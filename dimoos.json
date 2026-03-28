@@ -1,52 +1,8 @@
 [
   {
-    "name": "invisible monologue",
-    "series": "hand in hand",
-    "number": "?",
-    "owned": "yes",
-    "how": "pre-owned",
-    "who": "facebook marketplace",
-    "purchase_date": "06/02/2025"
-  },
-  {
-    "name": "follow the light",
-    "series": "finding mokoko",
-    "number": "?",
-    "owned": "yes",
-    "how": "pre-owned",
-    "who": "facebook marketplace",
-    "purchase_date": "09/06/2025"
-  },
-  {
-    "name": "chasing the clouds",
-    "series": "the golden gallop",
-    "number": "?",
-    "owned": "yes",
-    "how": "pre-owned",
-    "who": "facebook marketplace",
-    "purchase_date": "01/25/2026"
-  },
-  {
-    "name": "vinyl plush blister pack",
-    "series": "crush on coffee",
-    "number": "?",
-    "owned": "yes",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
-  },
-  {
-    "name": "let’s go",
-    "series": "pop mart gathering at the pop land",
-    "number": "?",
-    "owned": "yes",
-    "how": "pre-owned",
-    "who": "facebook marketplace",
-    "purchase_date": "02/07/2026"
-  },
-  {
     "name": "piglet",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -56,6 +12,7 @@
   {
     "name": "rabbit",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -65,6 +22,7 @@
   {
     "name": "fox",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -74,6 +32,7 @@
   {
     "name": "little elephant",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -83,6 +42,7 @@
   {
     "name": "hedgehog",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -92,6 +52,7 @@
   {
     "name": "kitty",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -101,6 +62,7 @@
   {
     "name": "white crane",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -110,6 +72,7 @@
   {
     "name": "panda",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -119,6 +82,7 @@
   {
     "name": "shiba",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -128,6 +92,7 @@
   {
     "name": "sheep",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -137,6 +102,7 @@
   {
     "name": "blue bird",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -146,6 +112,7 @@
   {
     "name": "a squid",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -155,6 +122,7 @@
   {
     "name": "lucky charm",
     "series": "stray animal",
+    "series_date": "2019.08",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -164,6 +132,7 @@
   {
     "name": "magician",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -173,6 +142,7 @@
   {
     "name": "wizard",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -182,6 +152,7 @@
   {
     "name": "drummer",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -191,6 +162,7 @@
   {
     "name": "rose knight",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -200,6 +172,7 @@
   {
     "name": "commander",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -209,6 +182,7 @@
   {
     "name": "fire dancer",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -218,6 +192,7 @@
   {
     "name": "clown candy",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -227,6 +202,7 @@
   {
     "name": "aerialist flower",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -236,6 +212,7 @@
   {
     "name": "instrumentalist",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -245,6 +222,7 @@
   {
     "name": "juggler",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -254,6 +232,7 @@
   {
     "name": "performer nico",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -263,6 +242,7 @@
   {
     "name": "performer nico",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -272,6 +252,7 @@
   {
     "name": "clown with balloon",
     "series": "midnight circus",
+    "series_date": "2019.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -281,6 +262,7 @@
   {
     "name": "sweety dimoo",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -290,6 +272,7 @@
   {
     "name": "snowtown elf",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -299,6 +282,7 @@
   {
     "name": "gingerbread man",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -308,6 +292,7 @@
   {
     "name": "snowtown penguin",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -317,6 +302,7 @@
   {
     "name": "santa dimoo",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -326,6 +312,7 @@
   {
     "name": "snow country dimoo",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -335,6 +322,7 @@
   {
     "name": "snowtown fox",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -344,6 +332,7 @@
   {
     "name": "play with snow",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -353,6 +342,7 @@
   {
     "name": "gift giving deer",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -362,6 +352,7 @@
   {
     "name": "gift elf",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -371,6 +362,7 @@
   {
     "name": "christmas sock",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -380,6 +372,7 @@
   {
     "name": "christmas tree",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -389,6 +382,7 @@
   {
     "name": "snowman dimoo",
     "series": "christmas 2019",
+    "series_date": "2019.12",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -398,6 +392,7 @@
   {
     "name": "jet boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -407,6 +402,7 @@
   {
     "name": "explorer",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -416,6 +412,7 @@
   {
     "name": "kitty space boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -425,6 +422,7 @@
   {
     "name": "ufo boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -434,6 +432,7 @@
   {
     "name": "flower boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -443,6 +442,7 @@
   {
     "name": "rocket boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -452,6 +452,7 @@
   {
     "name": "doctor of aeronautics",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -461,6 +462,7 @@
   {
     "name": "earth baby",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -470,6 +472,7 @@
   {
     "name": "electric boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -479,6 +482,7 @@
   {
     "name": "monster boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -488,6 +492,7 @@
   {
     "name": "astronaut coser",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -497,6 +502,7 @@
   {
     "name": "astronaut",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -506,6 +512,7 @@
   {
     "name": "cosmic boy",
     "series": "space travel",
+    "series_date": "2020.03",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -515,6 +522,7 @@
   {
     "name": "warrior",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -524,6 +532,7 @@
   {
     "name": "ugly duckling",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -533,6 +542,7 @@
   {
     "name": "little red",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -542,6 +552,7 @@
   {
     "name": "big bad wolf",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -551,6 +562,7 @@
   {
     "name": "baby dragon",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -560,6 +572,7 @@
   {
     "name": "wizard",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -569,6 +582,7 @@
   {
     "name": "prince tangled",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -578,6 +592,7 @@
   {
     "name": "hunter",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -587,6 +602,7 @@
   {
     "name": "elf of flower",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -596,6 +612,7 @@
   {
     "name": "alchemist",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -605,6 +622,7 @@
   {
     "name": "frog prince",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -614,6 +632,7 @@
   {
     "name": "swan",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -623,6 +642,7 @@
   {
     "name": "pandora's box",
     "series": "fairy tale",
+    "series_date": "2020.05",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -632,6 +652,7 @@
   {
     "name": "courier boy",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -641,6 +662,7 @@
   {
     "name": "delivery boy",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -650,6 +672,7 @@
   {
     "name": "salesman",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -659,6 +682,7 @@
   {
     "name": "director",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -668,6 +692,7 @@
   {
     "name": "e-sports player",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -677,6 +702,7 @@
   {
     "name": "son of landlord",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -686,6 +712,7 @@
   {
     "name": "busker",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -695,6 +722,7 @@
   {
     "name": "photographer",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -704,6 +732,7 @@
   {
     "name": "art toy collector",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -713,6 +742,7 @@
   {
     "name": "sneaker collector",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -722,6 +752,7 @@
   {
     "name": "groomer",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -731,6 +762,7 @@
   {
     "name": "baker",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -740,6 +772,7 @@
   {
     "name": "sculptor",
     "series": "life university",
+    "series_date": "2020.09",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -749,6 +782,7 @@
   {
     "name": "santa claus",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -758,6 +792,7 @@
   {
     "name": "snow fox",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -767,6 +802,7 @@
   {
     "name": "christmas stockings",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -776,6 +812,7 @@
   {
     "name": "christmas tree",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -785,6 +822,7 @@
   {
     "name": "gif-giving mouse",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -794,6 +832,7 @@
   {
     "name": "gingerbread house",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -803,6 +842,7 @@
   {
     "name": "snowman",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -812,6 +852,7 @@
   {
     "name": "owl",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -821,6 +862,7 @@
   {
     "name": "candy",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -830,6 +872,7 @@
   {
     "name": "polar bear",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -839,6 +882,7 @@
   {
     "name": "wreath",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -848,6 +892,7 @@
   {
     "name": "jingle bell",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -857,6 +902,7 @@
   {
     "name": "night elf",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -866,6 +912,7 @@
   {
     "name": "christmas card",
     "series": "christmas 2020",
+    "series_date": "2020.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -875,6 +922,7 @@
   {
     "name": "pisces",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -884,6 +932,7 @@
   {
     "name": "cancer",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -893,6 +942,7 @@
   {
     "name": "leo",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -902,6 +952,7 @@
   {
     "name": "virgo",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -911,6 +962,7 @@
   {
     "name": "aquarius",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -920,6 +972,7 @@
   {
     "name": "libra",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -929,6 +982,7 @@
   {
     "name": "scorpio",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -938,6 +992,7 @@
   {
     "name": "sagittarius",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -947,6 +1002,7 @@
   {
     "name": "aries",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -956,6 +1012,7 @@
   {
     "name": "taurus",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -965,6 +1022,7 @@
   {
     "name": "gemini",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -974,6 +1032,7 @@
   {
     "name": "capricorn",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -983,6 +1042,7 @@
   {
     "name": "astrologer",
     "series": "zodiac",
+    "series_date": "2021.02",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -992,6 +1052,7 @@
   {
     "name": "penguin",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1001,6 +1062,7 @@
   {
     "name": "polar bear",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1010,6 +1072,7 @@
   {
     "name": "axolotl",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1019,6 +1082,7 @@
   {
     "name": "coral",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1028,6 +1092,7 @@
   {
     "name": "starfish",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1037,6 +1102,7 @@
   {
     "name": "seahorse",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1046,6 +1112,7 @@
   {
     "name": "killer whale",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1055,6 +1122,7 @@
   {
     "name": "anglerfish",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1064,6 +1132,7 @@
   {
     "name": "octopus",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1073,6 +1142,7 @@
   {
     "name": "sea butterfly",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1082,6 +1152,7 @@
   {
     "name": "turtle",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1091,6 +1162,7 @@
   {
     "name": "flying fish",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1100,6 +1172,7 @@
   {
     "name": "aquanaut",
     "series": "aquarium",
+    "series_date": "2021.06",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1109,6 +1182,7 @@
   {
     "name": "party for piggy",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1118,6 +1192,7 @@
   {
     "name": "rabbit tricycle",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1127,6 +1202,7 @@
   {
     "name": "frisbee player",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1136,6 +1212,7 @@
   {
     "name": "bubble sailor",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1145,6 +1222,7 @@
   {
     "name": "love letter courier",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1154,6 +1232,7 @@
   {
     "name": "duck captain",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -1163,6 +1242,7 @@
   {
     "name": "mattress tester",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1172,6 +1252,7 @@
   {
     "name": "ranch catcher",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1181,6 +1262,7 @@
   {
     "name": "summer lemon tea",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1190,6 +1272,7 @@
   {
     "name": "frog gardener",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1199,6 +1282,7 @@
   {
     "name": "puppy bather",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1208,6 +1292,7 @@
   {
     "name": "hamsters architect",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1217,6 +1302,7 @@
   {
     "name": "forester conductor",
     "series": "pets vacation",
+    "series_date": "2021.08",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1226,6 +1312,7 @@
   {
     "name": "wild man",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1235,6 +1322,7 @@
   {
     "name": "firefly",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1244,6 +1332,7 @@
   {
     "name": "raccoon",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1253,6 +1342,7 @@
   {
     "name": "night wolf",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1262,6 +1352,7 @@
   {
     "name": "sleepy bunny",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1271,6 +1362,7 @@
   {
     "name": "dark rose",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1280,6 +1372,7 @@
   {
     "name": "little bee",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1289,6 +1382,7 @@
   {
     "name": "mushroom",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1298,6 +1392,7 @@
   {
     "name": "sunflower",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1307,6 +1402,7 @@
   {
     "name": "dewdrop",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1316,6 +1412,7 @@
   {
     "name": "baby bat",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1325,6 +1422,7 @@
   {
     "name": "night watcher",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1334,6 +1432,7 @@
   {
     "name": "stump",
     "series": "forest night",
+    "series_date": "2021.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1343,6 +1442,7 @@
   {
     "name": "fall asleep",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1352,6 +1452,7 @@
   {
     "name": "bubble bath",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1361,6 +1462,7 @@
   {
     "name": "summer refrigerator",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1370,6 +1472,7 @@
   {
     "name": "afternoon tea",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1379,6 +1482,7 @@
   {
     "name": "drowsy look",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1388,6 +1492,7 @@
   {
     "name": "gardening moment",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1397,6 +1502,7 @@
   {
     "name": "outfit of the day",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1406,6 +1512,7 @@
   {
     "name": "snack food carnival",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1415,6 +1522,7 @@
   {
     "name": "the morning news",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1424,6 +1532,7 @@
   {
     "name": "binge-watcher",
     "series": "homebody",
+    "series_date": "2021.11",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1433,6 +1542,7 @@
   {
     "name": "snow sunday",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1442,6 +1552,7 @@
   {
     "name": "goodnight fries",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1451,6 +1562,7 @@
   {
     "name": "sweet corn",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1460,6 +1572,7 @@
   {
     "name": "just cola",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1469,6 +1582,7 @@
   {
     "name": "baby burger",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1478,6 +1592,7 @@
   {
     "name": "pilot colonel",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1487,6 +1602,7 @@
   {
     "name": "kfc bucket",
     "series": "kfc china 35th anniversary",
+    "series_date": "2022.01",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1496,6 +1612,7 @@
   {
     "name": "sightseeing submarine",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1505,6 +1622,7 @@
   {
     "name": "ranch tractor",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1514,6 +1632,7 @@
   {
     "name": "peace maker",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1523,6 +1642,7 @@
   {
     "name": "speedy taxi",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1532,6 +1652,7 @@
   {
     "name": "prize claw crane",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1541,6 +1662,7 @@
   {
     "name": "honey copter",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1550,6 +1672,7 @@
   {
     "name": "dream glider",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1559,6 +1682,7 @@
   {
     "name": "shopping cart",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1568,6 +1692,7 @@
   {
     "name": "baby walker",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1577,6 +1702,7 @@
   {
     "name": "gourmet’s ufo",
     "series": "where we go",
+    "series_date": "2022.03",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1586,6 +1712,7 @@
   {
     "name": "handmade flower cake",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1595,6 +1722,7 @@
   {
     "name": "honey muffins",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1604,6 +1732,7 @@
   {
     "name": "sweet pudding",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1613,6 +1742,7 @@
   {
     "name": "strawberry cream roll",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1622,6 +1752,7 @@
   {
     "name": "fairytale taste",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1631,6 +1762,7 @@
   {
     "name": "rich picnic basket",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1640,6 +1772,7 @@
   {
     "name": "tea and snacks time",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1649,6 +1782,7 @@
   {
     "name": "drink freely",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1658,6 +1792,7 @@
   {
     "name": "dessert time",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1667,6 +1802,7 @@
   {
     "name": "sweet supplies",
     "series": "go on an outing together",
+    "series_date": "2022.05",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1676,6 +1812,7 @@
   {
     "name": "number d01",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1685,6 +1822,7 @@
   {
     "name": "selfie with newton’s apple",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1694,6 +1832,7 @@
   {
     "name": "waves of inspiration",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1703,6 +1842,7 @@
   {
     "name": "general of qin dynasty vlog",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1712,6 +1852,7 @@
   {
     "name": "the imperial guard’s bubble gum",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1721,6 +1862,7 @@
   {
     "name": "anubis’ cat teaser stick",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1730,6 +1872,7 @@
   {
     "name": "video game boy",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1739,6 +1882,7 @@
   {
     "name": "a navigator in a motorboat",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1748,6 +1892,7 @@
   {
     "name": "rock choir",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1757,6 +1902,7 @@
   {
     "name": "the savage",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1766,6 +1912,7 @@
   {
     "name": "contemporary artist",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1775,6 +1922,7 @@
   {
     "name": "messenger pigeon",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1784,6 +1932,7 @@
   {
     "name": "time rider",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1793,6 +1942,7 @@
   {
     "name": "time manipulator",
     "series": "time machine or time roaming",
+    "series_date": "2022.07",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1802,6 +1952,7 @@
   {
     "name": "jurassic guide",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1811,6 +1962,7 @@
   {
     "name": "jurassic history",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1820,6 +1972,7 @@
   {
     "name": "pterosaur paraglider",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1829,6 +1982,7 @@
   {
     "name": "the birth of a baby dinosaur",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1838,6 +1992,7 @@
   {
     "name": "growth recorder",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1847,6 +2002,7 @@
   {
     "name": "dinosaur egg researcher",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1856,6 +2012,7 @@
   {
     "name": "dinosaur trainer",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1865,6 +2022,7 @@
   {
     "name": "hug a dinosaur",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1874,6 +2032,7 @@
   {
     "name": "baby dinosaur knight",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1883,6 +2042,7 @@
   {
     "name": "spherical tour bus",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1892,6 +2052,7 @@
   {
     "name": "park sightsetting bus",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1901,6 +2062,7 @@
   {
     "name": "brachiosaurus feeder",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1910,6 +2072,7 @@
   {
     "name": "ow ow",
     "series": "jurassic world",
+    "series_date": "2022.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -1919,6 +2082,7 @@
   {
     "name": "sleepy",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1928,6 +2092,7 @@
   {
     "name": "lucky",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1937,6 +2102,7 @@
   {
     "name": "vivacity",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1946,6 +2112,7 @@
   {
     "name": "sweetie",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1955,6 +2122,7 @@
   {
     "name": "beauty",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1964,6 +2132,7 @@
   {
     "name": "bathing",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1973,6 +2142,7 @@
   {
     "name": "foodie",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1982,6 +2152,7 @@
   {
     "name": "lovely",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -1991,6 +2162,7 @@
   {
     "name": "curiosity",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2000,6 +2172,7 @@
   {
     "name": "manager",
     "series": "2022.12 - cat paradise",
+    "series_date": "2022.12",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2009,6 +2182,7 @@
   {
     "name": "love theatre",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2018,6 +2192,7 @@
   {
     "name": "joyride bumper car",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2027,6 +2202,7 @@
   {
     "name": "rotating cup",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2036,6 +2212,7 @@
   {
     "name": "ice cream",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2045,6 +2222,7 @@
   {
     "name": "wait",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2054,6 +2232,7 @@
   {
     "name": "rowboat",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2063,6 +2242,7 @@
   {
     "name": "love fountain",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2072,6 +2252,7 @@
   {
     "name": "record anniversary",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2081,6 +2262,7 @@
   {
     "name": "summer fireworks",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2090,6 +2272,7 @@
   {
     "name": "marshmallow",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2099,6 +2282,7 @@
   {
     "name": "romantic balloons",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2108,6 +2292,7 @@
   {
     "name": "small handcart",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2117,6 +2302,7 @@
   {
     "name": "photo prop wall",
     "series": "dating",
+    "series_date": "2023.02",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2126,6 +2312,7 @@
   {
     "name": "angel",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2135,6 +2322,7 @@
   {
     "name": "devil",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2144,6 +2332,7 @@
   {
     "name": "magician",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2153,6 +2342,7 @@
   {
     "name": "flamingo",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2162,6 +2352,7 @@
   {
     "name": "elk",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2171,6 +2362,7 @@
   {
     "name": "rocky overlord",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2180,6 +2372,7 @@
   {
     "name": "rocky king",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2189,6 +2382,7 @@
   {
     "name": "pajamas rabbit",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2198,6 +2392,7 @@
   {
     "name": "joker",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2207,6 +2402,7 @@
   {
     "name": "little green dragon",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2216,6 +2412,7 @@
   {
     "name": "snowball",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2225,6 +2422,7 @@
   {
     "name": "snowy owl",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2234,6 +2432,7 @@
   {
     "name": "daytime",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2243,6 +2442,7 @@
   {
     "name": "nighttime",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2252,6 +2452,7 @@
   {
     "name": "dreamworld",
     "series": "retro",
+    "series_date": "2023.05",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2261,6 +2462,7 @@
   {
     "name": "yeti",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "1",
     "owned": "no",
     "how": "n/a",
@@ -2270,6 +2472,7 @@
   {
     "name": "cerberus",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "2",
     "owned": "yes",
     "how": "pre-owned",
@@ -2279,6 +2482,7 @@
   {
     "name": "fox spirit",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "3",
     "owned": "no",
     "how": "n/a",
@@ -2288,6 +2492,7 @@
   {
     "name": "scare box",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "4",
     "owned": "yes",
     "how": "pre-owned",
@@ -2297,6 +2502,7 @@
   {
     "name": "dear monster",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "5",
     "owned": "yes",
     "how": "blind box",
@@ -2306,6 +2512,7 @@
   {
     "name": "ghost",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "6",
     "owned": "yes",
     "how": "pre-owned",
@@ -2315,6 +2522,7 @@
   {
     "name": "little devil",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "7",
     "owned": "yes",
     "how": "blind box",
@@ -2324,6 +2532,7 @@
   {
     "name": "shadow sailor",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "8",
     "owned": "yes",
     "how": "pre-owned",
@@ -2333,6 +2542,7 @@
   {
     "name": "mummy",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "9",
     "owned": "yes",
     "how": "pre-owned",
@@ -2342,6 +2552,7 @@
   {
     "name": "scarecrow",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "10",
     "owned": "yes",
     "how": "pre-owned",
@@ -2351,6 +2562,7 @@
   {
     "name": "unicorn",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "11",
     "owned": "yes",
     "how": "blind box",
@@ -2360,6 +2572,7 @@
   {
     "name": "ghost catcher",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "12",
     "owned": "yes",
     "how": "blind box",
@@ -2369,6 +2582,7 @@
   {
     "name": "mystic magic",
     "series": "no one’s gonna sleep tonight",
+    "series_date": "2023.09",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2378,6 +2592,7 @@
   {
     "name": "tears of eos",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2387,6 +2602,7 @@
   {
     "name": "recipe for wonder",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "2",
     "owned": "yes",
     "how": "blind box",
@@ -2396,6 +2612,7 @@
   {
     "name": "snowball effect",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2405,6 +2622,7 @@
   {
     "name": "making snowman",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2414,6 +2632,7 @@
   {
     "name": "treasures in the wild",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2423,6 +2642,7 @@
   {
     "name": "merry christmas",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2432,6 +2652,7 @@
   {
     "name": "winter dream",
     "series": "letters from snowman",
+    "series_date": "2023.11",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2441,6 +2662,7 @@
   {
     "name": "duckling leader",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "1",
     "owned": "yes",
     "how": "blind box",
@@ -2450,6 +2672,7 @@
   {
     "name": "sleeping bunny",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "2",
     "owned": "yes",
     "how": "blind box",
@@ -2459,6 +2682,7 @@
   {
     "name": "warm polar bear",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "3",
     "owned": "yes",
     "how": "pre-owned",
@@ -2468,6 +2692,7 @@
   {
     "name": "taichi panda",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "4",
     "owned": "yes",
     "how": "pre-owned",
@@ -2477,6 +2702,7 @@
   {
     "name": "bear dad",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "5",
     "owned": "yes",
     "how": "blind box",
@@ -2486,6 +2712,7 @@
   {
     "name": "baby elephant bubble",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "6",
     "owned": "yes",
     "how": "blind box",
@@ -2495,6 +2722,7 @@
   {
     "name": "foodie giraffe",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "7",
     "owned": "yes",
     "how": "blind box",
@@ -2504,6 +2732,7 @@
   {
     "name": "penguin tango",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "8",
     "owned": "yes",
     "how": "pre-owned",
@@ -2513,6 +2742,7 @@
   {
     "name": "crocodile cleaner",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "9",
     "owned": "yes",
     "how": "blind box",
@@ -2522,6 +2752,7 @@
   {
     "name": "red panda with apple",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "10",
     "owned": "yes",
     "how": "pre-owned",
@@ -2531,6 +2762,7 @@
   {
     "name": "tigers learn to walk",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "11",
     "owned": "yes",
     "how": "blind box",
@@ -2540,6 +2772,7 @@
   {
     "name": "sleepy koala",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "12",
     "owned": "yes",
     "how": "blind box",
@@ -2549,6 +2782,7 @@
   {
     "name": "mystic magic",
     "series": "animal kingdom",
+    "series_date": "2024.03",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2558,6 +2792,7 @@
   {
     "name": "calm down",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "1",
     "owned": "yes",
     "how": "pre-owned",
@@ -2567,6 +2802,7 @@
   {
     "name": "don't overthink",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "2",
     "owned": "yes",
     "how": "pre-owned",
@@ -2576,6 +2812,7 @@
   {
     "name": "cheer up",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "3",
     "owned": "yes",
     "how": "blind box",
@@ -2585,6 +2822,7 @@
   {
     "name": "candy for you",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "4",
     "owned": "yes",
     "how": "pre-owned",
@@ -2594,6 +2832,7 @@
   {
     "name": "light up",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2603,6 +2842,7 @@
   {
     "name": "embrace emotions",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "6",
     "owned": "yes",
     "how": "blind box",
@@ -2612,6 +2852,7 @@
   {
     "name": "peace of mind",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2621,6 +2862,7 @@
   {
     "name": "meditation",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2630,6 +2872,7 @@
   {
     "name": "pleasure",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2639,6 +2882,7 @@
   {
     "name": "startled",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "10",
     "owned": "yes",
     "how": "blind box",
@@ -2648,6 +2892,7 @@
   {
     "name": "shielded",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "11",
     "owned": "yes",
     "how": "blind box",
@@ -2657,6 +2902,7 @@
   {
     "name": "don't be afraid",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2666,6 +2912,7 @@
   {
     "name": "imaginary encounter",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2675,6 +2922,7 @@
   {
     "name": "imaginary adventure",
     "series": "by your side",
+    "series_date": "2024.06",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2684,6 +2932,7 @@
   {
     "name": "dreams of courage",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "1",
     "owned": "yes",
     "how": "blind box",
@@ -2693,6 +2942,7 @@
   {
     "name": "bear guardian",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "2",
     "owned": "yes",
     "how": "blind box",
@@ -2702,6 +2952,7 @@
   {
     "name": "dreams of sailing",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "3",
     "owned": "yes",
     "how": "pre-owned",
@@ -2711,6 +2962,7 @@
   {
     "name": "moonlight explorer",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "4",
     "owned": "yes",
     "how": "pre-owned",
@@ -2720,6 +2972,7 @@
   {
     "name": "wishful dreaming",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "5",
     "owned": "yes",
     "how": "n/a",
@@ -2729,6 +2982,7 @@
   {
     "name": "star catcher",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "6",
     "owned": "yes",
     "how": "pre-owned",
@@ -2738,6 +2992,7 @@
   {
     "name": "dreams of painting",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "7",
     "owned": "yes",
     "how": "n/a",
@@ -2747,6 +3002,7 @@
   {
     "name": "drawing spring",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "8",
     "owned": "yes",
     "how": "blind box",
@@ -2756,6 +3012,7 @@
   {
     "name": "dreams of a garden",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "9",
     "owned": "yes",
     "how": "pre-owned",
@@ -2765,6 +3022,7 @@
   {
     "name": "floating gardener",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "10",
     "owned": "yes",
     "how": "pre-owned",
@@ -2774,6 +3032,7 @@
   {
     "name": "dream with a butterfly",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "11",
     "owned": "yes",
     "how": "pre-owned",
@@ -2783,6 +3042,7 @@
   {
     "name": "butterfly wizard",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "12",
     "owned": "yes",
     "how": "pre-owned",
@@ -2792,6 +3052,7 @@
   {
     "name": "dreams of good fortune",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2801,6 +3062,7 @@
   {
     "name": "fortune cat",
     "series": "weaving wonders",
+    "series_date": "2024.10",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2810,6 +3072,7 @@
   {
     "name": "spring brings springtime",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2819,6 +3082,7 @@
   {
     "name": "snow and wintersweet",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2828,6 +3092,7 @@
   {
     "name": "rooftop guardian creatures",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2837,6 +3102,7 @@
   {
     "name": "sachet lotus",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2846,6 +3112,7 @@
   {
     "name": "propitious jades",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2855,6 +3122,7 @@
   {
     "name": "black and white game",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2864,6 +3132,7 @@
   {
     "name": "auspicious animal seal",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2873,6 +3142,7 @@
   {
     "name": "river scroll",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2882,6 +3152,7 @@
   {
     "name": "sandalwood incense burner",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2891,6 +3162,7 @@
   {
     "name": "exhale like an orchid",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2900,6 +3172,7 @@
   {
     "name": "ink bamboo painting",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2909,6 +3182,7 @@
   {
     "name": "porcelain blossoms",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2918,6 +3192,7 @@
   {
     "name": "drunkenness",
     "series": "stories in the cup",
+    "series_date": "2024.12",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -2927,6 +3202,7 @@
   {
     "name": "minnie's balloon",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2936,6 +3212,7 @@
   {
     "name": "mickey tv show",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2945,6 +3222,7 @@
   {
     "name": "three nephews",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2954,6 +3232,7 @@
   {
     "name": "daisy's gift",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2963,6 +3242,7 @@
   {
     "name": "donald duck's singing",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2972,6 +3252,7 @@
   {
     "name": "scrooge’s bathtub",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -2981,6 +3262,7 @@
   {
     "name": "donald duck popcorn",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -2990,6 +3272,7 @@
   {
     "name": "chip and dale",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -2999,6 +3282,7 @@
   {
     "name": "goofy’s prank",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -3008,6 +3292,7 @@
   {
     "name": "chip and dale’s dream",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3017,6 +3302,7 @@
   {
     "name": "classic mickey",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -3026,6 +3312,7 @@
   {
     "name": "pluto’s house",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3035,6 +3322,7 @@
   {
     "name": "the captain of steamboat willie",
     "series": "dimoo world x disney",
+    "series_date": "2025.03",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -3044,6 +3332,7 @@
   {
     "name": "parting clouds",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3053,6 +3342,7 @@
   {
     "name": "touching",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3062,6 +3352,7 @@
   {
     "name": "seeing",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3071,6 +3362,7 @@
   {
     "name": "hearing",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -3080,6 +3372,7 @@
   {
     "name": "fallen leaves",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3089,6 +3382,7 @@
   {
     "name": "cloud whisper",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3098,6 +3392,7 @@
   {
     "name": "weathered rock",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -3107,6 +3402,7 @@
   {
     "name": "the raindrop",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3116,6 +3412,7 @@
   {
     "name": "newborn soul",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3125,6 +3422,7 @@
   {
     "name": "melting ice",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "pre-owned",
@@ -3134,6 +3432,7 @@
   {
     "name": "rising wind",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3143,6 +3442,7 @@
   {
     "name": "withering flowers",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3152,6 +3452,7 @@
   {
     "name": "upward growth",
     "series": "shapes in nature",
+    "series_date": "2025.07",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -3161,6 +3462,7 @@
   {
     "name": "blooming button",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3170,6 +3472,7 @@
   {
     "name": "puppy socks",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3179,6 +3482,7 @@
   {
     "name": "soaking in a dream",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3188,6 +3492,7 @@
   {
     "name": "melt into me",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3197,6 +3502,7 @@
   {
     "name": "my pillow beats",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3206,6 +3512,7 @@
   {
     "name": "quacky stroll",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3215,6 +3522,7 @@
   {
     "name": "dancing on clouds",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3224,6 +3532,7 @@
   {
     "name": "air my soul in the sun",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3233,6 +3542,7 @@
   {
     "name": "soul trails",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3242,6 +3552,7 @@
   {
     "name": "unlocking time",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3251,6 +3562,7 @@
   {
     "name": "a call between worlds",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3260,6 +3572,7 @@
   {
     "name": "a story only i can tell",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3269,6 +3582,7 @@
   {
     "name": "where days don’t count",
     "series": "the missing day",
+    "series_date": "2025.09",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -3278,6 +3592,7 @@
   {
     "name": "dependence",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3287,6 +3602,7 @@
   {
     "name": "innocence",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3296,6 +3612,7 @@
   {
     "name": "protection",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3305,6 +3622,7 @@
   {
     "name": "curiosity",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "?",
     "owned": "no",
     "how": "n/a",
@@ -3314,6 +3632,7 @@
   {
     "name": "attachment",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3323,6 +3642,7 @@
   {
     "name": "strangeness",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3332,6 +3652,7 @@
   {
     "name": "security",
     "series": "journal of new life",
+    "series_date": "2025.11",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
@@ -3341,6 +3662,7 @@
   {
     "name": "the goodbye i cannot say",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3350,6 +3672,7 @@
   {
     "name": "the hourglass",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3359,6 +3682,7 @@
   {
     "name": "purring thread",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3368,6 +3692,7 @@
   {
     "name": "bad morning",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3377,6 +3702,7 @@
   {
     "name": "path of whispering lilies",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3386,6 +3712,7 @@
   {
     "name": "rainbow after storm",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3395,6 +3722,7 @@
   {
     "name": "summer on the grass",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3404,6 +3732,7 @@
   {
     "name": "first swim",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3413,6 +3742,7 @@
   {
     "name": "blooms from the mud",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3422,6 +3752,7 @@
   {
     "name": "kiteland",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3431,6 +3762,7 @@
   {
     "name": "snowfield swing",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3440,6 +3772,7 @@
   {
     "name": "cosmic dream",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "?",
     "owned": "yes",
     "how": "blind box",
@@ -3449,10 +3782,61 @@
   {
     "name": "in your arms",
     "series": "memories we hold",
+    "series_date": "2025.12",
     "number": "secret",
     "owned": "no",
     "how": "n/a",
     "who": "n/a",
     "purchase_date": "n/a"
+  },
+  {
+    "name": "invisible monologue",
+    "series": "hand in hand",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "06/02/2025"
+  },
+  {
+    "name": "follow the light",
+    "series": "finding mokoko",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "09/06/2025"
+  },
+  {
+    "name": "chasing the clouds",
+    "series": "the golden gallop",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "01/25/2026"
+  },
+  {
+    "name": "vinyl plush blister pack",
+    "series": "crush on coffee",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "n/a",
+    "who": "n/a",
+    "purchase_date": "n/a"
+  },
+  {
+    "name": "let’s go",
+    "series": "pop mart gathering at the pop land",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/07/2026"
   }
 ]

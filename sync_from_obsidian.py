@@ -78,6 +78,14 @@ def load_dimoos():
         file_series = fm.get("series_name", "").strip()
         is_misc = f.name.startswith("00 -")
 
+        # Extract YYYY.MM date prefix from filename (e.g. "2022.05 - go on an outing.md" → "2022.05")
+        # Misc file ("00 - misc dimoos.md") gets "9999.99" to sort last
+        if is_misc:
+            series_date = "9999.99"
+        else:
+            date_m = re.match(r"^(\d{4}\.\d{2})", f.name)
+            series_date = date_m.group(1) if date_m else "9999.98"
+
         with open(f, encoding="utf-8") as fh:
             lines = fh.readlines()
 
@@ -121,6 +129,7 @@ def load_dimoos():
             dimoos.append({
                 "name":          name,
                 "series":        series,
+                "series_date":   series_date,
                 "number":        fields.get("num", "?"),
                 "owned":         fields.get("owned", "no"),
                 "how":           fields.get("how", "n/a"),
@@ -128,6 +137,7 @@ def load_dimoos():
                 "purchase_date": parse_dimoo_date(fields.get("date", "n/a")),
             })
 
+    dimoos.sort(key=lambda d: d["series_date"])
     return dimoos
 
 
@@ -181,7 +191,8 @@ def load_restaurants():
             "date":         to_iso_date(fm.get("date", "")),
             "location":     fm.get("location", ""),
             "people":       fm.get("people", ""),
-            "would_return": fm.get("would_return") or fm.get("return_visit", ""),
+            "would_return": fm.get("would_return", ""),
+            "return_visit": fm.get("return_visit", ""),
             "food":         fm.get("food", ""),
             "service":      fm.get("service", ""),
             "atmosphere":   fm.get("atmosphere", ""),
