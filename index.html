@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard</title>
+  <style>
+    :root {
+      --bg:            #ffe0e9;
+      --card:          #ffffff;
+      --primary:       #b9375e;
+      --primary-light: rgba(185,55,94,0.08);
+      --border:        #ffc2d4;
+      --text:          #522e38;
+      --muted:         #602437;
+      --accent:        #e05780;
+      --radius:        14px;
+      --shadow:        0 2px 14px rgba(185,55,94,0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Tabs ── */
+    .tabs {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 0 1.5rem;
+      display: flex;
+    }
+    .tab-btn {
+      padding: 0.85rem 1.25rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+      border-bottom: 3px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+      white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--primary); }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    /* ── Tab panels ── */
+    .tab-panel { display: none; padding: 1.75rem 2rem; }
+    .tab-panel.active { display: block; }
+
+    /* ── Stat cards ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.3rem;
+      box-shadow: var(--shadow);
+    }
+    .stat-card .label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+    .stat-card .value {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-card .sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+    .stat-card .value.sm { font-size: 1.1rem; padding-top: 0.35rem; font-weight: 700; }
+
+    /* ── Charts grid ── */
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .chart-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.3rem 1.4rem;
+      box-shadow: var(--shadow);
+    }
+    .chart-card.wide { grid-column: 1 / -1; }
+    .chart-card h3 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .chart-fixed { position: relative; height: 520px; }
+    .no-data-msg {
+      color: var(--muted);
+      font-size: 0.88rem;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    /* ── Table section ── */
+    .table-section {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .table-header {
+      padding: 0.9rem 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .table-header h3 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .count-pill {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.15em 0.55em;
+      border-radius: 999px;
+    }
+    .filter-row {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .filter-row select, .filter-row input {
+      padding: 0.38rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 0.83rem;
+      color: var(--text);
+      background: var(--bg);
+      outline: none;
+    }
+    .filter-row select:focus, .filter-row input:focus { border-color: var(--primary); }
+
+    .table-wrap { overflow-x: auto; overflow-y: auto; max-height: 480px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    th, td { padding: 0.55rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th {
+      position: sticky; top: 0; z-index: 1;
+      background: var(--bg);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+    }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover td { background: var(--primary-light); }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-block;
+      padding: 0.18em 0.6em;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-yes    { background: #89023e; color: #ffd9da; }
+    .badge-no     { background: #30343f; color: #ffd9da; }
+    .badge-maybe  { background: #ea638c; color: #ffffff; }
+
+    /* ── Pills ── */
+    .rpill, .gpill {
+      display: inline-block;
+      padding: 0.18em 0.55em;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .c-muted { color: var(--muted); }
+    .empty-cell { text-align: center; color: var(--muted); padding: 2rem; }
+
+    .schema-hint { margin-top: 0.75rem; font-size: 0.82rem; }
+    .schema-hint summary { cursor: pointer; color: var(--primary); user-select: none; }
+    .schema-hint pre {
+      margin-top: 0.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 600px) {
+      .tab-panel { padding: 1rem; }
+      header { padding: 0.75rem 1rem; }
+      .tabs { padding: 0 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header><h1>My Dashboard</h1></header>
+
+<nav class="tabs">
+  <button class="tab-btn active" data-tab="dimoo">Dimoo Collection</button>
+  <button class="tab-btn" data-tab="movies">Movies</button>
+  <button class="tab-btn" data-tab="restaurants">Restaurants</button>
+</nav>
+
+<!-- ══ DIMOO ══════════════════════════════════════════════════════════ -->
+<section class="tab-panel active" id="panel-dimoo">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="label">Total Tracked</div><div class="value" id="d-total">—</div></div>
+    <div class="stat-card"><div class="label">Owned</div><div class="value" id="d-owned">—</div></div>
+    <div class="stat-card"><div class="label">Missing</div><div class="value" id="d-missing">—</div></div>
+    <div class="stat-card"><div class="label">Completion</div><div class="value" id="d-pct">—</div><div class="sub" id="d-series-sub"></div></div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card wide" id="card-d-series">
+      <h3>Collection by Series</h3>
+      <div class="chart-fixed"><canvas id="chart-d-series"></canvas></div>
+    </div>
+    <div class="chart-card" id="card-d-how">
+      <h3>How Acquired</h3>
+      <canvas id="chart-d-how"></canvas>
+    </div>
+    <div class="chart-card" id="card-d-growth">
+      <h3>Collection Growth</h3>
+      <canvas id="chart-d-growth"></canvas>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <div class="table-header">
+      <h3>All Figurines <span class="count-pill" id="d-count"></span></h3>
+      <div class="filter-row">
+        <select id="f-d-series"><option value="">All Series</option></select>
+        <select id="f-d-owned">
+          <option value="">All</option>
+          <option value="yes">Owned</option>
+          <option value="no">Missing</option>
+        </select>
+        <input id="f-d-search" type="text" placeholder="Search name…" style="width:140px" />
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Name</th><th>Series</th><th>#</th><th>Status</th><th>How</th><th>From</th><th>Date</th>
+      </tr></thead><tbody id="tbody-d"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MOVIES ═════════════════════════════════════════════════════════ -->
+<section class="tab-panel" id="panel-movies">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="label">Movies Logged</div><div class="value" id="m-total">—</div></div>
+    <div class="stat-card"><div class="label">Avg Rating</div><div class="value" id="m-avg">—</div><div class="sub">out of 10</div></div>
+    <div class="stat-card"><div class="label">At Theatre</div><div class="value" id="m-theatre">—</div></div>
+    <div class="stat-card"><div class="label">This Year</div><div class="value" id="m-thisyear">—</div></div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card" id="card-m-ratings">
+      <h3>Rating Distribution</h3>
+      <canvas id="chart-m-ratings"></canvas>
+    </div>
+    <div class="chart-card" id="card-m-location">
+      <h3>Where Watched</h3>
+      <canvas id="chart-m-location"></canvas>
+    </div>
+    <div class="chart-card" id="card-m-year">
+      <h3>Movies by Year</h3>
+      <canvas id="chart-m-year"></canvas>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <div class="table-header">
+      <h3>All Movies <span class="count-pill" id="m-count"></span></h3>
+      <div class="filter-row">
+        <select id="f-m-location">
+          <option value="">All Locations</option>
+          <option value="Theatre">Theatre</option>
+          <option value="Home">Home</option>
+        </select>
+        <select id="f-m-rating">
+          <option value="">Any Rating</option>
+          <option value="high">High (8–10)</option>
+          <option value="mid">Mid (5–7)</option>
+          <option value="low">Low (1–4)</option>
+        </select>
+        <input id="f-m-search" type="text" placeholder="Search title…" style="width:140px" />
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Title</th><th>Year</th><th>Date Watched</th><th>Where</th><th>With</th><th>Rating</th><th>Notes</th>
+      </tr></thead><tbody id="tbody-m"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RESTAURANTS ════════════════════════════════════════════════════ -->
+<section class="tab-panel" id="panel-restaurants">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="label">Restaurants</div><div class="value" id="r-total">—</div></div>
+    <div class="stat-card"><div class="label">Top Grade</div><div class="value sm" id="r-top-grade">—</div></div>
+    <div class="stat-card"><div class="label">Would Return</div><div class="value" id="r-return">—</div></div>
+    <div class="stat-card"><div class="label">This Year</div><div class="value" id="r-thisyear">—</div></div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card" id="card-r-overall">
+      <h3>Overall Grade Distribution</h3>
+      <canvas id="chart-r-overall"></canvas>
+    </div>
+    <div class="chart-card" id="card-r-return">
+      <h3>Would Return</h3>
+      <canvas id="chart-r-return"></canvas>
+    </div>
+    <div class="chart-card" id="card-r-month">
+      <h3>Visits by Month</h3>
+      <canvas id="chart-r-month"></canvas>
+    </div>
+  </div>
+
+  <div class="table-section">
+    <div class="table-header">
+      <h3>All Restaurants <span class="count-pill" id="r-count"></span></h3>
+      <div class="filter-row">
+        <select id="f-r-return">
+          <option value="">All</option>
+          <option value="yes">Would Return</option>
+          <option value="maybe">Maybe</option>
+          <option value="no">Wouldn't Return</option>
+        </select>
+        <select id="f-r-grade">
+          <option value="">Any Grade</option>
+          <option value="S">S</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+        <input id="f-r-search" type="text" placeholder="Search name…" style="width:140px" />
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table><thead><tr>
+        <th>Name</th><th>Date</th><th>Location</th><th>With</th>
+        <th>Return?</th><th>Food</th><th>Service</th><th>Atm</th><th>Value</th><th>Overall</th>
+      </tr></thead><tbody id="tbody-r"></tbody></table>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// ── Constants ────────────────────────────────────────────────────────────────
+const PALETTE = [
+  '#89023e','#ea638c','#30343f','#c4355a','#f0a0b8',
+  '#5c1a2e','#d4607a','#1b2021','#b87a8a','#f5d0d5',
+  '#7a2540','#e87a9a','#40303a','#c05070','#ffd9da'
+];
+
+const GRADE_ORDER  = ['S','A','B','C','D'];
+const GRADE_COLORS = { S:'#89023e', A:'#ea638c', B:'#ffd9da', C:'#30343f', D:'#1b2021' };
+const GRADE_TEXT   = { S:'#ffd9da', A:'#ffffff', B:'#89023e', C:'#ffd9da', D:'#ffd9da' };
+const THIS_YEAR = new Date().getFullYear();
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function titleCase(s) {
+  if (!s) return '';
+  return String(s).split(' ').map(w => w ? w[0].toUpperCase() + w.slice(1) : '').join(' ');
+}
+
+function parseDate(str) {
+  if (!str || str === 'n/a') return null;
+  const p = str.split('/');
+  if (p.length === 3) return new Date(Number(p[2]), Number(p[0]) - 1, Number(p[1]));
+  return new Date(str);
+}
+
+function groupBy(arr, keyFn) {
+  return arr.reduce((acc, d) => {
+    const k = keyFn(d) || 'Unknown';
+    acc[k] = (acc[k] || 0) + 1;
+    return acc;
+  }, {});
+}
+
+function topKey(map) {
+  return Object.entries(map).sort((a, b) => b[1] - a[1])[0]?.[0] ?? '—';
+}
+
+function applyRatingStyle(el, r) {
+  const n = Number(r);
+  if (n >= 8)      { el.style.background = '#89023e'; el.style.color = '#ffd9da'; }
+  else if (n >= 6) { el.style.background = '#ea638c'; el.style.color = '#ffffff'; }
+  else if (n >= 4) { el.style.background = '#ffd9da'; el.style.color = '#89023e'; }
+  else             { el.style.background = '#30343f'; el.style.color = '#ffd9da'; }
+}
+
+// Extract base grade letter (A from A+, B from B-, S stays S)
+function gradeBase(g) {
+  if (!g) return '';
+  return g[0].toUpperCase();
+}
+
+function applyGradeStyle(el, g) {
+  const base = gradeBase(g);
+  el.style.background = GRADE_COLORS[base] || '#f5f5f5';
+  el.style.color      = GRADE_TEXT[base]   || '#1b2021';
+}
+
+function normalizeWatchLocation(loc) {
+  if (!loc) return 'Home';
+  const l = loc.toLowerCase();
+  if (l.includes('theatre') || l.includes('theater') || l.includes('cinema') ||
+      l.includes('amc') || l.includes('regal') || l.includes('imax'))
+    return 'Theatre';
+  return 'Home';
+}
+
+function normalizeHow(how) {
+  if (!how || how === 'n/a') return 'Unknown';
+  const h = how.toLowerCase().split(';')[0].trim();
+  if (h.includes('gift'))        return 'Gift';
+  if (h.includes('pre-owned'))   return 'Pre-owned';
+  if (h.includes('blind box'))   return 'Blind Box';
+  if (h.includes('trade'))       return 'Trade';
+  if (h.includes('self bought')) return 'Self Bought';
+  return titleCase(h);
+}
+
+function setText(id, val) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = val ?? '—';
+}
+
+// ── Chart management ─────────────────────────────────────────────────────────
+const CI = {};
+function safeChart(id, config) {
+  if (CI[id]) { CI[id].destroy(); delete CI[id]; }
+  const canvas = document.getElementById(id);
+  if (!canvas) return;
+  CI[id] = new Chart(canvas, config);
+}
+
+function emptyCard(cardId, msg) {
+  const card = document.getElementById(cardId);
+  if (!card) return;
+  const h3 = card.querySelector('h3');
+  card.innerHTML = '';
+  if (h3) card.appendChild(h3);
+  const p = document.createElement('p');
+  p.className = 'no-data-msg';
+  p.textContent = msg;
+  card.appendChild(p);
+}
+
+// ── Data loading ─────────────────────────────────────────────────────────────
+async function fetchJSON(url) {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) return [];
+    return await r.json();
+  } catch { return []; }
+}
+
+let DIM = [], MOV = [], REST = [];
+const rendered = {};
+
+async function init() {
+  [DIM, MOV, REST] = await Promise.all([
+    fetchJSON('dimoos.json'),
+    fetchJSON('movies.json'),
+    fetchJSON('restaurants.json')
+  ]);
+  setupTabs();
+  setupFilters();
+  renderDimoo();
+  rendered.dimoo = true;
+}
+
+// ── Tab switching ─────────────────────────────────────────────────────────────
+function setupTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn')
+        .forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+      document.querySelectorAll('.tab-panel')
+        .forEach(p => p.classList.toggle('active', p.id === `panel-${tab}`));
+      if (!rendered[tab]) {
+        rendered[tab] = true;
+        if (tab === 'movies')      renderMovies();
+        if (tab === 'restaurants') renderRestaurants();
+      }
+    });
+  });
+}
+
+// ── Filters ───────────────────────────────────────────────────────────────────
+const timers = {};
+function debounce(key, fn) {
+  clearTimeout(timers[key]);
+  timers[key] = setTimeout(fn, 200);
+}
+
+function setupFilters() {
+  ['f-d-series','f-d-owned','f-d-search'].forEach(id =>
+    document.getElementById(id)?.addEventListener('input', () => debounce('d', renderDimooTable)));
+  ['f-m-location','f-m-rating','f-m-search'].forEach(id =>
+    document.getElementById(id)?.addEventListener('input', () => debounce('m', renderMoviesTable)));
+  ['f-r-return','f-r-grade','f-r-search'].forEach(id =>
+    document.getElementById(id)?.addEventListener('input', () => debounce('r', renderRestaurantsTable)));
+}
+
+// ══ DIMOO ════════════════════════════════════════════════════════════════════
+function renderDimoo() {
+  const owned   = DIM.filter(d => d.owned === 'yes');
+  const series  = [...new Set(DIM.map(d => d.series))];
+  const pct     = DIM.length ? Math.round(owned.length / DIM.length * 100) : 0;
+
+  setText('d-total',      DIM.length);
+  setText('d-owned',      owned.length);
+  setText('d-missing',    DIM.length - owned.length);
+  setText('d-pct',        `${pct}%`);
+  setText('d-series-sub', `across ${series.length} series`);
+
+  // Series filter dropdown
+  const sel = document.getElementById('f-d-series');
+  series.sort().forEach(s => {
+    const o = document.createElement('option');
+    o.value = s; o.textContent = titleCase(s);
+    sel.appendChild(o);
+  });
+
+  // Chart 1: Stacked horizontal bar
+  const seriesSorted = [...series].sort();
+  safeChart('chart-d-series', {
+    type: 'bar',
+    data: {
+      labels: seriesSorted.map(s => titleCase(s)),
+      datasets: [
+        { label: 'Owned',   data: seriesSorted.map(s => DIM.filter(d => d.series === s && d.owned === 'yes').length), backgroundColor: '#89023e', borderRadius: 3 },
+        { label: 'Missing', data: seriesSorted.map(s => DIM.filter(d => d.series === s && d.owned === 'no').length),  backgroundColor: '#f0b0b8', borderRadius: 3 }
+      ]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' } },
+      scales: {
+        x: { stacked: true, beginAtZero: true, grid: { color: '#f0c5c8' } },
+        y: { stacked: true, ticks: { font: { size: 11 } } }
+      }
+    }
+  });
+
+  // Chart 2: Acquisition doughnut
+  const howMap = {};
+  owned.forEach(d => { const k = normalizeHow(d.how); howMap[k] = (howMap[k] || 0) + 1; });
+  const howEntries = Object.entries(howMap).sort((a, b) => b[1] - a[1]);
+  safeChart('chart-d-how', {
+    type: 'doughnut',
+    data: {
+      labels: howEntries.map(e => e[0]),
+      datasets: [{ data: howEntries.map(e => e[1]), backgroundColor: PALETTE, borderWidth: 2 }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom', labels: { font: { size: 12 } } } } }
+  });
+
+  // Chart 3: Cumulative growth
+  const dated = owned.map(d => parseDate(d.purchase_date)).filter(Boolean).sort((a, b) => a - b);
+  if (dated.length) {
+    const monthMap = {};
+    dated.forEach(dt => {
+      const key = `${dt.getFullYear()}-${String(dt.getMonth() + 1).padStart(2, '0')}`;
+      monthMap[key] = (monthMap[key] || 0) + 1;
+    });
+    const months = Object.keys(monthMap).sort();
+    let cum = 0;
+    safeChart('chart-d-growth', {
+      type: 'line',
+      data: {
+        labels: months.map(m => {
+          const [y, mo] = m.split('-');
+          return new Date(Number(y), Number(mo) - 1, 1).toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+        }),
+        datasets: [{
+          label: 'Total Owned',
+          data: months.map(m => { cum += monthMap[m]; return cum; }),
+          borderColor: '#89023e',
+          backgroundColor: 'rgba(137,2,62,0.12)',
+          tension: 0.35,
+          fill: true,
+          pointRadius: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { beginAtZero: true, grid: { color: '#f0c5c8' } },
+          x: { ticks: { maxTicksLimit: 12, maxRotation: 45, font: { size: 11 } } }
+        }
+      }
+    });
+  } else {
+    emptyCard('card-d-growth', 'No dated entries yet — add purchase_date values to see growth over time.');
+  }
+
+  renderDimooTable();
+}
+
+function renderDimooTable() {
+  const fSeries = document.getElementById('f-d-series').value;
+  const fOwned  = document.getElementById('f-d-owned').value;
+  const fSearch = document.getElementById('f-d-search').value.toLowerCase().trim();
+
+  const rows = DIM.filter(d => {
+    if (fSeries && d.series !== fSeries) return false;
+    if (fOwned  && d.owned  !== fOwned)  return false;
+    if (fSearch && !(d.name ?? '').toLowerCase().includes(fSearch)) return false;
+    return true;
+  });
+
+  setText('d-count', rows.length);
+  const tbody = document.getElementById('tbody-d');
+
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-cell">No figurines match your filters.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = '';
+  rows.forEach(d => {
+    const tr = document.createElement('tr');
+    const add = (text, cls) => {
+      const td = document.createElement('td');
+      td.textContent = text || '—';
+      if (cls) td.className = cls;
+      tr.appendChild(td); return td;
+    };
+    add(titleCase(d.name));
+    add(titleCase(d.series));
+    add(d.number ?? '—', 'c-muted');
+
+    const btd = document.createElement('td');
+    const badge = document.createElement('span');
+    badge.className = `badge badge-${d.owned}`;
+    badge.textContent = d.owned === 'yes' ? 'Owned' : 'Missing';
+    btd.appendChild(badge); tr.appendChild(btd);
+
+    add(d.how  && d.how  !== 'n/a' ? d.how  : '—');
+    add(d.who  && d.who  !== 'n/a' ? d.who  : '—');
+    add(d.purchase_date && d.purchase_date !== 'n/a' ? d.purchase_date : '—', 'c-muted');
+    tbody.appendChild(tr);
+  });
+}
+
+// ══ MOVIES ═══════════════════════════════════════════════════════════════════
+function renderMovies() {
+  if (!MOV.length) {
+    setText('m-total', 0);
+    ['card-m-ratings','card-m-location','card-m-year'].forEach(id =>
+      emptyCard(id, 'Run sync_from_obsidian.py to populate movies.json'));
+    document.getElementById('tbody-m').innerHTML =
+      '<tr><td colspan="7" class="empty-cell">No movies yet. Run <code>python3 sync_from_obsidian.py</code></td></tr>';
+    return;
+  }
+
+  const ratings = MOV.map(m => Number(m.rating)).filter(r => r > 0);
+  const avgRating = ratings.length
+    ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(1) : '—';
+  const theatreCount = MOV.filter(m => normalizeWatchLocation(m.location) === 'Theatre').length;
+  const theatrePct = MOV.length ? `${Math.round(theatreCount / MOV.length * 100)}%` : '—';
+  const thisYear = MOV.filter(m => m.watch_date?.startsWith(String(THIS_YEAR))).length;
+
+  setText('m-total',    MOV.length);
+  setText('m-avg',      avgRating);
+  setText('m-theatre',  theatrePct);
+  setText('m-thisyear', thisYear);
+
+  // Chart 1: Rating distribution
+  const rBins = Array.from({ length: 10 }, (_, i) => i + 1);
+  safeChart('chart-m-ratings', {
+    type: 'bar',
+    data: {
+      labels: rBins.map(String),
+      datasets: [{
+        label: 'Movies',
+        data: rBins.map(r => MOV.filter(m => Number(m.rating) === r).length),
+        backgroundColor: rBins.map(r => `hsl(${r * 12}, 65%, 62%)`),
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { title: { display: true, text: 'Rating' }, grid: { display: false } },
+        y: { beginAtZero: true, ticks: { stepSize: 1 } }
+      }
+    }
+  });
+
+  // Chart 2: Theatre vs Home doughnut
+  const locMap = groupBy(MOV, m => normalizeWatchLocation(m.location));
+  safeChart('chart-m-location', {
+    type: 'doughnut',
+    data: {
+      labels: Object.keys(locMap),
+      datasets: [{ data: Object.values(locMap), backgroundColor: ['#89023e','#ea638c','#30343f'], borderWidth: 2 }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Chart 3: Movies by watch year
+  const yearMap = groupBy(MOV, m => m.watch_date ? m.watch_date.split('-')[0] : null);
+  const yearEntries = Object.entries(yearMap).sort((a, b) => a[0] - b[0]);
+  safeChart('chart-m-year', {
+    type: 'bar',
+    data: {
+      labels: yearEntries.map(e => e[0]),
+      datasets: [{ label: 'Movies', data: yearEntries.map(e => e[1]), backgroundColor: '#89023e', borderRadius: 4 }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } }, x: { grid: { display: false } } }
+    }
+  });
+
+  renderMoviesTable();
+}
+
+function renderMoviesTable() {
+  const fLoc    = document.getElementById('f-m-location').value;
+  const fRating = document.getElementById('f-m-rating').value;
+  const fSearch = document.getElementById('f-m-search').value.toLowerCase().trim();
+
+  const rows = MOV.filter(m => {
+    if (fLoc && normalizeWatchLocation(m.location) !== fLoc) return false;
+    const r = Number(m.rating);
+    if (fRating === 'high' && r < 8)  return false;
+    if (fRating === 'mid'  && (r < 5 || r > 7)) return false;
+    if (fRating === 'low'  && r > 4)  return false;
+    if (fSearch && !(m.title ?? '').toLowerCase().includes(fSearch)) return false;
+    return true;
+  }).sort((a, b) => (b.watch_date || '').localeCompare(a.watch_date || ''));
+
+  setText('m-count', rows.length);
+  const tbody = document.getElementById('tbody-m');
+
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-cell">No movies match your filters.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = '';
+  rows.forEach(m => {
+    const tr = document.createElement('tr');
+    const add = (text, cls) => {
+      const td = document.createElement('td');
+      td.textContent = text || '—';
+      if (cls) td.className = cls;
+      tr.appendChild(td);
+    };
+
+    add(titleCase(m.title));
+    add(m.year, 'c-muted');
+    add(m.watch_date, 'c-muted');
+    add(m.location || '—');
+    add(m.people || '—', 'c-muted');
+
+    // Rating pill
+    const rtd = document.createElement('td');
+    if (m.rating) {
+      const pill = document.createElement('span');
+      pill.className = 'rpill';
+      applyRatingStyle(pill, m.rating);
+      pill.textContent = `${m.rating}/10`;
+      rtd.appendChild(pill);
+    } else { rtd.textContent = '—'; rtd.className = 'c-muted'; }
+    tr.appendChild(rtd);
+
+    // Notes (truncated with tooltip)
+    const ntd = document.createElement('td');
+    ntd.style.cssText = 'max-width:220px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis';
+    ntd.title = m.overall || '';
+    ntd.textContent = m.overall || '—';
+    ntd.className = 'c-muted';
+    tr.appendChild(ntd);
+
+    tbody.appendChild(tr);
+  });
+}
+
+// ══ RESTAURANTS ══════════════════════════════════════════════════════════════
+function renderRestaurants() {
+  if (!REST.length) {
+    setText('r-total', 0);
+    ['card-r-overall','card-r-return','card-r-month'].forEach(id =>
+      emptyCard(id, 'Run sync_from_obsidian.py to populate restaurants.json'));
+    document.getElementById('tbody-r').innerHTML =
+      '<tr><td colspan="10" class="empty-cell">No restaurants yet. Run <code>python3 sync_from_obsidian.py</code></td></tr>';
+    return;
+  }
+
+  const withGrades = REST.filter(r => gradeBase(r.overall));
+  const gradeMap = groupBy(withGrades, r => gradeBase(r.overall));
+  const topGrade = GRADE_ORDER.find(g => gradeMap[g] > 0) ?? '—';
+  const returnYes = REST.filter(r => r.would_return === 'yes').length;
+  const returnPct = REST.length ? `${Math.round(returnYes / REST.length * 100)}%` : '—';
+  const thisYear  = REST.filter(r => r.date?.startsWith(String(THIS_YEAR))).length;
+
+  setText('r-total',     REST.length);
+  setText('r-top-grade', topGrade + (gradeMap[topGrade] ? ` (${gradeMap[topGrade]}×)` : ''));
+  setText('r-return',    returnPct);
+  setText('r-thisyear',  thisYear);
+
+  // Chart 1: Overall grade distribution
+  const gradeCounts = GRADE_ORDER.map(g => gradeMap[g] || 0);
+  safeChart('chart-r-overall', {
+    type: 'bar',
+    data: {
+      labels: GRADE_ORDER,
+      datasets: [{
+        label: 'Restaurants',
+        data: gradeCounts,
+        backgroundColor: GRADE_ORDER.map(g => GRADE_COLORS[g]),
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } }, x: { grid: { display: false } } }
+    }
+  });
+
+  // Chart 2: Would Return doughnut
+  const retMap = groupBy(REST.filter(r => r.would_return), r => r.would_return);
+  const retOrder = ['yes','maybe','no'];
+  const retColors = { yes: '#89023e', maybe: '#ea638c', no: '#30343f' };
+  const retEntries = retOrder.filter(k => retMap[k]);
+  safeChart('chart-r-return', {
+    type: 'doughnut',
+    data: {
+      labels: retEntries.map(k => k.charAt(0).toUpperCase() + k.slice(1)),
+      datasets: [{ data: retEntries.map(k => retMap[k]), backgroundColor: retEntries.map(k => retColors[k]), borderWidth: 2 }]
+    },
+    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+  });
+
+  // Chart 3: Visits by month
+  const monthMap = {};
+  REST.forEach(r => {
+    if (!r.date) return;
+    const key = r.date.slice(0, 7); // YYYY-MM
+    monthMap[key] = (monthMap[key] || 0) + 1;
+  });
+  const months = Object.keys(monthMap).sort();
+  safeChart('chart-r-month', {
+    type: 'bar',
+    data: {
+      labels: months.map(m => {
+        const [y, mo] = m.split('-');
+        return new Date(Number(y), Number(mo) - 1, 1).toLocaleDateString('en-US', { month: 'short', year: '2-digit' });
+      }),
+      datasets: [{ label: 'Visits', data: months.map(m => monthMap[m]), backgroundColor: '#ea638c', borderRadius: 4 }]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { display: false } },
+      scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } }, x: { grid: { display: false } } }
+    }
+  });
+
+  renderRestaurantsTable();
+}
+
+function renderRestaurantsTable() {
+  const fReturn = document.getElementById('f-r-return').value;
+  const fGrade  = document.getElementById('f-r-grade').value;
+  const fSearch = document.getElementById('f-r-search').value.toLowerCase().trim();
+
+  const rows = REST.filter(r => {
+    if (fReturn && r.would_return !== fReturn) return false;
+    if (fGrade  && gradeBase(r.overall) !== fGrade) return false;
+    if (fSearch && !(r.name ?? '').toLowerCase().includes(fSearch)) return false;
+    return true;
+  }).sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+
+  setText('r-count', rows.length);
+  const tbody = document.getElementById('tbody-r');
+
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="10" class="empty-cell">No restaurants match your filters.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = '';
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    const add = (text, cls) => {
+      const td = document.createElement('td');
+      td.textContent = text || '—';
+      if (cls) td.className = cls;
+      tr.appendChild(td);
+    };
+
+    add(titleCase(r.name));
+    add(r.date || '—', 'c-muted');
+    add(r.location || '—');
+    add(r.people || '—', 'c-muted');
+
+    // Would return badge
+    const btd = document.createElement('td');
+    if (r.would_return) {
+      const badge = document.createElement('span');
+      badge.className = `badge badge-${r.would_return}`;
+      badge.textContent = r.would_return.charAt(0).toUpperCase() + r.would_return.slice(1);
+      btd.appendChild(badge);
+    } else { btd.textContent = '—'; btd.className = 'c-muted'; }
+    tr.appendChild(btd);
+
+    // Grade pills (food, service, atmosphere, value, overall)
+    ['food','service','atmosphere','value','overall'].forEach(key => {
+      const td = document.createElement('td');
+      if (r[key]) {
+        const pill = document.createElement('span');
+        pill.className = 'gpill';
+        applyGradeStyle(pill, r[key]);
+        pill.textContent = r[key].toUpperCase();
+        td.appendChild(pill);
+      } else { td.textContent = '—'; td.className = 'c-muted'; }
+      tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+  });
+}
+
+// ── Run ───────────────────────────────────────────────────────────────────────
+init().catch(err => console.error('Dashboard init error:', err));
+</script>
+</body>
+</html>

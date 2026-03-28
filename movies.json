@@ -1,0 +1,884 @@
+[
+  {
+    "title": "ruby gillman, teenage kraken",
+    "year": 2023,
+    "watch_date": "2023-07-01",
+    "location": "theatre",
+    "people": "bernice and mom",
+    "rating": 4,
+    "overall": "highkey meh. okay family movie"
+  },
+  {
+    "title": "the 355",
+    "year": 2022,
+    "watch_date": "2023-07-02",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 2,
+    "overall": "super meh. boring heist movie"
+  },
+  {
+    "title": "knives out",
+    "year": 2019,
+    "watch_date": "2023-07-13",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 10,
+    "overall": "loved it. amazing murder mystery"
+  },
+  {
+    "title": "puss in boots",
+    "year": 2011,
+    "watch_date": "2023-07-16",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 6,
+    "overall": "not bad but not amazing"
+  },
+  {
+    "title": "puss in boots the last wish",
+    "year": 2022,
+    "watch_date": "2023-07-17",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 7,
+    "overall": "relatively entertaining"
+  },
+  {
+    "title": "teenage mutant ninja turtles mutant mayhem",
+    "year": 2023,
+    "watch_date": "2023-08-05",
+    "location": "theatre",
+    "people": "bernice and mom",
+    "rating": 7,
+    "overall": "mixed feelings but decent movie"
+  },
+  {
+    "title": "the truman show",
+    "year": 1998,
+    "watch_date": "2023-08-05",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 9,
+    "overall": "good movie. did not expect it to be this good"
+  },
+  {
+    "title": "gran turismo",
+    "year": 2023,
+    "watch_date": "2023-08-13",
+    "location": "theatre",
+    "people": "daniel and cj",
+    "rating": 7,
+    "overall": "decent movie geared toward people who like nascar and video games"
+  },
+  {
+    "title": "oppenheimer",
+    "year": 2023,
+    "watch_date": "2023-08-25",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 6,
+    "overall": "good political movie but not my cup of tea"
+  },
+  {
+    "title": "the flash",
+    "year": 2023,
+    "watch_date": "2023-09-02",
+    "location": "dad's house",
+    "people": "audrey, aunty marie, xavier, and dad",
+    "rating": 6,
+    "overall": "enjoyable movie but a lot of time travel plot holes"
+  },
+  {
+    "title": "the super mario bros",
+    "year": 2023,
+    "watch_date": "2023-09-11",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "super nostalgic. super funny. amazing art. great kids movie but works best when knowing about the franchise"
+  },
+  {
+    "title": "asteroid city",
+    "year": 2023,
+    "watch_date": "2023-09-12",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "enjoyable movie"
+  },
+  {
+    "title": "barbie",
+    "year": 2023,
+    "watch_date": "2023-09-12",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 5,
+    "overall": "okay movie. very politically feminist"
+  },
+  {
+    "title": "eternal sunshine of the spotless mind",
+    "year": 2004,
+    "watch_date": "2023-09-12",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "very interesting movie"
+  },
+  {
+    "title": "love at first sight",
+    "year": 2023,
+    "watch_date": "2023-09-18",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 7,
+    "overall": "decent romcom"
+  },
+  {
+    "title": "let it snow",
+    "year": 2019,
+    "watch_date": "2023-09-19",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 3,
+    "overall": "kinda mid romance stories grouping"
+  },
+  {
+    "title": "borat",
+    "year": 2006,
+    "watch_date": "2023-09-21",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 10,
+    "overall": "pure enjoyment but dark humor needed"
+  },
+  {
+    "title": "a haunting in venice",
+    "year": 2023,
+    "watch_date": "2023-09-24",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 9,
+    "overall": "really good murder mystery mystery with a side of horror"
+  },
+  {
+    "title": "downsizing",
+    "year": 2017,
+    "watch_date": "2023-11-08",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "enjoyed the overall concept but there always seemed to be something off about it"
+  },
+  {
+    "title": "five nights at freddy’s",
+    "year": 2023,
+    "watch_date": "2023-11-11",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 6,
+    "overall": "not really a horror movie seems like more for the nostalgia factor of fnaf"
+  },
+  {
+    "title": "meet the robinsons",
+    "year": 2007,
+    "watch_date": "2023-12-02",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "fun movie but terrible science behind space time continuum"
+  },
+  {
+    "title": "elementals",
+    "year": 2023,
+    "watch_date": "2023-12-03",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 9,
+    "overall": "good movie about showing hardships of interracial couples with immigrant parents"
+  },
+  {
+    "title": "leo",
+    "year": 2023,
+    "watch_date": "2023-12-03",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "funny kids movie"
+  },
+  {
+    "title": "the boy and the heron",
+    "year": 2023,
+    "watch_date": "2023-12-09",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 6,
+    "overall": "gorgeous movie but weak plot and somewhat mediocre characters, not my cup of tea"
+  },
+  {
+    "title": "the adventures of tintin",
+    "year": 2011,
+    "watch_date": "2023-12-15",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 7,
+    "overall": "fun movie to at felt like it could be made into a game like it takes two"
+  },
+  {
+    "title": "love actually",
+    "year": 2003,
+    "watch_date": "2023-12-16",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 7,
+    "overall": "interesting movie with not all happy endings"
+  },
+  {
+    "title": "lost in translation",
+    "year": 2003,
+    "watch_date": "2023-12-19",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 4,
+    "overall": "not my cup of tea. cheating is not okay"
+  },
+  {
+    "title": "sweeney todd the demon barber of fleet street",
+    "year": 2007,
+    "watch_date": "2023-12-22",
+    "location": "sf home on discord",
+    "people": "brighten",
+    "rating": 10,
+    "overall": "amazing musical with crazy twists"
+  },
+  {
+    "title": "priscilla",
+    "year": 2023,
+    "watch_date": "2023-12-31",
+    "location": "sf home",
+    "people": "alone",
+    "rating": 9,
+    "overall": "great movie but made me kinda sick the entire time"
+  },
+  {
+    "title": "wonka",
+    "year": 2023,
+    "watch_date": "2024-01-07",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 9,
+    "overall": "super entertaining movie with much nostalgia in the music"
+  },
+  {
+    "title": "look both ways",
+    "year": 2022,
+    "watch_date": "2024-01-13",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 7,
+    "overall": "fun movie"
+  },
+  {
+    "title": "mean girls",
+    "year": 2004,
+    "watch_date": "2024-01-14",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "decent movie. can see why it’s iconic but shitty ending"
+  },
+  {
+    "title": "mean girls",
+    "year": 2024,
+    "watch_date": "2024-01-20",
+    "location": "theatre",
+    "people": "alone",
+    "rating": 6,
+    "overall": "basically a remake of the old movie but cutting out the cancelable stuff so more toned down with songs"
+  },
+  {
+    "title": "the wonderful store of henry sugar",
+    "year": 2023,
+    "watch_date": "2024-01-27",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "interesting wes anderson movie"
+  },
+  {
+    "title": "wish",
+    "year": 2023,
+    "watch_date": "2024-01-27",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 3,
+    "overall": "weak plot family movie. honestly dogwater"
+  },
+  {
+    "title": "queenpin",
+    "year": 2021,
+    "watch_date": "2024-01-29",
+    "location": "apartment",
+    "people": "brighten",
+    "rating": 5,
+    "overall": "average movie"
+  },
+  {
+    "title": "american fiction",
+    "year": 2024,
+    "watch_date": "2024-02-04",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "felt like a clip into a guys unfortunate life"
+  },
+  {
+    "title": "migration",
+    "year": 2024,
+    "watch_date": "2024-02-14",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 7,
+    "overall": "cute and funny children’s animation movie"
+  },
+  {
+    "title": "poor things",
+    "year": 2023,
+    "watch_date": "2024-02-23",
+    "location": "theatre",
+    "people": "brighten",
+    "rating": 8,
+    "overall": "too much sex but decent movie"
+  },
+  {
+    "title": "bodies bodies bodies",
+    "year": 2022,
+    "watch_date": "2024-03-19",
+    "location": "apartment",
+    "people": "alone",
+    "rating": 6,
+    "overall": "weird horror comedy murder mystery"
+  },
+  {
+    "title": "the hunger games the ballad of songbirds and snakes",
+    "year": 2023,
+    "watch_date": "2024-04-11",
+    "location": "pc theatre",
+    "people": "alex",
+    "rating": 7,
+    "overall": "okay movie"
+  },
+  {
+    "title": "spy x family code white",
+    "year": 2024,
+    "watch_date": "2024-04-18",
+    "location": "theatre",
+    "people": "alex",
+    "rating": 9,
+    "overall": "very like the actual show basically a long episode"
+  },
+  {
+    "title": "the fall guy",
+    "year": 2024,
+    "watch_date": "2024-05-12",
+    "location": "theatre",
+    "people": "alex",
+    "rating": 10,
+    "overall": "really funny romcom very good"
+  },
+  {
+    "title": "haikyuu!! the dumpster battle",
+    "year": 2024,
+    "watch_date": "2024-06-01",
+    "location": "theatre",
+    "people": "alex",
+    "rating": 10,
+    "overall": "we love kenma and hinata"
+  },
+  {
+    "title": "bad boys ride or die",
+    "year": 2024,
+    "watch_date": "2024-06-06",
+    "location": "theatre",
+    "people": "alex",
+    "rating": 9,
+    "overall": "really funny action movie"
+  },
+  {
+    "title": "inside out",
+    "year": 2015,
+    "watch_date": "2024-06-12",
+    "location": "apartment",
+    "people": "alex",
+    "rating": 7,
+    "overall": "cute movie with a nice lesson"
+  },
+  {
+    "title": "inside out 2",
+    "year": 2024,
+    "watch_date": "2024-06-13",
+    "location": "theatre",
+    "people": "alex",
+    "rating": 5,
+    "overall": "good message but mid execution"
+  },
+  {
+    "title": "descendants the rise of red",
+    "year": 2024,
+    "watch_date": "2024-07-16",
+    "location": "sf home on discord",
+    "people": "alex",
+    "rating": 5,
+    "overall": "good singing but shit plot"
+  },
+  {
+    "title": "deadpool & wolverine",
+    "year": 2024,
+    "watch_date": "2024-07-28",
+    "location": "theatre",
+    "people": "chao family",
+    "rating": 9,
+    "overall": "cute funny nostalgic movie"
+  },
+  {
+    "title": "harold and the purple crayon",
+    "year": 2024,
+    "watch_date": "2024-08-11",
+    "location": "theatre",
+    "people": "chao family",
+    "rating": 8,
+    "overall": "funny movie"
+  },
+  {
+    "title": "the platform 2",
+    "year": 2024,
+    "watch_date": "2024-10-09",
+    "location": "sf home on discord",
+    "people": "alex",
+    "rating": 6,
+    "overall": "goes from okay to meh to decent to wtf ending"
+  },
+  {
+    "title": "crazy, stupid, love",
+    "year": 2011,
+    "watch_date": "2024-11-24",
+    "location": "daly city home on discord",
+    "people": "alex",
+    "rating": 10,
+    "overall": "really funny movie with very relatable relationships"
+  },
+  {
+    "title": "our little secret",
+    "year": 2024,
+    "watch_date": "2024-12-04",
+    "location": "alex’s apartment",
+    "people": "alex",
+    "rating": 9,
+    "overall": "cute romcom"
+  },
+  {
+    "title": "wicked",
+    "year": 2024,
+    "watch_date": "2024-12-05",
+    "location": "theatre",
+    "people": "alex",
+    "rating": 7,
+    "overall": "it feel very open ended because it was a part 1 but leaves the movie very underwhelming"
+  },
+  {
+    "title": "kinda pregnant",
+    "year": 2025,
+    "watch_date": "2025-02-08",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 7,
+    "overall": "funny movie but gave me second hand embarrassment"
+  },
+  {
+    "title": "captain america brave new world",
+    "year": 2025,
+    "watch_date": "2025-02-22",
+    "location": "theatre",
+    "people": "ellison and eric",
+    "rating": 8,
+    "overall": "decent marvel movie w/ a pretty cool end credit scene"
+  },
+  {
+    "title": "princess mononoke 4k",
+    "year": 2025,
+    "watch_date": "2025-04-06",
+    "location": "theatre",
+    "people": "ellison, michael lemay, michael sim, and eric",
+    "rating": 8,
+    "overall": "good movie somewhat about industrialization with great animations"
+  },
+  {
+    "title": "colorful stage! the movie a miku who can't sing",
+    "year": 2025,
+    "watch_date": "2025-04-24",
+    "location": "theatre",
+    "people": "michael sim, mikki, jordan mai, and eric",
+    "rating": 10,
+    "overall": "loved seeing Mizuki and soundtrack was great"
+  },
+  {
+    "title": "the hating game",
+    "year": 2021,
+    "watch_date": "2025-04-27",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 7,
+    "overall": "unique romcom that moved a lot faster than usual for the classic enemies to lovers trope"
+  },
+  {
+    "title": "sinners",
+    "year": 2025,
+    "watch_date": "2025-05-03",
+    "location": "theatre",
+    "people": "chris i and eric",
+    "rating": 8,
+    "overall": "interesting take on a vampire movie which followed the traditional vampire rules, but i’m not the biggest vampire movie fan"
+  },
+  {
+    "title": "the life list",
+    "year": 2025,
+    "watch_date": "2025-05-03",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 7,
+    "overall": "was an okay romcom"
+  },
+  {
+    "title": "pitch perfect",
+    "year": 2012,
+    "watch_date": "2025-05-04",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 8,
+    "overall": "good movie that really exposed acapella to the world but plot was a little weak"
+  },
+  {
+    "title": "thunderbolts*",
+    "year": 2025,
+    "watch_date": "2025-05-04",
+    "location": "theatre",
+    "people": "ellison, jordan mai, and eric",
+    "rating": 9,
+    "overall": "a really good marvel movie that accurately portrayed how depression feels like"
+  },
+  {
+    "title": "final destination bloodlines",
+    "year": 2025,
+    "watch_date": "2025-05-17",
+    "location": "theatre",
+    "people": "chris i and eric",
+    "rating": 8,
+    "overall": "was a thriller comedy-like movie with a bunch of killing goldberg machines"
+  },
+  {
+    "title": "la la land",
+    "year": 2016,
+    "watch_date": "2025-05-18",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 9,
+    "overall": "amazing soundtrack movie with a compelling plot and somewhat of a twist ending"
+  },
+  {
+    "title": "lilo & stitch",
+    "year": 2025,
+    "watch_date": "2025-05-26",
+    "location": "theatre",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "good live action rendition of the animated story with slight changes"
+  },
+  {
+    "title": "despicable me 4",
+    "year": 2024,
+    "watch_date": "2025-06-01",
+    "location": "daly city home",
+    "people": "bernice",
+    "rating": 6,
+    "overall": "cute-ish movie but wasn’t that entertaining"
+  },
+  {
+    "title": "the greatest showman",
+    "year": 2017,
+    "watch_date": "2025-06-01",
+    "location": "daly city home on discord",
+    "people": "eric",
+    "rating": 9,
+    "overall": "amazing soundtrack musical with a pretty depressing plot"
+  },
+  {
+    "title": "anyone but you",
+    "year": 2023,
+    "watch_date": "2025-06-06",
+    "location": "dad’s house",
+    "people": "audrey",
+    "rating": 7,
+    "overall": "cute romcom but rewatchability is low"
+  },
+  {
+    "title": "now you see me",
+    "year": 2013,
+    "watch_date": "2025-06-09",
+    "location": "daly city home on discord",
+    "people": "eric",
+    "rating": 10,
+    "overall": "insane movie about magic"
+  },
+  {
+    "title": "sing",
+    "year": 2016,
+    "watch_date": "2025-06-12",
+    "location": "daly city home",
+    "people": "jordan mai",
+    "rating": 7,
+    "overall": "cute musical but mid plot"
+  },
+  {
+    "title": "bee movie",
+    "year": 2007,
+    "watch_date": "2025-06-14",
+    "location": "dad’s house",
+    "people": "kinda audrey and xavier",
+    "rating": 6,
+    "overall": "weird movie that i didnt like how they made the movie unrealistic"
+  },
+  {
+    "title": "kpop demon hunters",
+    "year": 2025,
+    "watch_date": "2025-06-28",
+    "location": "daly city home",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "pretty good soundtrack but a very okay plot"
+  },
+  {
+    "title": "materialists",
+    "year": 2025,
+    "watch_date": "2025-07-01",
+    "location": "movie theatre",
+    "people": "eric and jordan mai",
+    "rating": 9,
+    "overall": "a lot rom over com but has takes that make you think"
+  },
+  {
+    "title": "now you see me 2",
+    "year": 2016,
+    "watch_date": "2025-07-02",
+    "location": "daly city home on discord",
+    "people": "eric and jordan mai",
+    "rating": 9,
+    "overall": "a decent sequel but definitely not as good tricks as the first movie"
+  },
+  {
+    "title": "mission impossible – the final reckoning",
+    "year": 2025,
+    "watch_date": "2025-07-04",
+    "location": "redwood city theatre",
+    "people": "chao family",
+    "rating": 5,
+    "overall": "is an action and stunts movie but no stakes so it feels kinda lame"
+  },
+  {
+    "title": "superman",
+    "year": 2025,
+    "watch_date": "2025-07-20",
+    "location": "tanfran theatre",
+    "people": "eric and jordan mai",
+    "rating": 9,
+    "overall": "good cinematography, soundtrack but mid plot"
+  },
+  {
+    "title": "the fantastic four first steps",
+    "year": 2025,
+    "watch_date": "2025-07-27",
+    "location": "san mateo theatre",
+    "people": "bernice, eric, & jordan mai",
+    "rating": 9,
+    "overall": "good superhero movie you can go in without knowing old marvel stuff"
+  },
+  {
+    "title": "moana 2",
+    "year": 2024,
+    "watch_date": "2025-08-10",
+    "location": "la airbnb",
+    "people": "jordan mai and eric",
+    "rating": 3,
+    "overall": "everything was terrible other than the singers and the pretty colors"
+  },
+  {
+    "title": "turning red",
+    "year": 2022,
+    "watch_date": "2025-08-11",
+    "location": "la airbnb",
+    "people": "jordan mai and eric",
+    "rating": 7,
+    "overall": "funnish movie about puberty i think through the lens of a cantonese family with strong family values"
+  },
+  {
+    "title": "the naked gun",
+    "year": 2025,
+    "watch_date": "2025-08-15",
+    "location": "stonestown regal theatre",
+    "people": "jordan mai",
+    "rating": 6,
+    "overall": "just felt like a long af skit with funny moments but the comedic moments felt too forced"
+  },
+  {
+    "title": "f1",
+    "year": 2025,
+    "watch_date": "2025-08-17",
+    "location": "theatre",
+    "people": "jordan mai and eric",
+    "rating": 9,
+    "overall": "funny af racing movie with a really good main character"
+  },
+  {
+    "title": "anora",
+    "year": 2024,
+    "watch_date": "2025-09-06",
+    "location": "daly city home over discord",
+    "people": "eric & thanh",
+    "rating": 10,
+    "overall": "romantic, but funny, but sad, but real movie. pretty amazing acting but honestly a hard watch"
+  },
+  {
+    "title": "elio",
+    "year": 2025,
+    "watch_date": "2025-09-20",
+    "location": "daly city home on discord",
+    "people": "jordan mai",
+    "rating": 5,
+    "overall": "shit ending with overly pushed lesson of the story, terrible mc, but like the rest of the characters were 100% more likeable"
+  },
+  {
+    "title": "demon slayer kimetsu no yaiba the movie infinity castle",
+    "year": 2025,
+    "watch_date": "2025-09-23",
+    "location": "daly city cinemark theatre",
+    "people": "michael lemay, eric, jordan mai, and michael sim",
+    "rating": 10,
+    "overall": "great adaptation of the manga and start to the final trilogy of demon slayer"
+  },
+  {
+    "title": "unknown number the high school catfish",
+    "year": 2025,
+    "watch_date": "2025-09-28",
+    "location": "daly city home over discord",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "pretty shocking documentary that i really did not expect the ending"
+  },
+  {
+    "title": "chainsaw man - the movie reze arc",
+    "year": 2025,
+    "watch_date": "2025-10-25",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai, eric, michael sim, mikki",
+    "rating": 10,
+    "overall": "insanely good action scenes anime movie"
+  },
+  {
+    "title": "wicked",
+    "year": 2024,
+    "watch_date": "2025-11-22",
+    "location": "daly city home",
+    "people": "eric & jordan",
+    "rating": 8,
+    "overall": "good rewatch with nice foreshadowing"
+  },
+  {
+    "title": "wicked for good",
+    "year": 2025,
+    "watch_date": "2025-11-23",
+    "location": "redwood city cinemark theatre",
+    "people": "eric & jordan mai",
+    "rating": 8,
+    "overall": "cute movie with a lot of cameos respecting the original wizard of oz movie"
+  },
+  {
+    "title": "zootopia 2",
+    "year": 2025,
+    "watch_date": "2025-12-13",
+    "location": "daly city cinemark theatre",
+    "people": "jordan",
+    "rating": 8,
+    "overall": "basically the same as the first movie but with changes issues and nick putting it on hard for judy"
+  },
+  {
+    "title": "fatman",
+    "year": 2020,
+    "watch_date": "2025-12-25",
+    "location": "redwood city dads house",
+    "people": "daddy, audrey, xavier",
+    "rating": 9,
+    "overall": "adult christmas movie about a santa who’s broke"
+  },
+  {
+    "title": "joy ride",
+    "year": 2023,
+    "watch_date": "2025-12-26",
+    "location": "daly city home",
+    "people": "jordan mai",
+    "rating": 10,
+    "overall": "a movie showcasing the hardships of being an asian american"
+  },
+  {
+    "title": "is this thing on",
+    "year": 2025,
+    "watch_date": "2026-01-11",
+    "location": "daly city cinemark theatre",
+    "people": "jordan mai, eric trinh",
+    "rating": 9,
+    "overall": "movie about the truth of relationships"
+  },
+  {
+    "title": "the spongebob movie search for squarepants",
+    "year": 2025,
+    "watch_date": "2026-01-17",
+    "location": "tanfran cinemark theatre",
+    "people": "jordan mai",
+    "rating": 7,
+    "overall": "funny kids movie with patrick hard carrying the humor"
+  },
+  {
+    "title": "the bad guys",
+    "year": 2022,
+    "watch_date": "2026-01-23",
+    "location": "daly city home over discord",
+    "people": "patrick (chinese guy from drg)",
+    "rating": 9,
+    "overall": "well written feels-good, cute, and funny movie"
+  },
+  {
+    "title": "goat",
+    "year": 2026,
+    "watch_date": "2026-02-20",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai, eric trinh, ellison bernabe, angela, kevin (angela’s bf), drew, patrick, isiah",
+    "rating": 9,
+    "overall": "really fun movie with a lot of pop culture references"
+  },
+  {
+    "title": "crime 101",
+    "year": 2026,
+    "watch_date": "2026-02-21",
+    "location": "japantown amc theatre",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "weird but interesting and fun action movie"
+  },
+  {
+    "title": "hoppers",
+    "year": 2026,
+    "watch_date": "2026-03-08",
+    "location": "san leandro cinemark theatre",
+    "people": "jordan mai, eric trinh, vincent",
+    "rating": null,
+    "overall": ""
+  }
+]
