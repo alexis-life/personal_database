@@ -16,6 +16,7 @@ function _renderMoviesStats(data, year, isAll) {
   var rated = data.filter(function(m) { return m.rating != null; });
   var avg   = rated.length ? (rated.reduce(function(s, m) { return s + m.rating; }, 0) / rated.length).toFixed(1) : '\u2014';
   var top   = rated.length ? Math.max.apply(null, rated.map(function(m) { return m.rating; })) : '\u2014';
+  var worst = rated.length ? Math.min.apply(null, rated.map(function(m) { return m.rating; })) : '\u2014';
   var grid  = document.getElementById('m-stat-grid');
 
   if (isAll) {
@@ -28,9 +29,10 @@ function _renderMoviesStats(data, year, isAll) {
       statCard(4, 'Top Rating',    top,        'highest score');
   } else {
     grid.innerHTML =
-      statCard(1, 'Total',      data.length, 'movies in ' + year) +
-      statCard(2, 'Avg Rating', avg,         'out of 10 in ' + year) +
-      statCard(3, 'Top Rating', top,         'highest score in ' + year);
+      statCard(1, 'Total',        data.length, 'movies in ' + year) +
+      statCard(2, 'Avg Rating',   avg,         'out of 10') +
+      statCard(3, 'Top Rating',   top,         'best in ' + year) +
+      statCard(4, 'Worst Rating', worst,       'lowest in ' + year);
   }
 }
 
@@ -40,16 +42,16 @@ function _renderMoviesCharts(data, year, isAll) {
 
   if (isAll) {
     grid.innerHTML =
-      chartCard('Rating Distribution', 'chart-mov-ratings',  '', false) +
-      chartCard('Movies per Year',     'chart-mov-years',    '', false) +
-      chartCard('Where Watched',       'chart-mov-location', '', false);
+      chartCard('Rating Distribution', 'chart-mov-ratings',  '', 'medium') +
+      chartCard('Movies per Year',     'chart-mov-years',    '', 'medium') +
+      chartCard('Where Watched',       'chart-mov-location', '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
     _movYearsChart( 'chart-mov-years',    MOV);
     _movLocationChart('chart-mov-location', data);
   } else {
     grid.innerHTML =
-      chartCard('Rating Distribution \u2014 ' + esc(year), 'chart-mov-ratings',  '', false) +
-      chartCard('Where Watched \u2014 '        + esc(year), 'chart-mov-location', '', false);
+      chartCard('Rating Distribution \u2014 ' + esc(year), 'chart-mov-ratings',  '', 'medium') +
+      chartCard('Where Watched \u2014 '        + esc(year), 'chart-mov-location', '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
     _movLocationChart('chart-mov-location', data);
   }
@@ -68,6 +70,7 @@ function _movRatingChart(id, data) {
     type: 'bar',
     data: { labels: ['1','2','3','4','5','6','7','8','9','10'], datasets: [{ data: counts, backgroundColor: ratingColors, borderRadius: 4 }] },
     options: {
+      maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: { x: scaleX(11), y: scaleY() }
     }
@@ -86,6 +89,7 @@ function _movYearsChart(id, data) {
     type: 'bar',
     data: { labels: years, datasets: [{ data: years.map(function(y) { return yearCounts[y]; }), backgroundColor: '#b9375e', borderRadius: 4 }] },
     options: {
+      maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: { x: scaleX(11), y: scaleY() }
     }
@@ -103,15 +107,20 @@ function _movLocationChart(id, data) {
   var other = entries.slice(8).reduce(function(s, kv) { return s + kv[1]; }, 0);
   if (other > 0) top.push(['Other', other]);
 
-  if (!top.length) { document.getElementById(id).parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px">No location data available.</p>'; return; }
+  if (!top.length) {
+    var el = document.getElementById(id);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No location data available.</p>';
+    return;
+  }
 
   safeChart(id, {
     type: 'doughnut',
     data: { labels: top.map(function(kv) { return kv[0]; }), datasets: [{ data: top.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE }] },
-    options: { plugins: { legend: legendRight() } }
+    options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
   });
 }
 
+// ── Movies table (with sort) ──────────────────────────────────────────────────
 function renderMoviesTable() {
   var search = document.getElementById('m-search').value.toLowerCase();
   var year   = movYear;
@@ -119,13 +128,40 @@ function renderMoviesTable() {
   var rows = MOV.slice().reverse();
   if (year !== 'all' && year) rows = rows.filter(function(m) { return m.watch_date && m.watch_date.slice(0, 4) === year; });
   if (search) rows = rows.filter(function(m) {
-    return (m.title   || '').toLowerCase().indexOf(search) !== -1 ||
+    return (m.title    || '').toLowerCase().indexOf(search) !== -1 ||
            (m.location || '').toLowerCase().indexOf(search) !== -1 ||
-           (m.people  || '').toLowerCase().indexOf(search) !== -1 ||
-           (m.overall || '').toLowerCase().indexOf(search) !== -1;
+           (m.people   || '').toLowerCase().indexOf(search) !== -1 ||
+           (m.overall  || '').toLowerCase().indexOf(search) !== -1;
   });
 
+  // Sort
+  var s = movSort;
+  if (s.col) {
+    var dir = s.dir === 'asc' ? 1 : -1;
+    rows.sort(function(a, b) {
+      if (s.col === 'title') {
+        return dir * (a.title || '').localeCompare(b.title || '');
+      }
+      if (s.col === 'watch_date') {
+        var da = new Date(a.watch_date || '1900-01-01');
+        var db = new Date(b.watch_date || '1900-01-01');
+        return dir * (da - db);
+      }
+      if (s.col === 'rating') {
+        var ra = a.rating != null ? a.rating : (s.dir === 'asc' ? -1 : 999);
+        var rb = b.rating != null ? b.rating : (s.dir === 'asc' ? -1 : 999);
+        return dir * (ra - rb);
+      }
+      if (s.col === 'location') {
+        return dir * (a.location || '').localeCompare(b.location || '');
+      }
+      return 0;
+    });
+  }
+
+  updateSortIndicators('section-movies', s);
   document.getElementById('m-count').textContent = rows.length;
+
   var tbody = document.getElementById('m-tbody');
   tbody.innerHTML = '';
 

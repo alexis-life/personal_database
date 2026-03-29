@@ -124,7 +124,7 @@ def load_dimoos():
                     who_parts.append(v)
             who = "; ".join(p for p in who_parts if p and p != "n/a") or "n/a"
 
-            series = fields.get("series", file_series) if is_misc else file_series
+            series = "misc dimoos" if is_misc else file_series
 
             dimoos.append({
                 "name":          name,
