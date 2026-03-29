@@ -35,36 +35,36 @@ function _renderRestaurantsStats(data, year, isAll) {
     var newPlaces  = data.filter(function(r) { return (r.return_visit || '').toLowerCase() !== 'yes'; }).length;
     var sGradeYear = data.filter(function(r) { return gradeBase(r.overall) === 'S'; }).length;
     grid.innerHTML =
-      statCard(1, 'Would Return', yesCount,     data.length ? Math.round(yesCount / data.length * 100) + '% in ' + year : 'in ' + year) +
-      statCard(2, 'New Places',   newPlaces,    'first visits in ' + year) +
-      statCard(3, 'Total Visits', data.length,  'in ' + year) +
-      statCard(4, 'S-Grade',      sGradeYear,   'top rated in ' + year);
+      statCard(1, 'Would Return', yesCount,    data.length ? Math.round(yesCount / data.length * 100) + '% in ' + year : 'in ' + year) +
+      statCard(2, 'New Places',   newPlaces,   'first visits in ' + year) +
+      statCard(3, 'Total Visits', data.length, 'in ' + year) +
+      statCard(4, 'S-Grade',      sGradeYear,  'top rated in ' + year);
   }
 }
 
 function _renderRestaurantsCharts(data, year, isAll) {
   var grid = document.getElementById('r-chart-grid');
-  destroyCharts(['chart-rest-return', 'chart-rest-grades', 'chart-rest-months', 'chart-rest-new']);
+  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months']);
 
+  // Layout for both views: Would Return + New vs Return on top, Grade + Months on bottom
   if (isAll) {
     grid.innerHTML =
-      chartCard('Would Return',              'chart-rest-return', '', false) +
-      chartCard('Overall Grade Distribution','chart-rest-grades', '', false) +
-      chartCard('Visits by Month',           'chart-rest-months', '', false);
-    _restReturnChart('chart-rest-return', data);
-    _restGradeChart( 'chart-rest-grades', data);
-    _restMonthsChart('chart-rest-months', data);
+      chartCard('Would Return',               'chart-rest-return', '', 'medium') +
+      chartCard('New vs Return Visits',        'chart-rest-new',    '', 'medium') +
+      chartCard('Overall Grade Distribution', 'chart-rest-grades', '', 'medium') +
+      chartCard('Visits by Month',            'chart-rest-months', '', 'medium');
   } else {
     grid.innerHTML =
-      chartCard('Would Return \u2014 '              + esc(year), 'chart-rest-return', '', false) +
-      chartCard('Overall Grade \u2014 '             + esc(year), 'chart-rest-grades', '', false) +
-      chartCard('Visits by Month \u2014 '           + esc(year), 'chart-rest-months', '', false) +
-      chartCard('New vs Return Visits \u2014 '      + esc(year), 'chart-rest-new',    '', false);
-    _restReturnChart('chart-rest-return', data);
-    _restGradeChart( 'chart-rest-grades', data);
-    _restMonthsChart('chart-rest-months', data);
-    _restNewChart(   'chart-rest-new',    data);
+      chartCard('Would Return \u2014 '       + esc(year), 'chart-rest-return', '', 'medium') +
+      chartCard('New vs Return \u2014 '      + esc(year), 'chart-rest-new',    '', 'medium') +
+      chartCard('Overall Grade \u2014 '      + esc(year), 'chart-rest-grades', '', 'medium') +
+      chartCard('Visits by Month \u2014 '    + esc(year), 'chart-rest-months', '', 'medium');
   }
+
+  _restReturnChart('chart-rest-return', data);
+  _restNewChart(   'chart-rest-new',    data);
+  _restGradeChart( 'chart-rest-grades', data);
+  _restMonthsChart('chart-rest-months', data);
 }
 
 function _restReturnChart(id, data) {
@@ -76,36 +76,7 @@ function _restReturnChart(id, data) {
       labels: ['Would Return', 'Would Not', 'Maybe'],
       datasets: [{ data: [ret.yes, ret.no, ret.maybe], backgroundColor: ['#b9375e', '#8a2846', '#e05780'] }]
     },
-    options: { plugins: { legend: legendRight() } }
-  });
-}
-
-function _restGradeChart(id, data) {
-  var ORDER   = ['S','A','B','C','D'];
-  var GRADE_BG = { S: '#8a2846', A: '#b9375e', B: '#e05780', C: '#ff9ebb', D: '#ffc2d4' };
-  var counts  = { S: 0, A: 0, B: 0, C: 0, D: 0 };
-  data.forEach(function(r) { var g = gradeBase(r.overall); if (g in counts) counts[g]++; });
-  safeChart(id, {
-    type: 'bar',
-    data: {
-      labels: ORDER,
-      datasets: [{ data: ORDER.map(function(g) { return counts[g]; }), backgroundColor: ORDER.map(function(g) { return GRADE_BG[g]; }), borderRadius: 4 }]
-    },
-    options: { plugins: { legend: { display: false } }, scales: { x: scaleX(11), y: scaleY() } }
-  });
-}
-
-function _restMonthsChart(id, data) {
-  var monthMap = {};
-  data.forEach(function(r) { if (!r.date) return; var k = r.date.slice(0, 7); monthMap[k] = (monthMap[k] || 0) + 1; });
-  var months = Object.keys(monthMap).sort();
-
-  if (!months.length) { document.getElementById(id).parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px">No visit data available.</p>'; return; }
-
-  safeChart(id, {
-    type: 'bar',
-    data: { labels: months, datasets: [{ data: months.map(function(m) { return monthMap[m]; }), backgroundColor: '#e05780', borderRadius: 4 }] },
-    options: { plugins: { legend: { display: false } }, scales: { x: scaleX(10), y: scaleY() } }
+    options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
   });
 }
 
@@ -118,10 +89,43 @@ function _restNewChart(id, data) {
       labels: ['New Place', 'Return Visit'],
       datasets: [{ data: [newCount, returnCount], backgroundColor: ['#b9375e', '#ffc2d4'] }]
     },
-    options: { plugins: { legend: legendRight() } }
+    options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
   });
 }
 
+function _restGradeChart(id, data) {
+  var ORDER    = ['S','A','B','C','D'];
+  var GRADE_BG = { S: '#8a2846', A: '#b9375e', B: '#e05780', C: '#ff9ebb', D: '#ffc2d4' };
+  var counts   = { S: 0, A: 0, B: 0, C: 0, D: 0 };
+  data.forEach(function(r) { var g = gradeBase(r.overall); if (g in counts) counts[g]++; });
+  safeChart(id, {
+    type: 'bar',
+    data: {
+      labels: ORDER,
+      datasets: [{ data: ORDER.map(function(g) { return counts[g]; }), backgroundColor: ORDER.map(function(g) { return GRADE_BG[g]; }), borderRadius: 4 }]
+    },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: scaleX(11), y: scaleY() } }
+  });
+}
+
+function _restMonthsChart(id, data) {
+  // Group by calendar month (Jan–Dec), ignoring year
+  var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var counts = [0,0,0,0,0,0,0,0,0,0,0,0];
+  data.forEach(function(r) {
+    if (!r.date) return;
+    var m = parseInt(r.date.slice(5, 7), 10) - 1;
+    if (m >= 0 && m < 12) counts[m]++;
+  });
+
+  safeChart(id, {
+    type: 'bar',
+    data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: '#e05780', borderRadius: 4 }] },
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: scaleX(11), y: scaleY() } }
+  });
+}
+
+// ── Restaurants table (with sort) ─────────────────────────────────────────────
 function renderRestaurantsTable() {
   var search    = document.getElementById('r-search').value.toLowerCase();
   var returnSel = document.getElementById('r-filter-return').value;
@@ -136,7 +140,33 @@ function renderRestaurantsTable() {
            (r.people   || '').toLowerCase().indexOf(search) !== -1;
   });
 
+  // Sort
+  var s = restSort;
+  if (s.col) {
+    var dir = s.dir === 'asc' ? 1 : -1;
+    rows.sort(function(a, b) {
+      if (s.col === 'name') {
+        return dir * (a.name || '').localeCompare(b.name || '');
+      }
+      if (s.col === 'date') {
+        var da = new Date(a.date || '1900-01-01');
+        var db = new Date(b.date || '1900-01-01');
+        return dir * (da - db);
+      }
+      var gradeFields = ['food','service','atmosphere','value','overall'];
+      if (gradeFields.indexOf(s.col) !== -1) {
+        var ra = gradeRank(a[s.col]);
+        var rb = gradeRank(b[s.col]);
+        if (ra !== rb) return dir * (ra - rb);
+        return dir * (a[s.col] || '').localeCompare(b[s.col] || '');
+      }
+      return 0;
+    });
+  }
+
+  updateSortIndicators('section-restaurants', s);
   document.getElementById('r-count').textContent = rows.length;
+
   var tbody = document.getElementById('r-tbody');
   tbody.innerHTML = '';
 

@@ -2,17 +2,30 @@
 
 // ── Global state ──────────────────────────────────────────────────────────────
 var DIM = [], MOV = [], REST = [];
-var CI = {};  // chart instances keyed by canvas id
+var CI = {};
 var activeSection = 'dimoo';
-var dimooFilter   = 'all'; // 'all' or series name
-var movYear       = 'all'; // 'all' or YYYY string
-var restYear      = 'all'; // 'all' or YYYY string
+var dimooFilter   = 'all';
+var movYear       = 'all';
+var restYear      = 'all';
+
+// Dimoo owned-filter state: separate per view so they don't bleed into each other
+var dimooOwnedAll    = 'yes'; // all-series default: show owned only
+var dimooOwnedSeries = '';    // per-series default: show all statuses
+
+// Sort state per table  { col: String|null, dir: 'asc'|'desc' }
+var dimooSort = { col: null, dir: 'asc' };
+var movSort   = { col: null, dir: 'asc' };
+var restSort  = { col: null, dir: 'asc' };
 
 var PALETTE = [
   '#b9375e','#e05780','#8a2846','#ff7aa2','#ff9ebb',
   '#602437','#ffc2d4','#522e38','#d44070','#f0a0b8',
   '#9c2f50','#ffa8c5','#701c3a','#c05070','#ffe0e9'
 ];
+
+// Grade rank for sort comparison  (higher = better)
+var GRADE_RANK = { S: 5, A: 4, B: 3, C: 2, D: 1 };
+function gradeRank(g) { return GRADE_RANK[gradeBase(g)] || 0; }
 
 // ── Shared helpers ────────────────────────────────────────────────────────────
 function esc(s) {
@@ -46,8 +59,8 @@ function destroyCharts(ids) {
 function parseDate(s) {
   if (!s || s === 'n/a') return null;
   var p = s.split('/');
-  if (p.length === 3) return new Date(+p[2], +p[0] - 1, +p[1]); // MM/DD/YYYY
-  return new Date(s); // YYYY-MM-DD
+  if (p.length === 3) return new Date(+p[2], +p[0] - 1, +p[1]);
+  return new Date(s);
 }
 
 function fmtDate(s) {
@@ -69,24 +82,25 @@ function titleCase(s) {
   }).join(' ');
 }
 
-// Shared stat card HTML builder
+// HTML builders shared across section scripts
 function statCard(pos, label, value, sub) {
   return '<div class="stat-card sp' + pos + '">' +
-    '<div class="stat-label">' + esc(label) + '</div>' +
-    '<div class="stat-value">' + esc(value) + '</div>' +
-    '<div class="stat-sub">' + esc(sub) + '</div>' +
+    '<div class="stat-label">'  + esc(label) + '</div>' +
+    '<div class="stat-value">'  + esc(value) + '</div>' +
+    '<div class="stat-sub">'    + esc(sub)   + '</div>' +
     '</div>';
 }
 
-// Shared chart card HTML builder
-function chartCard(title, canvasId, extraClass, tall) {
+// size: 'tall' | 'medium' | ''
+function chartCard(title, canvasId, extraClass, size) {
+  var sizeClass = size === 'tall' ? ' tall' : size === 'medium' ? ' medium' : '';
   return '<div class="chart-card' + (extraClass ? ' ' + extraClass : '') + '">' +
     '<div class="chart-header">' + title + '</div>' +
-    '<div class="chart-body' + (tall ? ' tall' : '') + '"><canvas id="' + canvasId + '"></canvas></div>' +
+    '<div class="chart-body' + sizeClass + '"><canvas id="' + canvasId + '"></canvas></div>' +
     '</div>';
 }
 
-// Common Chart.js scale config
+// Common Chart.js scale helpers
 function scaleX(size) {
   return { ticks: { font: { family: 'Poppins', size: size || 11 }, color: '#8a2846' }, grid: { display: false } };
 }
@@ -95,6 +109,17 @@ function scaleY() {
 }
 function legendRight() {
   return { position: 'right', labels: { font: { family: 'Poppins', size: 11 }, color: '#522e38', boxWidth: 14 } };
+}
+
+// ── Sort indicators ───────────────────────────────────────────────────────────
+function updateSortIndicators(sectionId, sortObj) {
+  document.querySelectorAll('#' + sectionId + ' th[data-sort]').forEach(function(th) {
+    if (th.dataset.sort === sortObj.col) {
+      th.dataset.sortDir = sortObj.dir;
+    } else {
+      delete th.dataset.sortDir;
+    }
+  });
 }
 
 // ── Breadcrumb ────────────────────────────────────────────────────────────────
@@ -142,7 +167,6 @@ function setSubItemActive(listId, value) {
 }
 
 // ── Nav accordion ─────────────────────────────────────────────────────────────
-// Force-open a nav item (used on section switch)
 function openNavForce(navKey) {
   document.querySelectorAll('.nav-item').forEach(function(el) {
     var k = el.dataset.nav;
@@ -157,7 +181,6 @@ function openNavForce(navKey) {
   });
 }
 
-// Toggle sub-list without changing active section
 function toggleSubList(navKey) {
   var el = document.querySelector('.nav-item[data-nav="' + navKey + '"]');
   if (!el) return;
@@ -167,7 +190,7 @@ function toggleSubList(navKey) {
   if (sub) sub.style.maxHeight = !isOpen ? sub.scrollHeight + 'px' : '0';
 }
 
-// ── Section filter application ────────────────────────────────────────────────
+// ── Section / filter application ──────────────────────────────────────────────
 function setSubFilter(section, value) {
   if (section === 'dimoo') {
     dimooFilter = value;
@@ -200,11 +223,11 @@ function showSection(section) {
 
 // ── Setup ─────────────────────────────────────────────────────────────────────
 function buildAllSubLists() {
-  // Dimoo series in series_date order (already sorted in JSON)
+  // Dimoo — series in series_date order; "misc dimoos" goes last (9999.99)
   var seen = [];
   DIM.forEach(function(d) { if (seen.indexOf(d.series) === -1) seen.push(d.series); });
   var seriesItems = [{ label: 'All Series', value: 'all' }].concat(seen.map(function(s) {
-    return { label: titleCase(s), value: s };
+    return { label: s === 'misc dimoos' ? 'Misc Dimoos' : titleCase(s), value: s };
   }));
   buildSubList('sub-dimoo', seriesItems, function(val) { setSubFilter('dimoo', val); });
 
@@ -212,19 +235,19 @@ function buildAllSubLists() {
   var movieYears = Array.from(new Set(
     MOV.map(function(m) { return m.watch_date ? m.watch_date.slice(0, 4) : null; }).filter(Boolean)
   )).sort().reverse();
-  var movieItems = [{ label: 'All Years', value: 'all' }].concat(
-    movieYears.map(function(y) { return { label: y, value: y }; })
+  buildSubList('sub-movies',
+    [{ label: 'All Years', value: 'all' }].concat(movieYears.map(function(y) { return { label: y, value: y }; })),
+    function(val) { setSubFilter('movies', val); }
   );
-  buildSubList('sub-movies', movieItems, function(val) { setSubFilter('movies', val); });
 
   // Restaurant years descending
   var restYears = Array.from(new Set(
     REST.map(function(r) { return r.date ? r.date.slice(0, 4) : null; }).filter(Boolean)
   )).sort().reverse();
-  var restItems = [{ label: 'All', value: 'all' }].concat(
-    restYears.map(function(y) { return { label: y, value: y }; })
+  buildSubList('sub-restaurants',
+    [{ label: 'All', value: 'all' }].concat(restYears.map(function(y) { return { label: y, value: y }; })),
+    function(val) { setSubFilter('restaurants', val); }
   );
-  buildSubList('sub-restaurants', restItems, function(val) { setSubFilter('restaurants', val); });
 }
 
 function setupNav() {
@@ -235,14 +258,11 @@ function setupNav() {
       var isActive = el.classList.contains('active');
 
       if (isActive) {
-        // Same section — just toggle sub-list open/close
         toggleSubList(navKey);
       } else {
-        // Switch to new section, reset its sub-filter
         if (section === 'dimoo')       dimooFilter = 'all';
         if (section === 'movies')      movYear     = 'all';
         if (section === 'restaurants') restYear    = 'all';
-
         showSection(section);
         updateBreadcrumb(section, null);
         setSubItemActive('sub-' + navKey, 'all');
@@ -252,11 +272,50 @@ function setupNav() {
 }
 
 function setupFilters() {
-  document.getElementById('d-filter-owned').addEventListener('change', function() { renderDimooTable(); });
-  document.getElementById('d-search').addEventListener('input',  function() { renderDimooTable(); });
-  document.getElementById('m-search').addEventListener('input',  function() { renderMoviesTable(); });
-  document.getElementById('r-filter-return').addEventListener('change', function() { renderRestaurantsTable(); });
-  document.getElementById('r-search').addEventListener('input',  function() { renderRestaurantsTable(); });
+  document.getElementById('d-filter-owned').addEventListener('change', function() {
+    if (dimooFilter === 'all') { dimooOwnedAll    = this.value; }
+    else                       { dimooOwnedSeries = this.value; }
+    renderDimooTable();
+  });
+  document.getElementById('d-search').addEventListener('input',        function() { renderDimooTable(); });
+  document.getElementById('m-search').addEventListener('input',        function() { renderMoviesTable(); });
+  document.getElementById('r-filter-return').addEventListener('change',function() { renderRestaurantsTable(); });
+  document.getElementById('r-search').addEventListener('input',        function() { renderRestaurantsTable(); });
+}
+
+function setupSortable() {
+  // Dimoo
+  document.querySelectorAll('#section-dimoo th[data-sort]').forEach(function(th) {
+    th.classList.add('sortable');
+    th.addEventListener('click', function() {
+      var col = th.dataset.sort;
+      dimooSort.dir = dimooSort.col === col && dimooSort.dir === 'asc' ? 'desc' : 'asc';
+      dimooSort.col = col;
+      renderDimooTable();
+    });
+  });
+
+  // Movies
+  document.querySelectorAll('#section-movies th[data-sort]').forEach(function(th) {
+    th.classList.add('sortable');
+    th.addEventListener('click', function() {
+      var col = th.dataset.sort;
+      movSort.dir = movSort.col === col && movSort.dir === 'asc' ? 'desc' : 'asc';
+      movSort.col = col;
+      renderMoviesTable();
+    });
+  });
+
+  // Restaurants
+  document.querySelectorAll('#section-restaurants th[data-sort]').forEach(function(th) {
+    th.classList.add('sortable');
+    th.addEventListener('click', function() {
+      var col = th.dataset.sort;
+      restSort.dir = restSort.col === col && restSort.dir === 'asc' ? 'desc' : 'asc';
+      restSort.col = col;
+      renderRestaurantsTable();
+    });
+  });
 }
 
 function setupMobile() {
@@ -285,6 +344,7 @@ async function init() {
 
   buildAllSubLists();
   setupFilters();
+  setupSortable();
   setupNav();
   setupMobile();
 

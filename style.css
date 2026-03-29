@@ -168,6 +168,7 @@ body {
   padding: var(--content-pad);
   min-width: 0;
 }
+#d-chart-grid { margin-bottom: 20px; }
 
 .section { display: none; }
 .section.active { display: block; }
@@ -229,7 +230,8 @@ body {
   border-bottom: 1px solid var(--c2);
 }
 .chart-body { padding: 16px 24px 24px; }
-.chart-body.tall { height: 520px; }
+.chart-body.tall   { height: 520px; }
+.chart-body.medium { height: 280px; }
 .chart-body canvas { max-width: 100%; }
 
 /* ── Table card ─────────────────────────────────────── */
@@ -278,12 +280,10 @@ body {
 .table-filters select:focus,
 .table-filters input:focus { border-color: var(--c6); }
 
-.table-scroll { overflow-x: auto; }
-.table-scroll tbody { display: block; max-height: 480px; overflow-y: auto; }
-.table-scroll thead,
-.table-scroll tbody tr { display: table; width: 100%; table-layout: fixed; }
+.table-scroll { overflow-y: auto; max-height: 520px; }
 
-table { width: 100%; border-collapse: collapse; }
+table { width: 100%; border-collapse: separate; border-spacing: 0; }
+thead { position: sticky; top: 0; z-index: 2; }
 th {
   background: #fff0f3;
   font-size: 0.7rem;
@@ -294,9 +294,47 @@ th {
   padding: 10px 16px;
   text-align: left;
   white-space: nowrap;
-  position: sticky;
-  top: 0;
-  z-index: 1;
+}
+th.sortable {
+  cursor: pointer;
+  user-select: none;
+  padding-right: 26px;
+  position: relative;
+}
+th.sortable:hover { color: var(--c6); }
+
+/* Default unsorted: stacked up + down triangles */
+th.sortable::before,
+th.sortable::after {
+  content: '';
+  position: absolute;
+  right: 9px;
+  width: 0; height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  opacity: 0.35;
+}
+th.sortable::before {
+  top: calc(50% - 6px);
+  border-bottom: 5px solid var(--c7);
+}
+th.sortable::after {
+  top: calc(50% + 1px);
+  border-top: 5px solid var(--c7);
+}
+
+/* Ascending: only the up triangle, highlighted */
+th[data-sort-dir="asc"]::before {
+  border-bottom-color: var(--c6);
+  opacity: 1;
+}
+th[data-sort-dir="asc"]::after  { border-top-color: transparent; opacity: 0; }
+
+/* Descending: only the down triangle, highlighted */
+th[data-sort-dir="desc"]::before { border-bottom-color: transparent; opacity: 0; }
+th[data-sort-dir="desc"]::after {
+  border-top-color: var(--c6);
+  opacity: 1;
 }
 td {
   font-size: 0.85rem;

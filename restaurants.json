@@ -843,5 +843,31 @@
     "atmosphere": "",
     "value": "",
     "overall": ""
+  },
+  {
+    "name": "proposition chicken",
+    "date": "2026-03-28",
+    "location": "",
+    "people": "jordan mai, bernice",
+    "would_return": "no",
+    "return_visit": "no",
+    "food": "C",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "C",
+    "overall": "C"
+  },
+  {
+    "name": "qq noodle",
+    "date": "2026-03-28",
+    "location": "10889 s blaney ave, cupertino, ca 95014",
+    "people": "jordan mai, bernice",
+    "would_return": "yes",
+    "return_visit": "no",
+    "food": "A",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "A",
+    "overall": "A"
   }
 ]

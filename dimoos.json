@@ -2081,7 +2081,7 @@
   },
   {
     "name": "sleepy",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2091,7 +2091,7 @@
   },
   {
     "name": "lucky",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2101,7 +2101,7 @@
   },
   {
     "name": "vivacity",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2111,7 +2111,7 @@
   },
   {
     "name": "sweetie",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2121,7 +2121,7 @@
   },
   {
     "name": "beauty",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2131,7 +2131,7 @@
   },
   {
     "name": "bathing",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2141,7 +2141,7 @@
   },
   {
     "name": "foodie",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2151,7 +2151,7 @@
   },
   {
     "name": "lovely",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2161,7 +2161,7 @@
   },
   {
     "name": "curiosity",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "?",
     "owned": "no",
@@ -2171,7 +2171,7 @@
   },
   {
     "name": "manager",
-    "series": "2022.12 - cat paradise",
+    "series": "cat paradise",
     "series_date": "2022.12",
     "number": "secret",
     "owned": "no",
@@ -2184,10 +2184,10 @@
     "series": "dating",
     "series_date": "2023.02",
     "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/17/2026"
   },
   {
     "name": "joyride bumper car",
@@ -2214,10 +2214,10 @@
     "series": "dating",
     "series_date": "2023.02",
     "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/17/2026"
   },
   {
     "name": "wait",
@@ -2234,10 +2234,10 @@
     "series": "dating",
     "series_date": "2023.02",
     "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/17/2026"
   },
   {
     "name": "love fountain",
@@ -2274,10 +2274,10 @@
     "series": "dating",
     "series_date": "2023.02",
     "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/17/2026"
   },
   {
     "name": "romantic balloons",
@@ -2294,10 +2294,10 @@
     "series": "dating",
     "series_date": "2023.02",
     "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/17/2026"
   },
   {
     "name": "photo prop wall",
@@ -2975,9 +2975,9 @@
     "series_date": "2024.10",
     "number": "5",
     "owned": "yes",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "how": "blind box",
+    "who": "idk",
+    "purchase_date": "01/10/2025"
   },
   {
     "name": "star catcher",
@@ -2995,9 +2995,9 @@
     "series_date": "2024.10",
     "number": "7",
     "owned": "yes",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "how": "blind box",
+    "who": "idk",
+    "purchase_date": "01/10/2025"
   },
   {
     "name": "drawing spring",
@@ -3646,7 +3646,7 @@
     "number": "?",
     "owned": "yes",
     "how": "blind box",
-    "who": "gift - jordan (who_dup_1:: self bought",
+    "who": "gift - jordan mai; self bought",
     "purchase_date": "01/29/2026"
   },
   {
@@ -3791,7 +3791,57 @@
   },
   {
     "name": "invisible monologue",
-    "series": "hand in hand",
+    "series": "misc",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "06/02/2025"
+  },
+  {
+    "name": "follow the light",
+    "series": "misc",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "09/06/2025"
+  },
+  {
+    "name": "chasing the clouds",
+    "series": "misc",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "01/25/2026"
+  },
+  {
+    "name": "vinyl plush blister pack",
+    "series": "misc",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "indiv",
+    "who": "self bought",
+    "purchase_date": "12/08/2025"
+  },
+  {
+    "name": "let’s go",
+    "series": "misc",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "02/07/2026"
+  },
+  {
+    "name": "invisible monologue",
+    "series": "misc dimoos",
     "series_date": "9999.99",
     "number": "?",
     "owned": "yes",
@@ -3801,7 +3851,7 @@
   },
   {
     "name": "follow the light",
-    "series": "finding mokoko",
+    "series": "misc dimoos",
     "series_date": "9999.99",
     "number": "?",
     "owned": "yes",
@@ -3811,7 +3861,7 @@
   },
   {
     "name": "chasing the clouds",
-    "series": "the golden gallop",
+    "series": "misc dimoos",
     "series_date": "9999.99",
     "number": "?",
     "owned": "yes",
@@ -3821,17 +3871,17 @@
   },
   {
     "name": "vinyl plush blister pack",
-    "series": "crush on coffee",
+    "series": "misc dimoos",
     "series_date": "9999.99",
     "number": "?",
     "owned": "yes",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "how": "indiv",
+    "who": "self bought",
+    "purchase_date": "12/08/2025"
   },
   {
     "name": "let’s go",
-    "series": "pop mart gathering at the pop land",
+    "series": "misc dimoos",
     "series_date": "9999.99",
     "number": "?",
     "owned": "yes",
