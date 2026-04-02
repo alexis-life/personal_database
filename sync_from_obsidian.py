@@ -124,11 +124,22 @@ def load_dimoos():
                     who_parts.append(v)
             who = "; ".join(p for p in who_parts if p and p != "n/a") or "n/a"
 
-            series = "misc dimoos" if is_misc else file_series
+            # Files where each row has its own inline (series:: value)
+            INLINE_SERIES_FILES = {"pop beans"}
+            if is_misc:
+                group  = "misc dimoos"
+                series = fields.get("series", "misc dimoos")
+            elif file_series in INLINE_SERIES_FILES:
+                group  = file_series
+                series = fields.get("series", file_series)
+            else:
+                group  = file_series
+                series = file_series
 
             dimoos.append({
                 "name":          name,
                 "series":        series,
+                "group":         group,
                 "series_date":   series_date,
                 "number":        fields.get("num", "?"),
                 "owned":         fields.get("owned", "no"),

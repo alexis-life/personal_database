@@ -9,7 +9,7 @@ function renderDimoo() {
   // Restore this view's own filter state (kept independent per view)
   document.getElementById('d-filter-owned').value = isAll ? dimooOwnedAll : dimooOwnedSeries;
 
-  var data = isAll ? DIM : DIM.filter(function(d) { return d.series === filter; });
+  var data = isAll ? DIM : DIM.filter(function(d) { return (d.group || d.series) === filter; });
 
   _renderDimooStats(data, filter, isAll);
   _renderDimooCharts(data, isAll);
@@ -30,9 +30,17 @@ function _renderDimooStats(data, filter, isAll) {
       statCard(4, 'Series',  seriesCount, 'unique series');
   } else {
     var label = filter === 'misc dimoos' ? 'Misc Dimoos' : titleCase(filter);
-    grid.innerHTML =
-      statCard(1, 'Owned',   owned,   'in ' + label) +
-      statCard(2, 'Missing', missing, 'in ' + label);
+    var isGrouped = data.some(function(d) { return d.group && d.group !== d.series; });
+    if (isGrouped) {
+      var uniqueSeriesCount = new Set(data.map(function(d) { return d.series; })).size;
+      grid.innerHTML =
+        statCard(1, 'Owned',   owned,             'in ' + label) +
+        statCard(2, 'Series',  uniqueSeriesCount, 'unique series in ' + label);
+    } else {
+      grid.innerHTML =
+        statCard(1, 'Owned',   owned,   'in ' + label) +
+        statCard(2, 'Missing', missing, 'in ' + label);
+    }
   }
 }
 
@@ -45,7 +53,7 @@ function _renderDimooCharts(data, isAll) {
     grid.className = '';
     grid.innerHTML =
       '<div class="chart-grid" style="margin-bottom:20px">' +
-        chartCard('Owned vs Missing by Series', 'chart-dimoo-bar', '', 'tall') +
+        chartCard('Owned vs Missing by Series', 'chart-dimoo-bar', '', '') +
       '</div>' +
       '<div class="chart-grid">' +
         chartCard('Acquisition Method', 'chart-dimoo-how',    '', 'medium') +
@@ -56,15 +64,20 @@ function _renderDimooCharts(data, isAll) {
     // animation frame so the browser finishes laying out the new DOM first.
     // Without this, Chart.js reads the canvas dimensions before layout is done
     // and renders with the wrong width (visible as clipped labels on first load).
+    var HIDDEN_GROUPS = ['misc dimoos', 'pop beans'];
+    var barDIM = DIM.filter(function(d) { return HIDDEN_GROUPS.indexOf(d.group || d.series) === -1; });
     var seen = [];
-    DIM.forEach(function(d) { if (d.series !== 'misc dimoos' && seen.indexOf(d.series) === -1) seen.push(d.series); });
+    barDIM.forEach(function(d) { if (seen.indexOf(d.series) === -1) seen.push(d.series); });
     var labels        = seen.map(function(s) { var w = s.split(' '); return w.length > 4 ? w.slice(0,4).join(' ') + '\u2026' : s; });
-    var ownedCounts   = seen.map(function(s) { return DIM.filter(function(d) { return d.series === s && d.owned === 'yes'; }).length; });
-    var missingCounts = seen.map(function(s) { return DIM.filter(function(d) { return d.series === s && d.owned !== 'yes'; }).length; });
+    var ownedCounts   = seen.map(function(s) { return barDIM.filter(function(d) { return d.series === s && d.owned === 'yes'; }).length; });
+    var missingCounts = seen.map(function(s) { return barDIM.filter(function(d) { return d.series === s && d.owned !== 'yes'; }).length; });
     var ownedDIM      = DIM.filter(function(d) { return d.owned === 'yes'; });
 
     requestAnimationFrame(function() {
       requestAnimationFrame(function() {
+      // Set bar chart height dynamically so all series bars are visible
+      var barBody = document.querySelector('#chart-dimoo-bar').parentNode;
+      barBody.style.height = Math.max(400, seen.length * 22 + 40) + 'px';
       safeChart('chart-dimoo-bar', {
         type: 'bar',
         data: { labels: labels, datasets: [
@@ -76,7 +89,7 @@ function _renderDimooCharts(data, isAll) {
           indexAxis: 'y',
           scales: {
             x: { stacked: true, ticks: { font: { family: 'Poppins', size: 11 }, color: '#8a2846' }, grid: { color: '#ffe0e9' } },
-            y: { stacked: true, ticks: { font: { family: 'Poppins', size: 10 }, color: '#522e38' }, grid: { display: false } }
+            y: { stacked: true, ticks: { font: { family: 'Poppins', size: 10 }, color: '#522e38' }, grid: { display: false }, afterFit: function(scale) { scale.width = Math.max(scale.width, 150); } }
           },
           plugins: { legend: { labels: { font: { family: 'Poppins', size: 12 }, color: '#522e38' } } }
         }
@@ -175,7 +188,7 @@ function renderDimooTable() {
   var filter  = dimooFilter;
 
   var rows = DIM.slice();
-  if (filter !== 'all') rows = rows.filter(function(d) { return d.series === filter; });
+  if (filter !== 'all') rows = rows.filter(function(d) { return (d.group || d.series) === filter; });
   if (ownedF)           rows = rows.filter(function(d) { return d.owned === ownedF; });
   if (search)           rows = rows.filter(function(d) {
     return (d.name   || '').toLowerCase().indexOf(search) !== -1 ||
