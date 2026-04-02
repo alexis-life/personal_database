@@ -83,9 +83,14 @@ body {
 }
 
 .nav-chevron {
-  font-size: 0.7rem;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid var(--c3);
+  flex-shrink: 0;
   transition: transform 0.2s;
-  color: var(--c3);
 }
 .nav-item.open .nav-chevron { transform: rotate(90deg); }
 
@@ -169,6 +174,7 @@ body {
   min-width: 0;
 }
 #d-chart-grid { margin-bottom: 20px; }
+#r-chart-grid { grid-template-columns: repeat(2, 1fr); }
 
 .section { display: none; }
 .section.active { display: block; }

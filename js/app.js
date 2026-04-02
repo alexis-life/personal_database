@@ -194,6 +194,7 @@ function toggleSubList(navKey) {
 function setSubFilter(section, value) {
   if (section === 'dimoo') {
     dimooFilter = value;
+    dimooSort   = { col: null, dir: 'asc' };
     setSubItemActive('sub-dimoo', value);
     renderDimoo();
     updateBreadcrumb('dimoo', value === 'all' ? null : value);
@@ -223,9 +224,12 @@ function showSection(section) {
 
 // ── Setup ─────────────────────────────────────────────────────────────────────
 function buildAllSubLists() {
-  // Dimoo — series in series_date order; "misc dimoos" goes last (9999.99)
+  // Dimoo — groups in series_date order; "misc dimoos" goes last (9999.99)
   var seen = [];
-  DIM.forEach(function(d) { if (seen.indexOf(d.series) === -1) seen.push(d.series); });
+  DIM.forEach(function(d) {
+    var g = d.group || d.series;
+    if (seen.indexOf(g) === -1) seen.push(g);
+  });
   var seriesItems = [{ label: 'All Series', value: 'all' }].concat(seen.map(function(s) {
     return { label: s === 'misc dimoos' ? 'Misc Dimoos' : titleCase(s), value: s };
   }));
