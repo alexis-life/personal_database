@@ -176,6 +176,16 @@ body {
 #d-chart-grid { margin-bottom: 20px; }
 #r-chart-grid { grid-template-columns: repeat(2, 1fr); }
 
+/* Dimoo table: Type column only in misc dimoos view, Series column hidden there */
+#section-dimoo .col-type { display: none; }
+#section-dimoo .col-series { display: table-cell; }
+#section-dimoo.misc-view .col-type { display: table-cell; }
+#section-dimoo.misc-view .col-series { display: none; }
+
+/* Hide Status column and filter in misc dimoos + pop beans views */
+#section-dimoo.grouped-view .col-status { display: none; }
+#section-dimoo.grouped-view #d-filter-owned { display: none; }
+
 .section { display: none; }
 .section.active { display: block; }
 

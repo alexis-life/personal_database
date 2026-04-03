@@ -129,7 +129,14 @@ function updateBreadcrumb(section, filter) {
   var bc = document.getElementById('breadcrumb');
 
   if (!filter || filter === 'all') {
-    bc.innerHTML = '<span class="bc-current">' + esc(parent) + '</span>';
+    if (section === 'dimoo') {
+      bc.innerHTML =
+        '<span class="bc-parent" data-section="dimoo">' + esc(parent) + '</span>' +
+        '<span class="bc-sep">/</span>' +
+        '<span class="bc-current">Figure Series</span>';
+    } else {
+      bc.innerHTML = '<span class="bc-current">' + esc(parent) + '</span>';
+    }
   } else {
     var display = section === 'dimoo' ? titleCase(filter) : filter;
     bc.innerHTML =
@@ -230,7 +237,7 @@ function buildAllSubLists() {
     var g = d.group || d.series;
     if (seen.indexOf(g) === -1) seen.push(g);
   });
-  var seriesItems = [{ label: 'All Series', value: 'all' }].concat(seen.map(function(s) {
+  var seriesItems = [{ label: 'Figure Series', value: 'all' }].concat(seen.map(function(s) {
     return { label: s === 'misc dimoos' ? 'Misc Dimoos' : titleCase(s), value: s };
   }));
   buildSubList('sub-dimoo', seriesItems, function(val) { setSubFilter('dimoo', val); });

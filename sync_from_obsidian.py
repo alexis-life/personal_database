@@ -138,6 +138,7 @@ def load_dimoos():
 
             dimoos.append({
                 "name":          name,
+                "type":          fields.get("type", ""),
                 "series":        series,
                 "group":         group,
                 "series_date":   series_date,
