@@ -847,7 +847,7 @@
   {
     "name": "proposition chicken",
     "date": "2026-03-28",
-    "location": "",
+    "location": "16 w portal ave, san francisco, ca 94127",
     "people": "jordan mai, bernice",
     "would_return": "no",
     "return_visit": "no",
@@ -868,6 +868,58 @@
     "service": "B",
     "atmosphere": "B",
     "value": "A",
+    "overall": "A"
+  },
+  {
+    "name": "hashi gawa",
+    "date": "2026-04-04",
+    "location": "2661 blanding ave e, alameda, ca 94501",
+    "people": "jordan mai, eric trinh, vincent, patrick",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "food": "A",
+    "service": "A",
+    "atmosphere": "B",
+    "value": "A",
+    "overall": "A"
+  },
+  {
+    "name": "pho huynh hiep 3 - kevin's noodle house",
+    "date": "2026-04-04",
+    "location": "85 southgate ave, daly city, ca 94015",
+    "people": "jordan mai, eric trinh, bernice",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "food": "B",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "A",
+    "overall": "B"
+  },
+  {
+    "name": "kawanoya",
+    "date": "2026-04-05",
+    "location": "1689 church st, san francisco, ca 94131",
+    "people": "jordan mai",
+    "would_return": "yes",
+    "return_visit": "no",
+    "food": "S",
+    "service": "B",
+    "atmosphere": "S",
+    "value": "B",
+    "overall": "A"
+  },
+  {
+    "name": "wooga korean bbq",
+    "date": "2026-04-05",
+    "location": "10493 s de anza blvd, cupertino, ca 95014",
+    "people": "jordan mai, jett, jack",
+    "would_return": "yes",
+    "return_visit": "no",
+    "food": "A",
+    "service": "S",
+    "atmosphere": "A",
+    "value": "B",
     "overall": "A"
   }
 ]

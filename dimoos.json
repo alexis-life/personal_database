@@ -4308,90 +4308,6 @@
     "purchase_date": "n/a"
   },
   {
-    "name": "dependence",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
-  },
-  {
-    "name": "innocence",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "?",
-    "owned": "yes",
-    "how": "blind box",
-    "who": "gift - jordan mai; gift - jordan mai",
-    "purchase_date": "01/29/2026"
-  },
-  {
-    "name": "protection",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "?",
-    "owned": "yes",
-    "how": "blind box",
-    "who": "gift - jordan mai",
-    "purchase_date": "01/29/2026"
-  },
-  {
-    "name": "curiosity",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
-  },
-  {
-    "name": "attachment",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "?",
-    "owned": "yes",
-    "how": "blind box",
-    "who": "self bought",
-    "purchase_date": "01/29/2026"
-  },
-  {
-    "name": "strangeness",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "?",
-    "owned": "yes",
-    "how": "blind box",
-    "who": "gift - jordan mai; self bought",
-    "purchase_date": "01/29/2026"
-  },
-  {
-    "name": "security",
-    "type": "",
-    "series": "journal of new life",
-    "group": "journal of new life",
-    "series_date": "2025.11",
-    "number": "secret",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
-  },
-  {
     "name": "the goodbye i cannot say",
     "type": "",
     "series": "memories we hold",
@@ -5062,5 +4978,53 @@
     "how": "indiv",
     "who": "self bought",
     "purchase_date": "n/a"
+  },
+  {
+    "name": "innocence",
+    "type": "plushie",
+    "series": "journal of new life",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "blind box",
+    "who": "gift - jordan mai; gift - jordan mai",
+    "purchase_date": "01/29/2026"
+  },
+  {
+    "name": "protection",
+    "type": "plushie",
+    "series": "journal of new life",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "blind box",
+    "who": "gift - jordan mai",
+    "purchase_date": "01/29/2026"
+  },
+  {
+    "name": "attachment",
+    "type": "plushie",
+    "series": "journal of new life",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "blind box",
+    "who": "self bought",
+    "purchase_date": "01/29/2026"
+  },
+  {
+    "name": "strangeness",
+    "type": "plushie",
+    "series": "journal of new life",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "blind box",
+    "who": "gift - jordan mai; self bought",
+    "purchase_date": "01/29/2026"
   }
 ]
