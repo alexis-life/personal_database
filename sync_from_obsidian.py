@@ -9,9 +9,11 @@ import re
 from pathlib import Path
 
 VAULT      = Path.home() / "Library/Mobile Documents/iCloud~md~obsidian/Documents/personal"
-DIMOOS_DIR = VAULT / "cards/dimoos"
-MOVIES_DIR = VAULT / "cards/movies"
-REST_DIR   = VAULT / "cards/restaurants"
+DIMOOS_DIR  = VAULT / "cards/dimoos"
+MOVIES_DIR  = VAULT / "cards/movies"
+REST_DIR    = VAULT / "cards/restaurants"
+OPTCG_DIR   = VAULT / "cards/op tcg cards"
+PLAYING_DIR = VAULT / "cards/playing cards"
 OUT_DIR    = Path(__file__).parent
 
 # ── Shared helpers ────────────────────────────────────────────────────────────
@@ -138,6 +140,7 @@ def load_dimoos():
 
             dimoos.append({
                 "name":          name,
+                "type":          fields.get("type", ""),
                 "series":        series,
                 "group":         group,
                 "series_date":   series_date,
@@ -215,6 +218,108 @@ def load_restaurants():
     return restaurants
 
 
+# ── OP TCG ────────────────────────────────────────────────────────────────────
+
+def load_optcg():
+    cards = []
+    for f in sorted(OPTCG_DIR.glob("*.md")):
+        fm       = parse_frontmatter(f)
+        set_name = fm.get("series_name", f.stem).strip()
+        is_don   = "don" in set_name.lower()
+
+        with open(f, encoding="utf-8") as fh:
+            lines = fh.readlines()
+
+        current_owner = None
+        in_table      = False
+        for line in lines:
+            line    = line.rstrip("\n")
+            stripped = line.strip()
+
+            # Owner section headers (### alexis / ### jordan)
+            if stripped.startswith("### "):
+                header = stripped[4:].lower()
+                if "alexis" in header:
+                    current_owner = "alexis"
+                elif "jordan" in header:
+                    current_owner = "jordan"
+                in_table = False
+                continue
+
+            # Separator row → entering table
+            if re.search(r"\|[-\s|]+\|", line):
+                in_table = True
+                continue
+
+            if not line.startswith("|"):
+                in_table = False
+                continue
+
+            fields = extract_inline_fields(line)
+            if not fields or current_owner is None:
+                continue
+
+            name = fields.get("name", "").strip()
+            if not name:
+                continue
+
+            try:
+                count = int(fields.get("count", 1))
+            except (ValueError, TypeError):
+                count = 1
+
+            cards.append({
+                "set":        set_name,
+                "is_don":     is_don,
+                "owner":      current_owner,
+                "count":      count,
+                "region":     fields.get("region", "").lower(),
+                "name":       name,
+                "rarity":     fields.get("rarity", "").lower(),
+                "number":     fields.get("number", ""),
+                "alt":        fields.get("alt", ""),
+                "sp":         fields.get("sp", ""),
+                "color":      fields.get("color", "").lower(),
+                "foil":       fields.get("foil", ""),
+                "gold":       fields.get("gold", ""),
+                "source_set": fields.get("set", ""),
+                "date":       parse_dimoo_date(fields.get("date", "")),
+            })
+    return cards
+
+
+# ── Playing Cards ──────────────────────────────────────────────────────────────
+
+def load_playing_cards():
+    cards = []
+    for f in sorted(PLAYING_DIR.glob("*.md")):
+        fm         = parse_frontmatter(f)
+        file_brand = fm.get("brand", "").strip()
+
+        with open(f, encoding="utf-8") as fh:
+            lines = fh.readlines()
+
+        for line in lines:
+            line = line.rstrip("\n")
+            if re.search(r"\|[-\s|]+\|", line):
+                continue
+            if not line.startswith("|"):
+                continue
+            fields = extract_inline_fields(line)
+            if not fields:
+                continue
+            name = fields.get("name", "").strip()
+            if not name:
+                continue
+            brand = fields.get("brand", file_brand).strip() or file_brand
+            cards.append({
+                "brand": brand,
+                "name":  name,
+                "date":  parse_dimoo_date(fields.get("date", "")),
+            })
+    return cards
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
@@ -232,3 +337,13 @@ if __name__ == "__main__":
     with open(OUT_DIR / "restaurants.json", "w", encoding="utf-8") as f:
         json.dump(restaurants, f, ensure_ascii=False, indent=2)
     print(f"Wrote {len(restaurants)} restaurants → restaurants.json")
+
+    optcg = load_optcg()
+    with open(OUT_DIR / "optcg.json", "w", encoding="utf-8") as f:
+        json.dump(optcg, f, ensure_ascii=False, indent=2)
+    print(f"Wrote {len(optcg)} OP TCG cards → optcg.json")
+
+    playing = load_playing_cards()
+    with open(OUT_DIR / "playing_cards.json", "w", encoding="utf-8") as f:
+        json.dump(playing, f, ensure_ascii=False, indent=2)
+    print(f"Wrote {len(playing)} playing cards → playing_cards.json")

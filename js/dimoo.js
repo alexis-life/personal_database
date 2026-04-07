@@ -9,7 +9,14 @@ function renderDimoo() {
   // Restore this view's own filter state (kept independent per view)
   document.getElementById('d-filter-owned').value = isAll ? dimooOwnedAll : dimooOwnedSeries;
 
-  var data = isAll ? DIM : DIM.filter(function(d) { return (d.group || d.series) === filter; });
+  var FIGURE_HIDDEN = ['misc dimoos', 'pop beans'];
+  var data = isAll
+    ? DIM.filter(function(d) { return FIGURE_HIDDEN.indexOf(d.group || d.series) === -1; })
+    : DIM.filter(function(d) { return (d.group || d.series) === filter; });
+
+  var section = document.getElementById('section-dimoo');
+  section.classList.toggle('misc-view',    filter === 'misc dimoos');
+  section.classList.toggle('grouped-view', filter === 'misc dimoos' || filter === 'pop beans');
 
   _renderDimooStats(data, filter, isAll);
   _renderDimooCharts(data, isAll);
@@ -22,20 +29,21 @@ function _renderDimooStats(data, filter, isAll) {
   var grid    = document.getElementById('d-stat-grid');
 
   if (isAll) {
-    var seriesCount = Array.from(new Set(DIM.map(function(d) { return d.series; }))).length;
+    var seriesCount = Array.from(new Set(data.map(function(d) { return d.series; }))).length;
     grid.innerHTML =
-      statCard(1, 'Total Figurines', DIM.length, 'across all series') +
-      statCard(2, 'Owned',   owned,   Math.round(owned   / DIM.length * 100) + '% of collection') +
-      statCard(3, 'Missing', missing, Math.round(missing / DIM.length * 100) + '% of collection') +
+      statCard(1, 'Total Figurines', data.length, 'across all series') +
+      statCard(2, 'Owned',   owned,   Math.round(owned   / data.length * 100) + '% of collection') +
+      statCard(3, 'Missing', missing, Math.round(missing / data.length * 100) + '% of collection') +
       statCard(4, 'Series',  seriesCount, 'unique series');
   } else {
     var label = filter === 'misc dimoos' ? 'Misc Dimoos' : titleCase(filter);
-    var isGrouped = data.some(function(d) { return d.group && d.group !== d.series; });
-    if (isGrouped) {
-      var uniqueSeriesCount = new Set(data.map(function(d) { return d.series; })).size;
+    if (filter === 'misc dimoos') {
+      var indivEntries     = data.filter(function(d) { return d.series === 'individual figures'; });
+      var nonIndivEntries  = data.filter(function(d) { return d.series !== 'individual figures'; });
+      var uniqueSeriesCount = new Set(nonIndivEntries.map(function(d) { return d.series; })).size + indivEntries.length;
       grid.innerHTML =
-        statCard(1, 'Owned',   owned,             'in ' + label) +
-        statCard(2, 'Series',  uniqueSeriesCount, 'unique series in ' + label);
+        statCard(1, 'Owned',  owned,             'in ' + label) +
+        statCard(2, 'Series', uniqueSeriesCount, 'unique series in ' + label);
     } else {
       grid.innerHTML =
         statCard(1, 'Owned',   owned,   'in ' + label) +
@@ -96,19 +104,45 @@ function _renderDimooCharts(data, isAll) {
       });
 
       _dimooAcquisitionChart('chart-dimoo-how', ownedDIM);
-      _dimooGrowthChart('chart-dimoo-growth', DIM);
+      _dimooGrowthChart('chart-dimoo-growth', data);
       }); // inner rAF
     }); // outer rAF
 
   } else {
     grid.className = 'chart-grid';
-    grid.innerHTML =
-      chartCard('Acquisition Method', 'chart-dimoo-how',    '', 'medium') +
-      chartCard('Collection Growth',  'chart-dimoo-growth', '', 'medium');
-
-    _dimooAcquisitionChart('chart-dimoo-how', data.filter(function(d) { return d.owned === 'yes'; }));
+    if (dimooFilter === 'misc dimoos') {
+      grid.innerHTML =
+        chartCard('Type Breakdown',    'chart-dimoo-how',    '', 'medium') +
+        chartCard('Collection Growth', 'chart-dimoo-growth', '', 'medium');
+      _dimooTypeChart('chart-dimoo-how', data);
+    } else {
+      grid.innerHTML =
+        chartCard('Acquisition Method', 'chart-dimoo-how',    '', 'medium') +
+        chartCard('Collection Growth',  'chart-dimoo-growth', '', 'medium');
+      _dimooAcquisitionChart('chart-dimoo-how', data.filter(function(d) { return d.owned === 'yes'; }));
+    }
     _dimooGrowthChart('chart-dimoo-growth', data);
   }
+}
+
+function _dimooTypeChart(canvasId, data) {
+  var typeMap = {};
+  data.forEach(function(d) {
+    var t = (d.type || 'unknown').trim() || 'unknown';
+    t = t.charAt(0).toUpperCase() + t.slice(1);
+    typeMap[t] = (typeMap[t] || 0) + 1;
+  });
+  var keys = Object.keys(typeMap);
+  if (!keys.length) {
+    var el = document.getElementById(canvasId);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No entries.</p>';
+    return;
+  }
+  safeChart(canvasId, {
+    type: 'doughnut',
+    data: { labels: keys, datasets: [{ data: keys.map(function(k) { return typeMap[k]; }), backgroundColor: PALETTE }] },
+    options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
+  });
 }
 
 function _dimooAcquisitionChart(canvasId, data) {
@@ -187,8 +221,10 @@ function renderDimooTable() {
   var ownedF  = document.getElementById('d-filter-owned').value;
   var filter  = dimooFilter;
 
-  var rows = DIM.slice();
-  if (filter !== 'all') rows = rows.filter(function(d) { return (d.group || d.series) === filter; });
+  var FIGURE_HIDDEN = ['misc dimoos', 'pop beans'];
+  var rows = filter === 'all'
+    ? DIM.filter(function(d) { return FIGURE_HIDDEN.indexOf(d.group || d.series) === -1; })
+    : DIM.filter(function(d) { return (d.group || d.series) === filter; });
   if (ownedF)           rows = rows.filter(function(d) { return d.owned === ownedF; });
   if (search)           rows = rows.filter(function(d) {
     return (d.name   || '').toLowerCase().indexOf(search) !== -1 ||
@@ -226,7 +262,7 @@ function renderDimooTable() {
   tbody.innerHTML = '';
 
   if (!rows.length) {
-    tbody.innerHTML = '<tr class="no-data-row"><td colspan="6">No figurines match the current filters.</td></tr>';
+    tbody.innerHTML = '<tr class="no-data-row"><td colspan="7">No figurines match the current filters.</td></tr>';
     return;
   }
 
@@ -234,9 +270,10 @@ function renderDimooTable() {
     var tr = document.createElement('tr');
     var isOwned = d.owned === 'yes';
     tr.innerHTML =
+      '<td class="col-type">' + esc(d.type || '\u2014') + '</td>' +
       '<td>' + esc(d.name) + '</td>' +
-      '<td>' + esc(d.series) + '</td>' +
-      '<td><span class="badge ' + (isOwned ? 'badge-owned' : 'badge-missing') + '">' + (isOwned ? 'Owned' : 'Missing') + '</span></td>' +
+      '<td class="col-series">' + esc(d.series) + '</td>' +
+      '<td class="col-status"><span class="badge ' + (isOwned ? 'badge-owned' : 'badge-missing') + '">' + (isOwned ? 'Owned' : 'Missing') + '</span></td>' +
       '<td>' + esc(d.how) + '</td>' +
       '<td>' + esc(d.who) + '</td>' +
       '<td>' + (d.purchase_date && d.purchase_date !== 'n/a' ? esc(d.purchase_date) : '\u2014') + '</td>';
