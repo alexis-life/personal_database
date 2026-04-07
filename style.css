@@ -387,6 +387,26 @@ tbody tr:hover td { background: #fff0f3; }
 .badge-C { background: var(--c3); color: var(--c8); }
 .badge-D { background: var(--c2); color: var(--c8); }
 
+/* ── OP TCG column visibility ───────────────────────────── */
+/* Standard columns (number, rarity, color, alt, sp): shown by default, hidden in DON!! view */
+#section-optcg .col-std { display: table-cell; }
+#section-optcg .col-don { display: none; }
+#section-optcg.don-view .col-std { display: none; }
+#section-optcg.don-view .col-don { display: table-cell; }
+
+/* Playing Cards: brand column hidden when filtered to one brand */
+#section-playing .col-brand { display: table-cell; }
+#section-playing.brand-filter .col-brand { display: none; }
+
+/* ── OP TCG owner / rarity / special badges ─────────────── */
+.badge-owner-alexis { background: var(--c1); color: var(--c6); }
+.badge-owner-jordan { background: #e8e0f5; color: #4a3a8a; }
+.badge-rarity-r     { background: var(--c2); color: var(--c8); }
+.badge-rarity-sr    { background: var(--c5); color: #fff; }
+.badge-rarity-sec   { background: #c8a820; color: #fff; }
+.badge-sp           { background: var(--c7); color: var(--c1); }
+.badge-foil         { background: #c8a820; color: #fff; }
+
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 1023px) {
   #sidebar { transform: translateX(calc(-1 * var(--sidebar-w))); }

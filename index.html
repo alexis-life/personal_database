@@ -21,10 +21,22 @@
 
     <div class="sidebar-section-label">Collections</div>
     <div class="nav-item" data-section="dimoo" data-nav="dimoo">
-      <span>Dimoo Collection</span>
+      <span>Dimoos</span>
       <span class="nav-chevron"></span>
     </div>
     <div class="sub-list" id="sub-dimoo"></div>
+
+    <div class="nav-item" data-section="optcg" data-nav="optcg">
+      <span>OP TCG Cards</span>
+      <span class="nav-chevron"></span>
+    </div>
+    <div class="sub-list" id="sub-optcg"></div>
+
+    <div class="nav-item" data-section="playing" data-nav="playing">
+      <span>Playing Cards</span>
+      <span class="nav-chevron"></span>
+    </div>
+    <div class="sub-list" id="sub-playing"></div>
 
     <div class="sidebar-section-label" style="margin-top:8px">Reviews</div>
     <div class="nav-item" data-section="movies" data-nav="movies">
@@ -38,6 +50,13 @@
       <span class="nav-chevron"></span>
     </div>
     <div class="sub-list" id="sub-restaurants"></div>
+
+    <div class="sidebar-section-label" style="margin-top:8px">Jordan's Collection</div>
+    <div class="nav-item" data-section="optcg" data-nav="jordan-optcg">
+      <span>OP TCG</span>
+      <span class="nav-chevron"></span>
+    </div>
+    <div class="sub-list" id="sub-jordan-optcg"></div>
 
   </div>
 </nav>
@@ -84,6 +103,73 @@
             </tr>
           </thead>
           <tbody id="d-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OP TCG ── -->
+  <section class="section" id="section-optcg">
+    <div class="stat-grid" id="o-stat-grid"></div>
+    <div class="chart-grid" id="o-chart-grid"></div>
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title-row">
+          <span class="table-title">Cards</span>
+          <span class="count-pill" id="o-count">0</span>
+        </div>
+        <div class="table-filters">
+          <input id="o-search" type="text" placeholder="Search&#8230;" style="width:160px">
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:20%" data-sort="name">Name</th>
+              <th class="col-std" style="width:11%">Number</th>
+              <th class="col-std" style="width:7%" data-sort="rarity">Rarity</th>
+              <th class="col-std" style="width:9%">Color</th>
+              <th class="col-std" style="width:6%">Alt</th>
+              <th class="col-std" style="width:5%">SP</th>
+              <th class="col-don" style="width:18%">Source Set</th>
+              <th class="col-don" style="width:7%">Foil</th>
+              <th class="col-don" style="width:7%">Gold</th>
+              <th style="width:7%">Region</th>
+              <th style="width:5%">Qty</th>
+              <th style="width:10%" data-sort="date">Date</th>
+            </tr>
+          </thead>
+          <tbody id="o-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Playing Cards ── -->
+  <section class="section" id="section-playing">
+    <div class="stat-grid" id="p-stat-grid"></div>
+    <div class="chart-grid" id="p-chart-grid"></div>
+    <div class="table-card">
+      <div class="table-header">
+        <div class="table-title-row">
+          <span class="table-title">Decks</span>
+          <span class="count-pill" id="p-count">0</span>
+        </div>
+        <div class="table-filters">
+          <input id="p-search" type="text" placeholder="Search&#8230;" style="width:160px">
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:55%" data-sort="name">Name</th>
+              <th class="col-brand" style="width:20%">Brand</th>
+              <th style="width:25%" data-sort="date">Date</th>
+            </tr>
+          </thead>
+          <tbody id="p-tbody"></tbody>
         </table>
       </div>
     </div>
@@ -168,6 +254,8 @@
 <script src="js/dimoo.js"></script>
 <script src="js/movies.js"></script>
 <script src="js/restaurants.js"></script>
+<script src="js/optcg.js"></script>
+<script src="js/playing_cards.js"></script>
 <script>init();</script>
 </body>
 </html>
