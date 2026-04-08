@@ -1,18 +1,5 @@
 [
   {
-    "name": "pekoe",
-    "date": "",
-    "location": "sunnyvale",
-    "people": "jordan mai",
-    "would_return": "",
-    "return_visit": "",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
-  },
-  {
     "name": "one piece cafe",
     "date": "2025-08-12",
     "location": "241 san pedro st, los angelos, ca 90012",
@@ -67,7 +54,7 @@
   {
     "name": "kizuki ramen & izakaya",
     "date": "2025-09-06",
-    "location": "",
+    "location": "3251 20th ave #172, san francisco, ca 94132",
     "people": "eric, jordan mai, and thanh",
     "would_return": "yes",
     "return_visit": "yes",
@@ -117,19 +104,6 @@
     "overall": "B+"
   },
   {
-    "name": "bi-rite creamery",
-    "date": "2025-09-08",
-    "location": "sf",
-    "people": "jordan mai",
-    "would_return": "yes",
-    "return_visit": "no",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
-  },
-  {
     "name": "ox 9 lanzhou handpulled noodles",
     "date": "2025-09-13",
     "location": "216 castro st, mountain view, ca 94041",
@@ -149,11 +123,11 @@
     "people": "lucia and adri",
     "would_return": "no",
     "return_visit": "no",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "B",
+    "service": "C",
+    "atmosphere": "C",
+    "value": "C",
+    "overall": "C"
   },
   {
     "name": "prime bbq",
@@ -171,15 +145,15 @@
   {
     "name": "ramen hiroshi",
     "date": "2025-09-19",
-    "location": "",
+    "location": "322 kearny st, san francisco, ca 94108",
     "people": "eric and jordan mai",
-    "would_return": "",
+    "would_return": "maybe",
     "return_visit": "no",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "B",
+    "service": "B",
+    "atmosphere": "C",
+    "value": "B",
+    "overall": "B"
   },
   {
     "name": "supreme pot",
@@ -201,11 +175,11 @@
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "no",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "B",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "A",
+    "overall": "B+"
   },
   {
     "name": "zhangliang malatang",
@@ -214,11 +188,11 @@
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "no",
-    "food": "",
+    "food": "B",
     "service": "D",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "atmosphere": "B",
+    "value": "B",
+    "overall": "B"
   },
   {
     "name": "top sf bbq",
@@ -249,15 +223,15 @@
   {
     "name": "tang bar",
     "date": "2025-09-30",
-    "location": "stonestown, sf",
+    "location": "3251 20th ave 2nd floor, san francisco, ca 94132",
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "yes",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "A",
+    "service": "C",
+    "atmosphere": "B",
+    "value": "C",
+    "overall": "A"
   },
   {
     "name": "uncle john's pancake house",
@@ -271,19 +245,6 @@
     "atmosphere": "C",
     "value": "A",
     "overall": "B"
-  },
-  {
-    "name": "mr & mrs tea house",
-    "date": "2025-10-07",
-    "location": "544 clement st, san francisco, ca 94118",
-    "people": "jordan",
-    "would_return": "yes",
-    "return_visit": "no",
-    "food": "A",
-    "service": "B",
-    "atmosphere": "C",
-    "value": "B",
-    "overall": "B+"
   },
   {
     "name": "fish.",
@@ -303,18 +264,18 @@
     "date": "2025-10-11",
     "location": "215 e 3rd ave, san mateo, ca 94401",
     "people": "jordan mai",
-    "would_return": "",
+    "would_return": "yes",
     "return_visit": "no",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "A",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "C",
+    "overall": "B"
   },
   {
     "name": "crab house at pier 39",
     "date": "2025-10-15",
-    "location": "",
+    "location": "2 beach st, san francisco, ca 94133",
     "people": "destiny, alvin, drew, sean, lucas, eddy",
     "would_return": "maybe",
     "return_visit": "yes",
@@ -406,7 +367,7 @@
     "name": "tokyo sushi & bar",
     "date": "2025-11-07",
     "location": "skyline",
-    "people": "jordan, eric, & walter",
+    "people": "jordan mai, eric trinh, & walter",
     "would_return": "maybe",
     "return_visit": "no",
     "food": "B",
@@ -418,7 +379,7 @@
   {
     "name": "the iron gate",
     "date": "2025-11-15",
-    "location": "1360 El Camino Real, Belmont, CA 94002",
+    "location": "1360 el camino real, belmont, ca 94002",
     "people": "grandma, dad, aunty marie, audrey, xavier",
     "would_return": "no",
     "return_visit": "no",
@@ -431,8 +392,8 @@
   {
     "name": "tony’s pizza napoletana",
     "date": "2025-11-15",
-    "location": "little italy",
-    "people": "eric jordan ellison",
+    "location": "1570 stockton st, san francisco, ca 94133",
+    "people": "eric trinh, jordan mai, ellison bernabe",
     "would_return": "no",
     "return_visit": "no",
     "food": "D",
@@ -458,19 +419,19 @@
     "name": "noodle panda",
     "date": "2025-11-22",
     "location": "1055 taraval st, san francisco, ca 94116",
-    "people": "",
-    "would_return": "",
-    "return_visit": "",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "people": "eric trinh, ellison bernabe, jordan mai",
+    "would_return": "yes",
+    "return_visit": "no",
+    "food": "A",
+    "service": "B",
+    "atmosphere": "A",
+    "value": "A",
+    "overall": "S"
   },
   {
     "name": "takeya",
     "date": "2025-12-01",
-    "location": "1 Chome-9-15 Yushima, Bunkyo City, Tokyo 113-0034, Japan",
+    "location": "1 chome-9-15 yushima, bunkyo city, tokyo 113-0034, japan",
     "people": "eric and jordan",
     "would_return": "yes",
     "return_visit": "no",
@@ -483,7 +444,7 @@
   {
     "name": "yoshinoya",
     "date": "2025-12-01",
-    "location": "1 Chome-17-1 Jingumae, Shibuya, Tokyo 150-0001, Japan",
+    "location": "1 chome-17-1 jingumae, shibuya, tokyo 150-0001, japan",
     "people": "eric and jordan",
     "would_return": "yes",
     "return_visit": "yes",
@@ -494,10 +455,10 @@
     "overall": "A"
   },
   {
-    "name": "ichiran",
+    "name": "ichiran nishi-shinjuku",
     "date": "2025-12-04",
-    "location": "",
-    "people": "",
+    "location": "japan, 〒160-0023 tokyo, shinjuku city, nishishinjuku, 7 chome−10−18 小滝橋パシフィカビル",
+    "people": "jordan mai, eric trinh",
     "would_return": "yes",
     "return_visit": "no",
     "food": "S",
@@ -513,11 +474,11 @@
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "yes",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "A",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "B",
+    "overall": "A"
   },
   {
     "name": "seapot daly city",
@@ -758,13 +719,13 @@
     "date": "2026-02-26",
     "location": "64 14th st, san francisco, ca 94103",
     "people": "joanna, haimi, destiny, jess, maria p, maria z, jamila",
-    "would_return": "",
+    "would_return": "yes",
     "return_visit": "no",
-    "food": "",
+    "food": "A",
     "service": "A",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "atmosphere": "B",
+    "value": "B",
+    "overall": "A"
   },
   {
     "name": "ramen yamada-ya san francisco",
