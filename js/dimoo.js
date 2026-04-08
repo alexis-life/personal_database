@@ -215,6 +215,14 @@ function _dimooGrowthChart(canvasId, data) {
   });
 }
 
+// Strip giver name from gift entries: "gift - angela" → "gift"
+function _fmtWho(who) {
+  if (!who || who === 'n/a') return who;
+  return who.split('; ').map(function(part) {
+    return part.toLowerCase().startsWith('gift') ? 'gift' : part;
+  }).join('; ');
+}
+
 // ── Dimoo table (with sort) ───────────────────────────────────────────────────
 function renderDimooTable() {
   var search  = document.getElementById('d-search').value.toLowerCase();
@@ -275,7 +283,7 @@ function renderDimooTable() {
       '<td class="col-series">' + esc(d.series) + '</td>' +
       '<td class="col-status"><span class="badge ' + (isOwned ? 'badge-owned' : 'badge-missing') + '">' + (isOwned ? 'Owned' : 'Missing') + '</span></td>' +
       '<td>' + esc(d.how) + '</td>' +
-      '<td>' + esc(d.who) + '</td>' +
+      '<td>' + esc(_fmtWho(d.who)) + '</td>' +
       '<td>' + (d.purchase_date && d.purchase_date !== 'n/a' ? esc(d.purchase_date) : '\u2014') + '</td>';
     tbody.appendChild(tr);
   });
