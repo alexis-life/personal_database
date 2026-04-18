@@ -896,7 +896,16 @@
     "watch_date": "2026-04-04",
     "location": "daly city cinemark theatre",
     "people": "jordan mai, eric trinh, bernice, mommy",
-    "rating": null,
-    "overall": "8"
+    "rating": 8,
+    "overall": "chaotic, cute space adventure movie about friendship, family, and cosmic chaos"
+  },
+  {
+    "title": "exit 8",
+    "year": 2025,
+    "watch_date": "2026-04-12",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
+    "rating": 9,
+    "overall": "cool movie adaptation of the spot the difference game"
   }
 ]

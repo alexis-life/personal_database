@@ -4062,10 +4062,10 @@
     "group": "shapes in nature",
     "series_date": "2025.07",
     "number": "?",
-    "owned": "no",
-    "how": "n/a",
-    "who": "n/a",
-    "purchase_date": "n/a"
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "toysez",
+    "purchase_date": "03/30/2026"
   },
   {
     "name": "weathered rock",
@@ -4833,7 +4833,7 @@
     "owned": "yes",
     "how": "picked",
     "who": "self bought",
-    "purchase_date": "05/25/2026"
+    "purchase_date": "05/25/2025"
   },
   {
     "name": "sitting doberman",
@@ -4845,7 +4845,7 @@
     "owned": "yes",
     "how": "picked",
     "who": "self bought",
-    "purchase_date": "05/25/2026"
+    "purchase_date": "05/25/2025"
   },
   {
     "name": "cocoa milk",
@@ -4857,7 +4857,7 @@
     "owned": "yes",
     "how": "picked",
     "who": "self bought",
-    "purchase_date": "n/a"
+    "purchase_date": "10/04/2025"
   },
   {
     "name": "france strawberries",
@@ -4869,7 +4869,7 @@
     "owned": "yes",
     "how": "picked",
     "who": "self bought",
-    "purchase_date": "05/25/2026"
+    "purchase_date": "05/25/2025"
   },
   {
     "name": "dimoo",
@@ -4881,7 +4881,43 @@
     "owned": "yes",
     "how": "pre-owned",
     "who": "facebook marketplace",
-    "purchase_date": "n/a"
+    "purchase_date": "03/08/2026"
+  },
+  {
+    "name": "whisper to me",
+    "type": "",
+    "series": "going outing with me",
+    "group": "pop beans",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "toysez",
+    "purchase_date": "03/30/2026"
+  },
+  {
+    "name": "give me  a hug",
+    "type": "",
+    "series": "winter romance",
+    "group": "pop beans",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "toysez",
+    "purchase_date": "03/30/2026"
+  },
+  {
+    "name": "flying to the moon",
+    "type": "",
+    "series": "lighting the night sky",
+    "group": "pop beans",
+    "series_date": "9999.98",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "toysez",
+    "purchase_date": "03/30/2026"
   },
   {
     "name": "hand in hand series-invisible monologue",
@@ -5026,5 +5062,17 @@
     "how": "blind box",
     "who": "gift - jordan mai; self bought",
     "purchase_date": "01/29/2026"
+  },
+  {
+    "name": "dimoo world × cinnamoroll figurine",
+    "type": "figurine",
+    "series": "individual figures",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "indiv",
+    "who": "self bought",
+    "purchase_date": "03/31/2026"
   }
 ]
