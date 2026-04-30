@@ -907,5 +907,32 @@
     "people": "jordan mai",
     "rating": 9,
     "overall": "cool movie adaptation of the spot the difference game"
+  },
+  {
+    "title": "cruella",
+    "year": 2021,
+    "watch_date": "2026-04-18",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 8,
+    "overall": "hilarious, high-fashion heist movie that turns a classic villain into a chaotic icon with a killer twist"
+  },
+  {
+    "title": "glass onion a knives out mystery",
+    "year": null,
+    "watch_date": "2026-04-26",
+    "location": "san diego air bnb",
+    "people": "jordan mai",
+    "rating": 9,
+    "overall": "fun, twisty murder mystery with a flashy cast, clever reveals, and a lot of chaotic rich-people drama movie"
+  },
+  {
+    "title": "michael",
+    "year": 2026,
+    "watch_date": "2026-04-26",
+    "location": "san diego utc amc threatre",
+    "people": "jordan mai",
+    "rating": null,
+    "overall": "musical movie tribute to michael jackson’s rise to stardom"
   }
 ]
