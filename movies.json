@@ -934,5 +934,14 @@
     "people": "jordan mai",
     "rating": null,
     "overall": "musical movie tribute to michael jackson’s rise to stardom"
+  },
+  {
+    "title": "the sheep detectives",
+    "year": 2026,
+    "watch_date": "2026-05-09",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai, eric trinh",
+    "rating": 9,
+    "overall": "funny murder mystery movie"
   }
 ]

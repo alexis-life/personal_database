@@ -5074,5 +5074,17 @@
     "how": "indiv",
     "who": "self bought",
     "purchase_date": "03/31/2026"
+  },
+  {
+    "name": "dimoo world × pompompurin figurine",
+    "type": "figurine",
+    "series": "individual figures",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "indiv",
+    "who": "self bought",
+    "purchase_date": "04/30/2026"
   }
 ]

@@ -1090,5 +1090,19 @@
     "atmosphere": "",
     "value": "",
     "overall": ""
+  },
+  {
+    "name": "tang bar san mateo",
+    "date": "2026-05-16",
+    "location": "62 e 4th ave, san mateo, ca 94401",
+    "people": "jordan mai",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "cuisine": "chinese",
+    "food": "S",
+    "service": "A",
+    "atmosphere": "A",
+    "value": "B",
+    "overall": "S"
   }
 ]
