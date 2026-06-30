@@ -5086,5 +5086,17 @@
     "how": "indiv",
     "who": "self bought",
     "purchase_date": "04/30/2026"
+  },
+  {
+    "name": "dimoo love's gaurdian figure",
+    "type": "figurine",
+    "series": "individual figures",
+    "group": "misc dimoos",
+    "series_date": "9999.99",
+    "number": "?",
+    "owned": "yes",
+    "how": "pre-owned",
+    "who": "facebook marketplace",
+    "purchase_date": "06/09/2026"
   }
 ]

@@ -932,7 +932,7 @@
     "watch_date": "2026-04-26",
     "location": "san diego utc amc threatre",
     "people": "jordan mai",
-    "rating": null,
+    "rating": 8,
     "overall": "musical movie tribute to michael jackson’s rise to stardom"
   },
   {
@@ -943,5 +943,41 @@
     "people": "jordan mai, eric trinh",
     "rating": 9,
     "overall": "funny murder mystery movie"
+  },
+  {
+    "title": "star wars the mandalorian and grogu",
+    "year": null,
+    "watch_date": "2026-05-25",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "i only really cared about grogu"
+  },
+  {
+    "title": "obsession",
+    "year": 2026,
+    "watch_date": "2026-06-06",
+    "location": "redwood city cinemark theatre",
+    "people": "jordan mai, eric trinh, felipe",
+    "rating": null,
+    "overall": ""
+  },
+  {
+    "title": "backrooms",
+    "year": 2026,
+    "watch_date": "2026-06-13",
+    "location": "san leandro cinemark theatre",
+    "people": "jordan mai, eric trinh, solomon",
+    "rating": null,
+    "overall": ""
+  },
+  {
+    "title": "toy story 5",
+    "year": 2026,
+    "watch_date": "2026-06-28",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
+    "rating": null,
+    "overall": ""
   }
 ]
