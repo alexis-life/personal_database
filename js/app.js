@@ -309,6 +309,18 @@ function buildAllSubLists() {
     function(val) { setSubFilter('jordan-optcg', val); }
   );
 
+  // Restaurant cuisine filter dropdown
+  var cuisines = Array.from(new Set(
+    REST.map(function(r) { return r.cuisine; }).filter(Boolean)
+  )).sort();
+  var cuisineSel = document.getElementById('r-filter-cuisine');
+  cuisines.forEach(function(c) {
+    var opt = document.createElement('option');
+    opt.value = c;
+    opt.textContent = titleCase(c);
+    cuisineSel.appendChild(opt);
+  });
+
   // Playing card brands (in file order)
   var playingBrands = Array.from(new Set(PLAYING.map(function(c) { return c.brand; })));
   buildSubList('sub-playing',
@@ -351,8 +363,9 @@ function setupFilters() {
   });
   document.getElementById('d-search').addEventListener('input',        function() { renderDimooTable(); });
   document.getElementById('m-search').addEventListener('input',        function() { renderMoviesTable(); });
-  document.getElementById('r-filter-return').addEventListener('change',function() { renderRestaurantsTable(); });
-  document.getElementById('r-search').addEventListener('input',        function() { renderRestaurantsTable(); });
+  document.getElementById('r-filter-return').addEventListener('change',  function() { renderRestaurantsTable(); });
+  document.getElementById('r-filter-cuisine').addEventListener('change', function() { renderRestaurantsTable(); });
+  document.getElementById('r-search').addEventListener('input',          function() { renderRestaurantsTable(); });
   document.getElementById('o-search').addEventListener('input', function() { renderOptcgTable(); });
   document.getElementById('p-search').addEventListener('input',        function() { renderPlayingTable(); });
 }

@@ -200,6 +200,13 @@ def load_restaurants():
         if not fm.get("restaurant_name"):
             continue
 
+        # Extract cuisine from tags:: field (e.g. "#cuisine/japanese")
+        cuisine = ""
+        tags_raw = fm.get("tags", "")
+        m = re.search(r"#cuisine/(\S+)", tags_raw)
+        if m:
+            cuisine = m.group(1).lower()
+
         restaurants.append({
             "name":         fm.get("restaurant_name", ""),
             "date":         to_iso_date(fm.get("date", "")),
@@ -207,6 +214,7 @@ def load_restaurants():
             "people":       fm.get("people", ""),
             "would_return": fm.get("would_return", ""),
             "return_visit": fm.get("return_visit", ""),
+            "cuisine":      cuisine,
             "food":         fm.get("food", ""),
             "service":      fm.get("service", ""),
             "atmosphere":   fm.get("atmosphere", ""),

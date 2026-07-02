@@ -896,6 +896,87 @@
     "watch_date": "2026-04-04",
     "location": "daly city cinemark theatre",
     "people": "jordan mai, eric trinh, bernice, mommy",
+    "rating": 8,
+    "overall": "chaotic, cute space adventure movie about friendship, family, and cosmic chaos"
+  },
+  {
+    "title": "exit 8",
+    "year": 2025,
+    "watch_date": "2026-04-12",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
+    "rating": 9,
+    "overall": "cool movie adaptation of the spot the difference game"
+  },
+  {
+    "title": "cruella",
+    "year": 2021,
+    "watch_date": "2026-04-18",
+    "location": "daly city home",
+    "people": "alone",
+    "rating": 8,
+    "overall": "hilarious, high-fashion heist movie that turns a classic villain into a chaotic icon with a killer twist"
+  },
+  {
+    "title": "glass onion a knives out mystery",
+    "year": null,
+    "watch_date": "2026-04-26",
+    "location": "san diego air bnb",
+    "people": "jordan mai",
+    "rating": 9,
+    "overall": "fun, twisty murder mystery with a flashy cast, clever reveals, and a lot of chaotic rich-people drama movie"
+  },
+  {
+    "title": "michael",
+    "year": 2026,
+    "watch_date": "2026-04-26",
+    "location": "san diego utc amc threatre",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "musical movie tribute to michael jackson’s rise to stardom"
+  },
+  {
+    "title": "the sheep detectives",
+    "year": 2026,
+    "watch_date": "2026-05-09",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai, eric trinh",
+    "rating": 9,
+    "overall": "funny murder mystery movie"
+  },
+  {
+    "title": "star wars the mandalorian and grogu",
+    "year": null,
+    "watch_date": "2026-05-25",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
+    "rating": 8,
+    "overall": "i only really cared about grogu"
+  },
+  {
+    "title": "obsession",
+    "year": 2026,
+    "watch_date": "2026-06-06",
+    "location": "redwood city cinemark theatre",
+    "people": "jordan mai, eric trinh, felipe",
+    "rating": null,
+    "overall": ""
+  },
+  {
+    "title": "backrooms",
+    "year": 2026,
+    "watch_date": "2026-06-13",
+    "location": "san leandro cinemark theatre",
+    "people": "jordan mai, eric trinh, solomon",
+    "rating": null,
+    "overall": ""
+  },
+  {
+    "title": "toy story 5",
+    "year": 2026,
+    "watch_date": "2026-06-28",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
     "rating": null,
     "overall": ""
   }

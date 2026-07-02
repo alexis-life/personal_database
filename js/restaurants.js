@@ -127,16 +127,19 @@ function _restMonthsChart(id, data) {
 
 // ── Restaurants table (with sort) ─────────────────────────────────────────────
 function renderRestaurantsTable() {
-  var search    = document.getElementById('r-search').value.toLowerCase();
-  var returnSel = document.getElementById('r-filter-return').value;
-  var year      = restYear;
+  var search     = document.getElementById('r-search').value.toLowerCase();
+  var returnSel  = document.getElementById('r-filter-return').value;
+  var cuisineSel = document.getElementById('r-filter-cuisine').value;
+  var year       = restYear;
 
   var rows = REST.slice().reverse();
   if (year !== 'all' && year) rows = rows.filter(function(r) { return r.date && r.date.slice(0, 4) === year; });
-  if (returnSel) rows = rows.filter(function(r) { return (r.would_return || '').toLowerCase() === returnSel; });
+  if (returnSel)  rows = rows.filter(function(r) { return (r.would_return || '').toLowerCase() === returnSel; });
+  if (cuisineSel) rows = rows.filter(function(r) { return (r.cuisine || '') === cuisineSel; });
   if (search) rows = rows.filter(function(r) {
     return (r.name     || '').toLowerCase().indexOf(search) !== -1 ||
            (r.location || '').toLowerCase().indexOf(search) !== -1 ||
+           (r.cuisine  || '').toLowerCase().indexOf(search) !== -1 ||
            (r.people   || '').toLowerCase().indexOf(search) !== -1;
   });
 
@@ -171,7 +174,7 @@ function renderRestaurantsTable() {
   tbody.innerHTML = '';
 
   if (!rows.length) {
-    tbody.innerHTML = '<tr class="no-data-row"><td colspan="9">No restaurants match the current filters.</td></tr>';
+    tbody.innerHTML = '<tr class="no-data-row"><td colspan="10">No restaurants match the current filters.</td></tr>';
     return;
   }
 
@@ -184,6 +187,7 @@ function renderRestaurantsTable() {
       '<td>' + esc(r.name) + '</td>' +
       '<td>' + esc(fmtDate(r.date)) + '</td>' +
       '<td>' + esc(r.location || '\u2014') + '</td>' +
+      '<td>' + esc(r.cuisine ? titleCase(r.cuisine) : '\u2014') + '</td>' +
       '<td>' + (cls ? '<span class="badge ' + cls + '">' + txt + '</span>' : txt) + '</td>' +
       '<td>' + gradeBadge(r.food)       + '</td>' +
       '<td>' + gradeBadge(r.service)    + '</td>' +
