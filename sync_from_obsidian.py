@@ -177,6 +177,8 @@ def load_movies():
             except (ValueError, TypeError):
                 rating = None
 
+            genres = re.findall(r"#genre/(\S+)", fm.get("tags", ""))
+
             movies.append({
                 "title":      title,
                 "year":       release_year,
@@ -185,6 +187,7 @@ def load_movies():
                 "people":     fm.get("people", ""),
                 "rating":     rating,
                 "overall":    fm.get("overall", ""),
+                "genres":     genres,
             })
 
     movies.sort(key=lambda m: m.get("watch_date") or "")

@@ -38,22 +38,26 @@ function _renderMoviesStats(data, year, isAll) {
 
 function _renderMoviesCharts(data, year, isAll) {
   var grid = document.getElementById('m-chart-grid');
-  destroyCharts(['chart-mov-ratings', 'chart-mov-years', 'chart-mov-location']);
+  destroyCharts(['chart-mov-ratings', 'chart-mov-years', 'chart-mov-location', 'chart-mov-genres']);
 
   if (isAll) {
     grid.innerHTML =
       chartCard('Rating Distribution', 'chart-mov-ratings',  '', 'medium') +
       chartCard('Movies per Year',     'chart-mov-years',    '', 'medium') +
-      chartCard('Where Watched',       'chart-mov-location', '', 'medium');
+      chartCard('Where Watched',       'chart-mov-location', '', 'medium') +
+      chartCard('Genre Breakdown',     'chart-mov-genres',   '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
     _movYearsChart( 'chart-mov-years',    MOV);
     _movLocationChart('chart-mov-location', data);
+    _movGenreChart('chart-mov-genres', data);
   } else {
     grid.innerHTML =
       chartCard('Rating Distribution \u2014 ' + esc(year), 'chart-mov-ratings',  '', 'medium') +
-      chartCard('Where Watched \u2014 '        + esc(year), 'chart-mov-location', '', 'medium');
+      chartCard('Where Watched \u2014 '        + esc(year), 'chart-mov-location', '', 'medium') +
+      chartCard('Genre Breakdown \u2014 '      + esc(year), 'chart-mov-genres',   '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
     _movLocationChart('chart-mov-location', data);
+    _movGenreChart('chart-mov-genres', data);
   }
 }
 
@@ -117,6 +121,37 @@ function _movLocationChart(id, data) {
     type: 'doughnut',
     data: { labels: top.map(function(kv) { return kv[0]; }), datasets: [{ data: top.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE }] },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
+  });
+}
+
+function _movGenreChart(id, data) {
+  var genreMap = {};
+  data.forEach(function(m) {
+    (m.genres || []).forEach(function(g) {
+      var label = g.replace(/_/g, ' ');
+      genreMap[label] = (genreMap[label] || 0) + 1;
+    });
+  });
+  var entries = Object.entries(genreMap).sort(function(a, b) { return b[1] - a[1]; });
+
+  if (!entries.length) {
+    var el = document.getElementById(id);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No genre data available.</p>';
+    return;
+  }
+
+  safeChart(id, {
+    type: 'bar',
+    data: {
+      labels: entries.map(function(kv) { return kv[0]; }),
+      datasets: [{ data: entries.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleY(), y: scaleX(0) }
+    }
   });
 }
 
