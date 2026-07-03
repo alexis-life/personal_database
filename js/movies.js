@@ -38,7 +38,7 @@ function _renderMoviesStats(data, year, isAll) {
 
 function _renderMoviesCharts(data, year, isAll) {
   var grid = document.getElementById('m-chart-grid');
-  destroyCharts(['chart-mov-ratings', 'chart-mov-years', 'chart-mov-location', 'chart-mov-genres']);
+  destroyCharts(['chart-mov-ratings', 'chart-mov-years', 'chart-mov-location', 'chart-mov-genres', 'chart-mov-people']);
 
   if (isAll) {
     grid.innerHTML =
@@ -54,10 +54,12 @@ function _renderMoviesCharts(data, year, isAll) {
     grid.innerHTML =
       chartCard('Rating Distribution \u2014 ' + esc(year), 'chart-mov-ratings',  '', 'medium') +
       chartCard('Where Watched \u2014 '        + esc(year), 'chart-mov-location', '', 'medium') +
-      chartCard('Genre Breakdown \u2014 '      + esc(year), 'chart-mov-genres',   '', 'medium');
+      chartCard('Genre Breakdown \u2014 '      + esc(year), 'chart-mov-genres',   '', 'medium') +
+      chartCard('Watched With \u2014 '         + esc(year), 'chart-mov-people',   '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
     _movLocationChart('chart-mov-location', data);
     _movGenreChart('chart-mov-genres', data);
+    _movPeopleChart('chart-mov-people', data);
   }
 }
 
@@ -137,6 +139,39 @@ function _movGenreChart(id, data) {
   if (!entries.length) {
     var el = document.getElementById(id);
     if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No genre data available.</p>';
+    return;
+  }
+
+  safeChart(id, {
+    type: 'bar',
+    data: {
+      labels: entries.map(function(kv) { return kv[0]; }),
+      datasets: [{ data: entries.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleY(), y: scaleX(0) }
+    }
+  });
+}
+
+function _movPeopleChart(id, data) {
+  var map = {};
+  data.forEach(function(m) {
+    var p = (m.people || '').trim().toLowerCase();
+    if (!p || p === 'alone') return;
+    p.split(/,\s*and\s*|,\s*|\s+and\s+/).forEach(function(name) {
+      name = name.trim();
+      if (name) map[name] = (map[name] || 0) + 1;
+    });
+  });
+  var entries = Object.entries(map).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 10);
+
+  if (!entries.length) {
+    var el = document.getElementById(id);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No people data available.</p>';
     return;
   }
 

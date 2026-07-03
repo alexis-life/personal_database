@@ -44,7 +44,7 @@ function _renderRestaurantsStats(data, year, isAll) {
 
 function _renderRestaurantsCharts(data, year, isAll) {
   var grid = document.getElementById('r-chart-grid');
-  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months', 'chart-rest-cuisine']);
+  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months', 'chart-rest-cuisine', 'chart-rest-years']);
 
   if (isAll) {
     grid.innerHTML =
@@ -52,14 +52,16 @@ function _renderRestaurantsCharts(data, year, isAll) {
       chartCard('New vs Return Visits',        'chart-rest-new',     '', 'medium') +
       chartCard('Overall Grade Distribution', 'chart-rest-grades',  '', 'medium') +
       chartCard('Visits by Month',            'chart-rest-months',  '', 'medium') +
-      chartCard('Cuisine Breakdown',          'chart-rest-cuisine', '', 'medium');
+      chartCard('Cuisine Breakdown',          'chart-rest-cuisine', '', 'medium') +
+      chartCard('Visits by Year',             'chart-rest-years',   '', 'medium');
   } else {
     grid.innerHTML =
       chartCard('Would Return \u2014 '    + esc(year), 'chart-rest-return',  '', 'medium') +
       chartCard('New vs Return \u2014 '   + esc(year), 'chart-rest-new',     '', 'medium') +
       chartCard('Overall Grade \u2014 '   + esc(year), 'chart-rest-grades',  '', 'medium') +
       chartCard('Visits by Month \u2014 ' + esc(year), 'chart-rest-months',  '', 'medium') +
-      chartCard('Cuisine \u2014 '         + esc(year), 'chart-rest-cuisine', '', 'medium');
+      chartCard('Cuisine \u2014 '         + esc(year), 'chart-rest-cuisine', '', 'medium') +
+      chartCard('Visits by Year',              'chart-rest-years',   '', 'medium');
   }
 
   _restReturnChart( 'chart-rest-return',  data);
@@ -67,6 +69,7 @@ function _renderRestaurantsCharts(data, year, isAll) {
   _restGradeChart(  'chart-rest-grades',  data);
   _restMonthsChart( 'chart-rest-months',  data);
   _restCuisineChart('chart-rest-cuisine', data);
+  _restYearsChart(  'chart-rest-years',   REST);
 }
 
 function _restReturnChart(id, data) {
@@ -152,6 +155,25 @@ function _restCuisineChart(id, data) {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: { x: scaleY(), y: scaleX(0) }
+    }
+  });
+}
+
+function _restYearsChart(id, data) {
+  var yearCounts = {};
+  data.forEach(function(r) {
+    var y = r.date ? r.date.slice(0, 4) : null;
+    if (y) yearCounts[y] = (yearCounts[y] || 0) + 1;
+  });
+  var years = Object.keys(yearCounts).sort();
+
+  safeChart(id, {
+    type: 'bar',
+    data: { labels: years, datasets: [{ data: years.map(function(y) { return yearCounts[y]; }), backgroundColor: '#b9375e', borderRadius: 4 }] },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleX(11), y: scaleY() }
     }
   });
 }
