@@ -8,5 +8,5 @@ if ! git diff --quiet -- dimoos.json movies.json restaurants.json optcg.json pla
   git add dimoos.json movies.json restaurants.json optcg.json playing_cards.json
   git commit -m "sync: $(date '+%Y-%m-%d %H:%M')"
   git push origin working
-  git push origin working:main
+  git push origin working:main --force
 fi
