@@ -6,7 +6,14 @@
     "location": "theatre",
     "people": "bernice and mom",
     "rating": 4,
-    "overall": "highkey meh. okay family movie"
+    "overall": "highkey meh. okay family movie",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation",
+      "fantasy"
+    ]
   },
   {
     "title": "the 355",
@@ -15,7 +22,11 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 2,
-    "overall": "super meh. boring heist movie"
+    "overall": "super meh. boring heist movie",
+    "genres": [
+      "action",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "knives out",
@@ -24,7 +35,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 10,
-    "overall": "loved it. amazing murder mystery"
+    "overall": "loved it. amazing murder mystery",
+    "genres": [
+      "mystery_thriller",
+      "comedy",
+      "crime",
+      "drama"
+    ]
   },
   {
     "title": "puss in boots",
@@ -33,7 +50,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 6,
-    "overall": "not bad but not amazing"
+    "overall": "not bad but not amazing",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "puss in boots the last wish",
@@ -42,7 +65,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 7,
-    "overall": "relatively entertaining"
+    "overall": "relatively entertaining",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "teenage mutant ninja turtles mutant mayhem",
@@ -51,7 +80,13 @@
     "location": "theatre",
     "people": "bernice and mom",
     "rating": 7,
-    "overall": "mixed feelings but decent movie"
+    "overall": "mixed feelings but decent movie",
+    "genres": [
+      "animation",
+      "adventure",
+      "comedy",
+      "kids_family"
+    ]
   },
   {
     "title": "the truman show",
@@ -60,7 +95,11 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 9,
-    "overall": "good movie. did not expect it to be this good"
+    "overall": "good movie. did not expect it to be this good",
+    "genres": [
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "gran turismo",
@@ -69,7 +108,11 @@
     "location": "theatre",
     "people": "daniel and cj",
     "rating": 7,
-    "overall": "decent movie geared toward people who like nascar and video games"
+    "overall": "decent movie geared toward people who like nascar and video games",
+    "genres": [
+      "action",
+      "drama"
+    ]
   },
   {
     "title": "oppenheimer",
@@ -78,7 +121,12 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 6,
-    "overall": "good political movie but not my cup of tea"
+    "overall": "good political movie but not my cup of tea",
+    "genres": [
+      "biography",
+      "drama",
+      "history"
+    ]
   },
   {
     "title": "the flash",
@@ -87,7 +135,12 @@
     "location": "dad's house",
     "people": "audrey, aunty marie, xavier, and dad",
     "rating": 6,
-    "overall": "enjoyable movie but a lot of time travel plot holes"
+    "overall": "enjoyable movie but a lot of time travel plot holes",
+    "genres": [
+      "action",
+      "fantasy",
+      "adventure"
+    ]
   },
   {
     "title": "the super mario bros",
@@ -96,7 +149,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 8,
-    "overall": "super nostalgic. super funny. amazing art. great kids movie but works best when knowing about the franchise"
+    "overall": "super nostalgic. super funny. amazing art. great kids movie but works best when knowing about the franchise",
+    "genres": [
+      "animation",
+      "adventure",
+      "comedy",
+      "kids_family"
+    ]
   },
   {
     "title": "asteroid city",
@@ -105,7 +164,12 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 8,
-    "overall": "enjoyable movie"
+    "overall": "enjoyable movie",
+    "genres": [
+      "comedy",
+      "drama",
+      "romance"
+    ]
   },
   {
     "title": "barbie",
@@ -114,7 +178,10 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 5,
-    "overall": "okay movie. very politically feminist"
+    "overall": "okay movie. very politically feminist",
+    "genres": [
+      "comedy"
+    ]
   },
   {
     "title": "eternal sunshine of the spotless mind",
@@ -123,7 +190,11 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 8,
-    "overall": "very interesting movie"
+    "overall": "very interesting movie",
+    "genres": [
+      "sci-fi",
+      "romance"
+    ]
   },
   {
     "title": "love at first sight",
@@ -132,7 +203,11 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 7,
-    "overall": "decent romcom"
+    "overall": "decent romcom",
+    "genres": [
+      "romance",
+      "comedy"
+    ]
   },
   {
     "title": "let it snow",
@@ -141,7 +216,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 3,
-    "overall": "kinda mid romance stories grouping"
+    "overall": "kinda mid romance stories grouping",
+    "genres": [
+      "holiday",
+      "romance",
+      "comedy",
+      "lgbtq"
+    ]
   },
   {
     "title": "borat",
@@ -150,7 +231,10 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 10,
-    "overall": "pure enjoyment but dark humor needed"
+    "overall": "pure enjoyment but dark humor needed",
+    "genres": [
+      "comedy"
+    ]
   },
   {
     "title": "a haunting in venice",
@@ -159,7 +243,12 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 9,
-    "overall": "really good murder mystery mystery with a side of horror"
+    "overall": "really good murder mystery mystery with a side of horror",
+    "genres": [
+      "holiday",
+      "mystery_thriller",
+      "drama"
+    ]
   },
   {
     "title": "downsizing",
@@ -168,7 +257,13 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 8,
-    "overall": "enjoyed the overall concept but there always seemed to be something off about it"
+    "overall": "enjoyed the overall concept but there always seemed to be something off about it",
+    "genres": [
+      "comedy",
+      "drama",
+      "sci-fi",
+      "fantasy"
+    ]
   },
   {
     "title": "five nights at freddy’s",
@@ -177,7 +272,11 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 6,
-    "overall": "not really a horror movie seems like more for the nostalgia factor of fnaf"
+    "overall": "not really a horror movie seems like more for the nostalgia factor of fnaf",
+    "genres": [
+      "horror",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "meet the robinsons",
@@ -186,7 +285,13 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 8,
-    "overall": "fun movie but terrible science behind space time continuum"
+    "overall": "fun movie but terrible science behind space time continuum",
+    "genres": [
+      "kids_family",
+      "adventure",
+      "comedy",
+      "animation"
+    ]
   },
   {
     "title": "elementals",
@@ -195,7 +300,13 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 9,
-    "overall": "good movie about showing hardships of interracial couples with immigrant parents"
+    "overall": "good movie about showing hardships of interracial couples with immigrant parents",
+    "genres": [
+      "animation",
+      "fantasy",
+      "comedy",
+      "kids_family"
+    ]
   },
   {
     "title": "leo",
@@ -204,7 +315,13 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 8,
-    "overall": "funny kids movie"
+    "overall": "funny kids movie",
+    "genres": [
+      "animation",
+      "comedy",
+      "kids_family",
+      "musical"
+    ]
   },
   {
     "title": "the boy and the heron",
@@ -213,7 +330,12 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 6,
-    "overall": "gorgeous movie but weak plot and somewhat mediocre characters, not my cup of tea"
+    "overall": "gorgeous movie but weak plot and somewhat mediocre characters, not my cup of tea",
+    "genres": [
+      "fantasy",
+      "adventure",
+      "anime"
+    ]
   },
   {
     "title": "the adventures of tintin",
@@ -222,7 +344,14 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 7,
-    "overall": "fun movie to at felt like it could be made into a game like it takes two"
+    "overall": "fun movie to at felt like it could be made into a game like it takes two",
+    "genres": [
+      "kids_family",
+      "adventure",
+      "animation",
+      "mystery_thriller",
+      "action"
+    ]
   },
   {
     "title": "love actually",
@@ -231,7 +360,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 7,
-    "overall": "interesting movie with not all happy endings"
+    "overall": "interesting movie with not all happy endings",
+    "genres": [
+      "romance",
+      "comedy",
+      "drama",
+      "holiday"
+    ]
   },
   {
     "title": "lost in translation",
@@ -240,7 +375,11 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 4,
-    "overall": "not my cup of tea. cheating is not okay"
+    "overall": "not my cup of tea. cheating is not okay",
+    "genres": [
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "sweeney todd the demon barber of fleet street",
@@ -249,7 +388,13 @@
     "location": "sf home over discord",
     "people": "brighten",
     "rating": 10,
-    "overall": "amazing musical with crazy twists"
+    "overall": "amazing musical with crazy twists",
+    "genres": [
+      "musical",
+      "mystery_thriller",
+      "crime",
+      "drama"
+    ]
   },
   {
     "title": "priscilla",
@@ -258,7 +403,13 @@
     "location": "sf home",
     "people": "alone",
     "rating": 9,
-    "overall": "great movie but made me kinda sick the entire time"
+    "overall": "great movie but made me kinda sick the entire time",
+    "genres": [
+      "biography",
+      "drama",
+      "romance",
+      "music"
+    ]
   },
   {
     "title": "wonka",
@@ -267,7 +418,13 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 9,
-    "overall": "super entertaining movie with much nostalgia in the music"
+    "overall": "super entertaining movie with much nostalgia in the music",
+    "genres": [
+      "kids_family",
+      "musical",
+      "comedy",
+      "fantasy"
+    ]
   },
   {
     "title": "look both ways",
@@ -276,7 +433,12 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 7,
-    "overall": "fun movie"
+    "overall": "fun movie",
+    "genres": [
+      "comedy",
+      "drama",
+      "romance"
+    ]
   },
   {
     "title": "mean girls",
@@ -285,7 +447,10 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 8,
-    "overall": "decent movie. can see why it’s iconic but shitty ending"
+    "overall": "decent movie. can see why it’s iconic but shitty ending",
+    "genres": [
+      "comedy"
+    ]
   },
   {
     "title": "mean girls",
@@ -294,7 +459,11 @@
     "location": "theatre",
     "people": "alone",
     "rating": 6,
-    "overall": "basically a remake of the old movie but cutting out the cancelable stuff so more toned down with songs"
+    "overall": "basically a remake of the old movie but cutting out the cancelable stuff so more toned down with songs",
+    "genres": [
+      "comedy",
+      "musical"
+    ]
   },
   {
     "title": "the wonderful store of henry sugar",
@@ -303,7 +472,12 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 8,
-    "overall": "interesting wes anderson movie"
+    "overall": "interesting wes anderson movie",
+    "genres": [
+      "comedy",
+      "adventure",
+      "short"
+    ]
   },
   {
     "title": "wish",
@@ -312,7 +486,15 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 3,
-    "overall": "weak plot family movie. honestly dogwater"
+    "overall": "weak plot family movie. honestly dogwater",
+    "genres": [
+      "kids_family",
+      "animation",
+      "fantasy",
+      "comedy",
+      "adventure",
+      "musical"
+    ]
   },
   {
     "title": "queenpin",
@@ -321,7 +503,11 @@
     "location": "apartment",
     "people": "brighten",
     "rating": 5,
-    "overall": "average movie"
+    "overall": "average movie",
+    "genres": [
+      "comedy",
+      "crime"
+    ]
   },
   {
     "title": "american fiction",
@@ -330,7 +516,11 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 8,
-    "overall": "felt like a clip into a guys unfortunate life"
+    "overall": "felt like a clip into a guys unfortunate life",
+    "genres": [
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "migration",
@@ -339,7 +529,13 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 7,
-    "overall": "cute and funny children’s animation movie"
+    "overall": "cute and funny children’s animation movie",
+    "genres": [
+      "animation",
+      "adventure",
+      "comedy",
+      "kids_family"
+    ]
   },
   {
     "title": "poor things",
@@ -348,7 +544,13 @@
     "location": "theatre",
     "people": "brighten",
     "rating": 8,
-    "overall": "too much sex but decent movie"
+    "overall": "too much sex but decent movie",
+    "genres": [
+      "comedy",
+      "fantasy",
+      "romance",
+      "sci-fi"
+    ]
   },
   {
     "title": "bodies bodies bodies",
@@ -357,7 +559,13 @@
     "location": "apartment",
     "people": "alone",
     "rating": 6,
-    "overall": "weird horror comedy murder mystery"
+    "overall": "weird horror comedy murder mystery",
+    "genres": [
+      "mystery_thriller",
+      "horror",
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "the hunger games the ballad of songbirds and snakes",
@@ -366,7 +574,12 @@
     "location": "pc theatre",
     "people": "alex",
     "rating": 7,
-    "overall": "okay movie"
+    "overall": "okay movie",
+    "genres": [
+      "action",
+      "adventure",
+      "sci-fi"
+    ]
   },
   {
     "title": "spy x family code white",
@@ -375,7 +588,13 @@
     "location": "theatre",
     "people": "alex",
     "rating": 9,
-    "overall": "very like the actual show basically a long episode"
+    "overall": "very like the actual show basically a long episode",
+    "genres": [
+      "anime",
+      "adventure",
+      "comedy",
+      "action"
+    ]
   },
   {
     "title": "the fall guy",
@@ -384,7 +603,13 @@
     "location": "theatre",
     "people": "alex",
     "rating": 10,
-    "overall": "really funny romcom very good"
+    "overall": "really funny romcom very good",
+    "genres": [
+      "action",
+      "comedy",
+      "romance",
+      "drama"
+    ]
   },
   {
     "title": "haikyuu!! the dumpster battle",
@@ -393,7 +618,12 @@
     "location": "theatre",
     "people": "alex",
     "rating": 10,
-    "overall": "we love kenma and hinata"
+    "overall": "we love kenma and hinata",
+    "genres": [
+      "anime",
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "bad boys ride or die",
@@ -402,7 +632,11 @@
     "location": "theatre",
     "people": "alex",
     "rating": 9,
-    "overall": "really funny action movie"
+    "overall": "really funny action movie",
+    "genres": [
+      "action",
+      "comedy"
+    ]
   },
   {
     "title": "inside out",
@@ -411,7 +645,13 @@
     "location": "apartment",
     "people": "alex",
     "rating": 7,
-    "overall": "cute movie with a nice lesson"
+    "overall": "cute movie with a nice lesson",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "fantasy",
+      "animation"
+    ]
   },
   {
     "title": "inside out 2",
@@ -420,7 +660,13 @@
     "location": "theatre",
     "people": "alex",
     "rating": 5,
-    "overall": "good message but mid execution"
+    "overall": "good message but mid execution",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "descendants the rise of red",
@@ -429,7 +675,13 @@
     "location": "sf home over discord",
     "people": "alex",
     "rating": 5,
-    "overall": "good singing but shit plot"
+    "overall": "good singing but shit plot",
+    "genres": [
+      "kids_family",
+      "fantasy",
+      "adventure",
+      "musical"
+    ]
   },
   {
     "title": "deadpool & wolverine",
@@ -438,7 +690,12 @@
     "location": "theatre",
     "people": "chao family",
     "rating": 9,
-    "overall": "cute funny nostalgic movie"
+    "overall": "cute funny nostalgic movie",
+    "genres": [
+      "action",
+      "comedy",
+      "adventure"
+    ]
   },
   {
     "title": "harold and the purple crayon",
@@ -447,7 +704,13 @@
     "location": "theatre",
     "people": "chao family",
     "rating": 8,
-    "overall": "funny movie"
+    "overall": "funny movie",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "fantasy"
+    ]
   },
   {
     "title": "the platform 2",
@@ -456,7 +719,11 @@
     "location": "sf home over discord",
     "people": "alex",
     "rating": 6,
-    "overall": "goes from okay to meh to decent to wtf ending"
+    "overall": "goes from okay to meh to decent to wtf ending",
+    "genres": [
+      "sci-fi",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "crazy, stupid, love",
@@ -465,7 +732,11 @@
     "location": "daly city home over discord",
     "people": "alex",
     "rating": 10,
-    "overall": "really funny movie with very relatable relationships"
+    "overall": "really funny movie with very relatable relationships",
+    "genres": [
+      "romance",
+      "comedy"
+    ]
   },
   {
     "title": "our little secret",
@@ -474,7 +745,12 @@
     "location": "alex’s apartment",
     "people": "alex",
     "rating": 9,
-    "overall": "cute romcom"
+    "overall": "cute romcom",
+    "genres": [
+      "romance",
+      "comedy",
+      "holiday"
+    ]
   },
   {
     "title": "wicked",
@@ -483,7 +759,13 @@
     "location": "theatre",
     "people": "alex",
     "rating": 7,
-    "overall": "it feel very open ended because it was a part 1 but leaves the movie very underwhelming"
+    "overall": "it feel very open ended because it was a part 1 but leaves the movie very underwhelming",
+    "genres": [
+      "adventure",
+      "fantasy",
+      "musical",
+      "kids_family"
+    ]
   },
   {
     "title": "kinda pregnant",
@@ -492,7 +774,10 @@
     "location": "daly city home",
     "people": "alone",
     "rating": 7,
-    "overall": "funny movie but gave me second hand embarrassment"
+    "overall": "funny movie but gave me second hand embarrassment",
+    "genres": [
+      "comedy"
+    ]
   },
   {
     "title": "captain america brave new world",
@@ -501,7 +786,12 @@
     "location": "theatre",
     "people": "ellison and eric",
     "rating": 8,
-    "overall": "decent marvel movie w/ a pretty cool end credit scene"
+    "overall": "decent marvel movie w/ a pretty cool end credit scene",
+    "genres": [
+      "action",
+      "adventure",
+      "fantasy"
+    ]
   },
   {
     "title": "princess mononoke 4k",
@@ -510,7 +800,12 @@
     "location": "theatre",
     "people": "ellison, michael lemay, michael sim, and eric",
     "rating": 8,
-    "overall": "good movie somewhat about industrialization with great animations"
+    "overall": "good movie somewhat about industrialization with great animations",
+    "genres": [
+      "adventure",
+      "fantasy",
+      "anime"
+    ]
   },
   {
     "title": "colorful stage! the movie a miku who can't sing",
@@ -519,7 +814,12 @@
     "location": "theatre",
     "people": "michael sim, mikki, jordan mai, and eric",
     "rating": 10,
-    "overall": "loved seeing Mizuki and soundtrack was great"
+    "overall": "loved seeing Mizuki and soundtrack was great",
+    "genres": [
+      "anime",
+      "drama",
+      "musical"
+    ]
   },
   {
     "title": "the hating game",
@@ -528,7 +828,11 @@
     "location": "daly city home",
     "people": "alone",
     "rating": 7,
-    "overall": "unique romcom that moved a lot faster than usual for the classic enemies to lovers trope"
+    "overall": "unique romcom that moved a lot faster than usual for the classic enemies to lovers trope",
+    "genres": [
+      "romance",
+      "comedy"
+    ]
   },
   {
     "title": "sinners",
@@ -537,7 +841,12 @@
     "location": "theatre",
     "people": "chris i and eric",
     "rating": 8,
-    "overall": "interesting take on a vampire movie which followed the traditional vampire rules, but i’m not the biggest vampire movie fan"
+    "overall": "interesting take on a vampire movie which followed the traditional vampire rules, but i’m not the biggest vampire movie fan",
+    "genres": [
+      "horror",
+      "mystery_thriller",
+      "drama"
+    ]
   },
   {
     "title": "the life list",
@@ -546,7 +855,12 @@
     "location": "daly city home",
     "people": "alone",
     "rating": 7,
-    "overall": "was an okay romcom"
+    "overall": "was an okay romcom",
+    "genres": [
+      "drama",
+      "comedy",
+      "romance"
+    ]
   },
   {
     "title": "pitch perfect",
@@ -555,7 +869,12 @@
     "location": "daly city home",
     "people": "alone",
     "rating": 8,
-    "overall": "good movie that really exposed acapella to the world but plot was a little weak"
+    "overall": "good movie that really exposed acapella to the world but plot was a little weak",
+    "genres": [
+      "musical",
+      "comedy",
+      "romance"
+    ]
   },
   {
     "title": "thunderbolts*",
@@ -564,7 +883,13 @@
     "location": "theatre",
     "people": "ellison, jordan mai, and eric",
     "rating": 9,
-    "overall": "a really good marvel movie that accurately portrayed how depression feels like"
+    "overall": "a really good marvel movie that accurately portrayed how depression feels like",
+    "genres": [
+      "action",
+      "adventure",
+      "crime",
+      "drama"
+    ]
   },
   {
     "title": "final destination bloodlines",
@@ -573,7 +898,10 @@
     "location": "theatre",
     "people": "chris i and eric",
     "rating": 8,
-    "overall": "was a thriller comedy-like movie with a bunch of killing goldberg machines"
+    "overall": "was a thriller comedy-like movie with a bunch of killing goldberg machines",
+    "genres": [
+      "horror"
+    ]
   },
   {
     "title": "la la land",
@@ -582,7 +910,13 @@
     "location": "daly city home",
     "people": "alone",
     "rating": 9,
-    "overall": "amazing soundtrack movie with a compelling plot and somewhat of a twist ending"
+    "overall": "amazing soundtrack movie with a compelling plot and somewhat of a twist ending",
+    "genres": [
+      "musical",
+      "romance",
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "lilo & stitch",
@@ -591,7 +925,14 @@
     "location": "theatre",
     "people": "jordan mai",
     "rating": 8,
-    "overall": "good live action rendition of the animated story with slight changes"
+    "overall": "good live action rendition of the animated story with slight changes",
+    "genres": [
+      "sci-fi",
+      "comedy",
+      "kids_family",
+      "adventure",
+      "action"
+    ]
   },
   {
     "title": "despicable me 4",
@@ -600,7 +941,13 @@
     "location": "daly city home",
     "people": "bernice",
     "rating": 6,
-    "overall": "cute-ish movie but wasn’t that entertaining"
+    "overall": "cute-ish movie but wasn’t that entertaining",
+    "genres": [
+      "animation",
+      "comedy",
+      "kids_family",
+      "adventure"
+    ]
   },
   {
     "title": "the greatest showman",
@@ -609,7 +956,12 @@
     "location": "daly city home over discord",
     "people": "eric",
     "rating": 9,
-    "overall": "amazing soundtrack musical with a pretty depressing plot"
+    "overall": "amazing soundtrack musical with a pretty depressing plot",
+    "genres": [
+      "musical",
+      "biography",
+      "drama"
+    ]
   },
   {
     "title": "anyone but you",
@@ -618,7 +970,11 @@
     "location": "dad’s house",
     "people": "audrey",
     "rating": 7,
-    "overall": "cute romcom but rewatchability is low"
+    "overall": "cute romcom but rewatchability is low",
+    "genres": [
+      "romance",
+      "comedy"
+    ]
   },
   {
     "title": "now you see me",
@@ -627,7 +983,12 @@
     "location": "daly city home over discord",
     "people": "eric",
     "rating": 10,
-    "overall": "insane movie about magic"
+    "overall": "insane movie about magic",
+    "genres": [
+      "mystery_thriller",
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "sing",
@@ -636,7 +997,13 @@
     "location": "daly city home",
     "people": "jordan mai",
     "rating": 7,
-    "overall": "cute musical but mid plot"
+    "overall": "cute musical but mid plot",
+    "genres": [
+      "kids_family",
+      "musical",
+      "comedy",
+      "animation"
+    ]
   },
   {
     "title": "bee movie",
@@ -645,7 +1012,13 @@
     "location": "dad’s house",
     "people": "kinda audrey and xavier",
     "rating": 6,
-    "overall": "weird movie that i didnt like how they made the movie unrealistic"
+    "overall": "weird movie that i didnt like how they made the movie unrealistic",
+    "genres": [
+      "animation",
+      "adventure",
+      "comedy",
+      "kids_family"
+    ]
   },
   {
     "title": "kpop demon hunters",
@@ -654,7 +1027,16 @@
     "location": "daly city home",
     "people": "jordan mai",
     "rating": 8,
-    "overall": "pretty good soundtrack but a very okay plot"
+    "overall": "pretty good soundtrack but a very okay plot",
+    "genres": [
+      "animation",
+      "action",
+      "adventure",
+      "fantasy",
+      "musical",
+      "kids_family",
+      "comedy"
+    ]
   },
   {
     "title": "materialists",
@@ -663,7 +1045,12 @@
     "location": "theatre",
     "people": "eric and jordan mai",
     "rating": 9,
-    "overall": "a lot rom over com but has takes that make you think"
+    "overall": "a lot rom over com but has takes that make you think",
+    "genres": [
+      "romance",
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "now you see me 2",
@@ -672,7 +1059,14 @@
     "location": "daly city home over discord",
     "people": "eric and jordan mai",
     "rating": 9,
-    "overall": "a decent sequel but definitely not as good tricks as the first movie"
+    "overall": "a decent sequel but definitely not as good tricks as the first movie",
+    "genres": [
+      "adventure",
+      "comedy",
+      "crime",
+      "drama",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "mission impossible – the final reckoning",
@@ -681,7 +1075,12 @@
     "location": "redwood city cinemark theatre",
     "people": "chao family",
     "rating": 5,
-    "overall": "is an action and stunts movie but no stakes so it feels kinda lame"
+    "overall": "is an action and stunts movie but no stakes so it feels kinda lame",
+    "genres": [
+      "action",
+      "adventure",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "superman",
@@ -690,7 +1089,13 @@
     "location": "tanfran theatre",
     "people": "eric and jordan mai",
     "rating": 9,
-    "overall": "good cinematography, soundtrack but mid plot"
+    "overall": "good cinematography, soundtrack but mid plot",
+    "genres": [
+      "action",
+      "adventure",
+      "sci-fi",
+      "fantasy"
+    ]
   },
   {
     "title": "the fantastic four first steps",
@@ -699,7 +1104,13 @@
     "location": "san mateo cinemark theatre",
     "people": "bernice, eric, & jordan mai",
     "rating": 9,
-    "overall": "good superhero movie you can go in without knowing old marvel stuff"
+    "overall": "good superhero movie you can go in without knowing old marvel stuff",
+    "genres": [
+      "action",
+      "adventure",
+      "sci-fi",
+      "fantasy"
+    ]
   },
   {
     "title": "moana 2",
@@ -708,7 +1119,14 @@
     "location": "la airbnb",
     "people": "jordan mai and eric",
     "rating": 3,
-    "overall": "everything was terrible other than the singers and the pretty colors"
+    "overall": "everything was terrible other than the singers and the pretty colors",
+    "genres": [
+      "animation",
+      "adventure",
+      "kids_family",
+      "musical",
+      "comedy"
+    ]
   },
   {
     "title": "turning red",
@@ -717,7 +1135,13 @@
     "location": "la airbnb",
     "people": "jordan mai and eric",
     "rating": 7,
-    "overall": "funnish movie about puberty i think through the lens of a cantonese family with strong family values"
+    "overall": "funnish movie about puberty i think through the lens of a cantonese family with strong family values",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "fantasy",
+      "animation"
+    ]
   },
   {
     "title": "the naked gun",
@@ -726,7 +1150,12 @@
     "location": "stonestown regal theatre",
     "people": "jordan mai",
     "rating": 6,
-    "overall": "just felt like a long af skit with funny moments but the comedic moments felt too forced"
+    "overall": "just felt like a long af skit with funny moments but the comedic moments felt too forced",
+    "genres": [
+      "comedy",
+      "action",
+      "crime"
+    ]
   },
   {
     "title": "f1",
@@ -735,7 +1164,12 @@
     "location": "theatre",
     "people": "jordan mai and eric",
     "rating": 9,
-    "overall": "funny af racing movie with a really good main character"
+    "overall": "funny af racing movie with a really good main character",
+    "genres": [
+      "action",
+      "drama",
+      "sports"
+    ]
   },
   {
     "title": "anora",
@@ -744,7 +1178,12 @@
     "location": "daly city home over discord",
     "people": "eric & thanh",
     "rating": 10,
-    "overall": "romantic, but funny, but sad, but real movie. pretty amazing acting but honestly a hard watch"
+    "overall": "romantic, but funny, but sad, but real movie. pretty amazing acting but honestly a hard watch",
+    "genres": [
+      "comedy",
+      "drama",
+      "romance"
+    ]
   },
   {
     "title": "elio",
@@ -753,7 +1192,8 @@
     "location": "daly city home over discord",
     "people": "jordan mai",
     "rating": 5,
-    "overall": "shit ending with overly pushed lesson of the story, terrible mc, but like the rest of the characters were 100% more likeable"
+    "overall": "shit ending with overly pushed lesson of the story, terrible mc, but like the rest of the characters were 100% more likeable",
+    "genres": []
   },
   {
     "title": "demon slayer kimetsu no yaiba the movie infinity castle",
@@ -762,7 +1202,13 @@
     "location": "daly city cinemark theatre",
     "people": "michael lemay, eric, jordan mai, and michael sim",
     "rating": 10,
-    "overall": "great adaptation of the manga and start to the final trilogy of demon slayer"
+    "overall": "great adaptation of the manga and start to the final trilogy of demon slayer",
+    "genres": [
+      "anime",
+      "action",
+      "fantasy",
+      "adventure"
+    ]
   },
   {
     "title": "unknown number the high school catfish",
@@ -771,7 +1217,12 @@
     "location": "daly city home over discord",
     "people": "jordan mai",
     "rating": 8,
-    "overall": "pretty shocking documentary that i really did not expect the ending"
+    "overall": "pretty shocking documentary that i really did not expect the ending",
+    "genres": [
+      "crime",
+      "drama",
+      "documentary"
+    ]
   },
   {
     "title": "chainsaw man - the movie reze arc",
@@ -780,7 +1231,13 @@
     "location": "san mateo cinemark theatre",
     "people": "jordan mai, eric, michael sim, mikki",
     "rating": 10,
-    "overall": "insanely good action scenes anime movie"
+    "overall": "insanely good action scenes anime movie",
+    "genres": [
+      "action",
+      "adventure",
+      "fantasy",
+      "anime"
+    ]
   },
   {
     "title": "wicked",
@@ -789,7 +1246,13 @@
     "location": "daly city home",
     "people": "eric & jordan",
     "rating": 8,
-    "overall": "good rewatch with nice foreshadowing"
+    "overall": "good rewatch with nice foreshadowing",
+    "genres": [
+      "adventure",
+      "fantasy",
+      "musical",
+      "kids_family"
+    ]
   },
   {
     "title": "wicked for good",
@@ -798,7 +1261,13 @@
     "location": "redwood city cinemark theatre",
     "people": "eric & jordan mai",
     "rating": 8,
-    "overall": "cute movie with a lot of cameos respecting the original wizard of oz movie"
+    "overall": "cute movie with a lot of cameos respecting the original wizard of oz movie",
+    "genres": [
+      "musical",
+      "fantasy",
+      "adventure",
+      "kids_family"
+    ]
   },
   {
     "title": "zootopia 2",
@@ -807,7 +1276,13 @@
     "location": "daly city cinemark theatre",
     "people": "jordan",
     "rating": 8,
-    "overall": "basically the same as the first movie but with changes issues and nick putting it on hard for judy"
+    "overall": "basically the same as the first movie but with changes issues and nick putting it on hard for judy",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "fatman",
@@ -816,7 +1291,13 @@
     "location": "redwood city dads house",
     "people": "daddy, audrey, xavier",
     "rating": 9,
-    "overall": "adult christmas movie about a santa who’s broke"
+    "overall": "adult christmas movie about a santa who’s broke",
+    "genres": [
+      "comedy",
+      "holiday",
+      "fantasy",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "joy ride",
@@ -825,7 +1306,10 @@
     "location": "daly city home",
     "people": "jordan mai",
     "rating": 10,
-    "overall": "a movie showcasing the hardships of being an asian american"
+    "overall": "a movie showcasing the hardships of being an asian american",
+    "genres": [
+      "comedy"
+    ]
   },
   {
     "title": "is this thing on",
@@ -834,7 +1318,11 @@
     "location": "daly city cinemark theatre",
     "people": "jordan mai, eric trinh",
     "rating": 9,
-    "overall": "movie about the truth of relationships"
+    "overall": "movie about the truth of relationships",
+    "genres": [
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "the spongebob movie search for squarepants",
@@ -843,7 +1331,13 @@
     "location": "tanfran cinemark theatre",
     "people": "jordan mai",
     "rating": 7,
-    "overall": "funny kids movie with patrick hard carrying the humor"
+    "overall": "funny kids movie with patrick hard carrying the humor",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "the bad guys",
@@ -852,7 +1346,14 @@
     "location": "daly city home over discord",
     "people": "patrick (chinese guy from drg)",
     "rating": 9,
-    "overall": "well written feels-good, cute, and funny movie"
+    "overall": "well written feels-good, cute, and funny movie",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "action",
+      "animation"
+    ]
   },
   {
     "title": "goat",
@@ -861,7 +1362,14 @@
     "location": "san mateo cinemark theatre",
     "people": "jordan mai, eric trinh, ellison bernabe, angela, kevin (angela’s bf), drew, patrick, isiah",
     "rating": 9,
-    "overall": "really fun movie with a lot of pop culture references"
+    "overall": "really fun movie with a lot of pop culture references",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "animation",
+      "adventure",
+      "sports"
+    ]
   },
   {
     "title": "crime 101",
@@ -870,7 +1378,12 @@
     "location": "japantown amc theatre",
     "people": "jordan mai",
     "rating": 8,
-    "overall": "weird but interesting and fun action movie"
+    "overall": "weird but interesting and fun action movie",
+    "genres": [
+      "crime",
+      "mystery_thriller",
+      "drama"
+    ]
   },
   {
     "title": "hoppers",
@@ -879,7 +1392,13 @@
     "location": "san leandro cinemark theatre",
     "people": "jordan mai, eric trinh, vincent",
     "rating": 9,
-    "overall": "cute, chaotic, and surprisingly deep beaver robot movie"
+    "overall": "cute, chaotic, and surprisingly deep beaver robot movie",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "project hail mary",
@@ -888,7 +1407,11 @@
     "location": "daly city cinemark theatre",
     "people": "jordan mai, eric trinh, bernice, vincent",
     "rating": 10,
-    "overall": "funny, emotional space survival movie about a bromance between a human and an alien"
+    "overall": "funny, emotional space survival movie about a bromance between a human and an alien",
+    "genres": [
+      "sci-fi",
+      "adventure"
+    ]
   },
   {
     "title": "the super mario galaxy movie",
@@ -897,7 +1420,13 @@
     "location": "daly city cinemark theatre",
     "people": "jordan mai, eric trinh, bernice, mommy",
     "rating": 8,
-    "overall": "chaotic, cute space adventure movie about friendship, family, and cosmic chaos"
+    "overall": "chaotic, cute space adventure movie about friendship, family, and cosmic chaos",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   },
   {
     "title": "exit 8",
@@ -906,7 +1435,11 @@
     "location": "san mateo cinemark theatre",
     "people": "jordan mai",
     "rating": 9,
-    "overall": "cool movie adaptation of the spot the difference game"
+    "overall": "cool movie adaptation of the spot the difference game",
+    "genres": [
+      "mystery_thriller",
+      "horror"
+    ]
   },
   {
     "title": "cruella",
@@ -915,7 +1448,11 @@
     "location": "daly city home",
     "people": "alone",
     "rating": 8,
-    "overall": "hilarious, high-fashion heist movie that turns a classic villain into a chaotic icon with a killer twist"
+    "overall": "hilarious, high-fashion heist movie that turns a classic villain into a chaotic icon with a killer twist",
+    "genres": [
+      "comedy",
+      "kids_family"
+    ]
   },
   {
     "title": "glass onion a knives out mystery",
@@ -924,7 +1461,12 @@
     "location": "san diego air bnb",
     "people": "jordan mai",
     "rating": 9,
-    "overall": "fun, twisty murder mystery with a flashy cast, clever reveals, and a lot of chaotic rich-people drama movie"
+    "overall": "fun, twisty murder mystery with a flashy cast, clever reveals, and a lot of chaotic rich-people drama movie",
+    "genres": [
+      "mystery_thriller",
+      "comedy",
+      "drama"
+    ]
   },
   {
     "title": "michael",
@@ -933,7 +1475,12 @@
     "location": "san diego utc amc threatre",
     "people": "jordan mai",
     "rating": 8,
-    "overall": "musical movie tribute to michael jackson’s rise to stardom"
+    "overall": "musical movie tribute to michael jackson’s rise to stardom",
+    "genres": [
+      "biography",
+      "drama",
+      "music"
+    ]
   },
   {
     "title": "the sheep detectives",
@@ -942,7 +1489,13 @@
     "location": "san mateo cinemark theatre",
     "people": "jordan mai, eric trinh",
     "rating": 9,
-    "overall": "funny murder mystery movie"
+    "overall": "funny murder mystery movie",
+    "genres": [
+      "mystery_thriller",
+      "comedy",
+      "action",
+      "kids_family"
+    ]
   },
   {
     "title": "star wars the mandalorian and grogu",
@@ -951,7 +1504,13 @@
     "location": "san mateo cinemark theatre",
     "people": "jordan mai",
     "rating": 8,
-    "overall": "i only really cared about grogu"
+    "overall": "i only really cared about grogu",
+    "genres": [
+      "sci-fi",
+      "adventure",
+      "action",
+      "fantasy"
+    ]
   },
   {
     "title": "obsession",
@@ -959,8 +1518,12 @@
     "watch_date": "2026-06-06",
     "location": "redwood city cinemark theatre",
     "people": "jordan mai, eric trinh, felipe",
-    "rating": null,
-    "overall": ""
+    "rating": 8,
+    "overall": "creepy horror about a guy's crystal shop wish for his crush to want him going way too far and turning obsessive and violent",
+    "genres": [
+      "horror",
+      "mystery_thriller"
+    ]
   },
   {
     "title": "backrooms",
@@ -968,8 +1531,14 @@
     "watch_date": "2026-06-13",
     "location": "san leandro cinemark theatre",
     "people": "jordan mai, eric trinh, solomon",
-    "rating": null,
-    "overall": ""
+    "rating": 6,
+    "overall": "confusing but genuinely creepy liminal space horror that messes with memory, time, and reality",
+    "genres": [
+      "sci-fi",
+      "fantasy",
+      "mystery_thriller",
+      "horror"
+    ]
   },
   {
     "title": "toy story 5",
@@ -977,7 +1546,13 @@
     "watch_date": "2026-06-28",
     "location": "san mateo cinemark theatre",
     "people": "jordan mai",
-    "rating": null,
-    "overall": ""
+    "rating": 8,
+    "overall": "toys competing with tablets and screens for a kid's attention, with jessie holding down the fort and buzz's space army going full cyber-defense",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ]
   }
 ]
