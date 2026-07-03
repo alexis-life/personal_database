@@ -44,27 +44,29 @@ function _renderRestaurantsStats(data, year, isAll) {
 
 function _renderRestaurantsCharts(data, year, isAll) {
   var grid = document.getElementById('r-chart-grid');
-  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months']);
+  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months', 'chart-rest-cuisine']);
 
-  // Layout for both views: Would Return + New vs Return on top, Grade + Months on bottom
   if (isAll) {
     grid.innerHTML =
-      chartCard('Would Return',               'chart-rest-return', '', 'medium') +
-      chartCard('New vs Return Visits',        'chart-rest-new',    '', 'medium') +
-      chartCard('Overall Grade Distribution', 'chart-rest-grades', '', 'medium') +
-      chartCard('Visits by Month',            'chart-rest-months', '', 'medium');
+      chartCard('Would Return',               'chart-rest-return',  '', 'medium') +
+      chartCard('New vs Return Visits',        'chart-rest-new',     '', 'medium') +
+      chartCard('Overall Grade Distribution', 'chart-rest-grades',  '', 'medium') +
+      chartCard('Visits by Month',            'chart-rest-months',  '', 'medium') +
+      chartCard('Cuisine Breakdown',          'chart-rest-cuisine', '', 'medium');
   } else {
     grid.innerHTML =
-      chartCard('Would Return \u2014 '       + esc(year), 'chart-rest-return', '', 'medium') +
-      chartCard('New vs Return \u2014 '      + esc(year), 'chart-rest-new',    '', 'medium') +
-      chartCard('Overall Grade \u2014 '      + esc(year), 'chart-rest-grades', '', 'medium') +
-      chartCard('Visits by Month \u2014 '    + esc(year), 'chart-rest-months', '', 'medium');
+      chartCard('Would Return \u2014 '    + esc(year), 'chart-rest-return',  '', 'medium') +
+      chartCard('New vs Return \u2014 '   + esc(year), 'chart-rest-new',     '', 'medium') +
+      chartCard('Overall Grade \u2014 '   + esc(year), 'chart-rest-grades',  '', 'medium') +
+      chartCard('Visits by Month \u2014 ' + esc(year), 'chart-rest-months',  '', 'medium') +
+      chartCard('Cuisine \u2014 '         + esc(year), 'chart-rest-cuisine', '', 'medium');
   }
 
-  _restReturnChart('chart-rest-return', data);
-  _restNewChart(   'chart-rest-new',    data);
-  _restGradeChart( 'chart-rest-grades', data);
-  _restMonthsChart('chart-rest-months', data);
+  _restReturnChart( 'chart-rest-return',  data);
+  _restNewChart(    'chart-rest-new',     data);
+  _restGradeChart(  'chart-rest-grades',  data);
+  _restMonthsChart( 'chart-rest-months',  data);
+  _restCuisineChart('chart-rest-cuisine', data);
 }
 
 function _restReturnChart(id, data) {
@@ -122,6 +124,35 @@ function _restMonthsChart(id, data) {
     type: 'bar',
     data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: '#e05780', borderRadius: 4 }] },
     options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: scaleX(11), y: scaleY() } }
+  });
+}
+
+function _restCuisineChart(id, data) {
+  var map = {};
+  data.forEach(function(r) {
+    var c = r.cuisine ? r.cuisine.replace(/_/g, ' ') : null;
+    if (c) map[c] = (map[c] || 0) + 1;
+  });
+  var entries = Object.entries(map).sort(function(a, b) { return b[1] - a[1]; });
+
+  if (!entries.length) {
+    var el = document.getElementById(id);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No cuisine data available.</p>';
+    return;
+  }
+
+  safeChart(id, {
+    type: 'bar',
+    data: {
+      labels: entries.map(function(kv) { return kv[0]; }),
+      datasets: [{ data: entries.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleY(), y: scaleX(0) }
+    }
   });
 }
 
