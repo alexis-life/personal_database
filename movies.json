@@ -4,7 +4,7 @@
     "year": 2023,
     "watch_date": "2023-07-01",
     "location": "theatre",
-    "people": "bernice tang, mommy",
+    "people": "bernice tang, shirley tang (mommy)",
     "rating": 4,
     "overall": "highkey meh. okay family movie",
     "genres": [
@@ -78,7 +78,7 @@
     "year": 2023,
     "watch_date": "2023-08-05",
     "location": "theatre",
-    "people": "bernice tang, mommy",
+    "people": "bernice tang, shirley tang (mommy)",
     "rating": 7,
     "overall": "mixed feelings but decent movie",
     "genres": [
@@ -133,7 +133,7 @@
     "year": 2023,
     "watch_date": "2023-09-02",
     "location": "dad's house",
-    "people": "audrey chao, aunty marie, xavier chao, daddy",
+    "people": "audrey chao, marie chao, xavier chao, walter chao (daddy)",
     "rating": 6,
     "overall": "enjoyable movie but a lot of time travel plot holes",
     "genres": [
@@ -688,7 +688,7 @@
     "year": 2024,
     "watch_date": "2024-07-28",
     "location": "theatre",
-    "people": "audrey chao, xavier chao, aunty marie, daddy",
+    "people": "audrey chao, xavier chao, marie chao, walter chao (daddy)",
     "rating": 9,
     "overall": "cute funny nostalgic movie",
     "genres": [
@@ -702,7 +702,7 @@
     "year": 2024,
     "watch_date": "2024-08-11",
     "location": "theatre",
-    "people": "audrey chao, xavier chao, aunty marie, daddy",
+    "people": "audrey chao, xavier chao, marie chao, walter chao (daddy)",
     "rating": 8,
     "overall": "funny movie",
     "genres": [
@@ -812,7 +812,7 @@
     "year": 2025,
     "watch_date": "2025-04-24",
     "location": "theatre",
-    "people": "michael sim, mikki, jordan mai, eric trinh",
+    "people": "michael sim, mikki sim, jordan mai, eric trinh",
     "rating": 10,
     "overall": "loved seeing Mizuki and soundtrack was great",
     "genres": [
@@ -1073,7 +1073,7 @@
     "year": 2025,
     "watch_date": "2025-07-04",
     "location": "redwood city cinemark theatre",
-    "people": "audrey chao, xavier chao, aunty marie, daddy",
+    "people": "audrey chao, xavier chao, marie chao, walter chao (daddy)",
     "rating": 5,
     "overall": "is an action and stunts movie but no stakes so it feels kinda lame",
     "genres": [
@@ -1229,7 +1229,7 @@
     "year": 2025,
     "watch_date": "2025-10-25",
     "location": "san mateo cinemark theatre",
-    "people": "jordan mai, eric trinh, michael sim, mikki",
+    "people": "jordan mai, eric trinh, michael sim, mikki sim",
     "rating": 10,
     "overall": "insanely good action scenes anime movie",
     "genres": [
@@ -1289,7 +1289,7 @@
     "year": 2020,
     "watch_date": "2025-12-25",
     "location": "redwood city dads house",
-    "people": "daddy, audrey chao, xavier chao",
+    "people": "walter chao (daddy), audrey chao, xavier chao",
     "rating": 9,
     "overall": "adult christmas movie about a santa who’s broke",
     "genres": [
@@ -1390,7 +1390,7 @@
     "year": 2026,
     "watch_date": "2026-03-08",
     "location": "san leandro cinemark theatre",
-    "people": "jordan mai, eric trinh, vincent",
+    "people": "jordan mai, eric trinh, vincent wong",
     "rating": 9,
     "overall": "cute, chaotic, and surprisingly deep beaver robot movie",
     "genres": [
@@ -1405,7 +1405,7 @@
     "year": 2026,
     "watch_date": "2026-03-28",
     "location": "daly city cinemark theatre",
-    "people": "jordan mai, eric trinh, bernice tang, vincent",
+    "people": "jordan mai, eric trinh, bernice tang, vincent wong",
     "rating": 10,
     "overall": "funny, emotional space survival movie about a bromance between a human and an alien",
     "genres": [
@@ -1418,7 +1418,7 @@
     "year": 2026,
     "watch_date": "2026-04-04",
     "location": "daly city cinemark theatre",
-    "people": "jordan mai, eric trinh, bernice tang, mommy",
+    "people": "jordan mai, eric trinh, bernice tang, shirley tang (mommy)",
     "rating": 8,
     "overall": "chaotic, cute space adventure movie about friendship, family, and cosmic chaos",
     "genres": [
@@ -1530,7 +1530,7 @@
     "year": 2026,
     "watch_date": "2026-06-13",
     "location": "san leandro cinemark theatre",
-    "people": "jordan mai, eric trinh, solomon",
+    "people": "jordan mai, eric trinh, solomon shumake",
     "rating": 6,
     "overall": "confusing but genuinely creepy liminal space horror that messes with memory, time, and reality",
     "genres": [
