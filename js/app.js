@@ -275,6 +275,7 @@ function showSection(section, navKey, expand) {
   document.querySelectorAll('.section').forEach(function(el) { el.classList.remove('active'); });
   document.getElementById('section-' + section).classList.add('active');
   openNavForce(navKey || section, expand !== false);
+  history.replaceState(null, '', '#' + (navKey || section));
 
   if (section === 'dimoo')            renderDimoo();
   else if (section === 'movies')      renderMovies();
@@ -350,6 +351,12 @@ function buildAllSubLists() {
     function(val) { setSubFilter('playing', val); }
   );
 }
+
+// navKey → section, so a URL hash like #jordan-optcg can be resolved on load
+var NAV_KEY_SECTIONS = {
+  dimoo: 'dimoo', optcg: 'optcg', 'jordan-optcg': 'optcg',
+  movies: 'movies', restaurants: 'restaurants', playing: 'playing'
+};
 
 function goToSection(section, navKey) {
   if (section === 'dimoo')       dimooFilter  = 'all';
@@ -605,7 +612,18 @@ async function init() {
   setupMobile();
   setupGlobalSearch();
 
-  showSection('dimoo', null, false);
-  updateBreadcrumb('dimoo', null);
-  setSubItemActive('sub-dimoo', 'all');
+  var navKey = location.hash.slice(1);
+  var section = NAV_KEY_SECTIONS[navKey];
+  if (!section) { navKey = 'dimoo'; section = 'dimoo'; }
+  if (navKey === 'jordan-optcg') optcgOwnerCtx = 'jordan';
+
+  showSection(section, navKey, false);
+  updateBreadcrumb(navKey === 'jordan-optcg' ? 'jordan-optcg' : section, null);
+  setSubItemActive('sub-' + navKey, 'all');
+
+  window.addEventListener('hashchange', function() {
+    var k = location.hash.slice(1);
+    var s = NAV_KEY_SECTIONS[k];
+    if (s) goToSection(s, k);
+  });
 }

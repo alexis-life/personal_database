@@ -85,13 +85,17 @@ function _optcgRarityChart(canvasId, data) {
   var keys = Object.keys(map).sort(function(a, b) {
     return (RARITY_RANK[a.toLowerCase()] || 0) - (RARITY_RANK[b.toLowerCase()] || 0);
   });
-  var colors = { R: C.petal, SR: C.rose, SEC: GOLD };
+  var colors = { R: C.petal, SR: C.rose, SEC: C.plum };
+  var fallbackIdx = 0;
   safeChart(canvasId, {
     type: 'bar',
     data: {
       labels: keys,
       datasets: [{ data: keys.map(function(k) { return map[k]; }),
-        backgroundColor: keys.map(function(k) { return colors[k] || C.blush; }) }]
+        backgroundColor: keys.map(function(k) {
+          if (colors[k]) return colors[k];
+          return PALETTE[(fallbackIdx++ + 3) % PALETTE.length];
+        }) }]
     },
     options: {
       maintainAspectRatio: false,
