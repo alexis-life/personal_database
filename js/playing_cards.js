@@ -84,16 +84,16 @@ function _playingGrowthChart(canvasId, data) {
   safeChart(canvasId, {
     type: 'line',
     data: { labels: months, datasets: [{
-      label: 'Decks',
+      label: 'decks',
       data: cumData,
-      borderColor: '#b9375e',
-      backgroundColor: 'rgba(185,55,94,0.12)',
-      fill: true, tension: 0.3, pointRadius: 3, pointBackgroundColor: '#b9375e'
+      borderColor: C.rose,
+      backgroundColor: 'rgba(185,55,94,0.12)', // C.rose (#b9375e) at low alpha
+      fill: true, tension: 0.3, pointRadius: 3, pointBackgroundColor: C.rose
     }]},
     options: {
       maintainAspectRatio: false,
       scales: {
-        x: { ticks: { font: { family: 'Poppins', size: 10 }, color: '#8a2846', maxRotation: 45 }, grid: { color: '#ffe0e9' } },
+        x: { ticks: { font: { family: 'Poppins', size: 10 }, color: C.maroon, maxRotation: 45 }, grid: { color: C.pale } },
         y: scaleY()
       },
       plugins: { legend: { display: false } }
