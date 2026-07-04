@@ -145,7 +145,7 @@ function renderPlayingTable() {
     var tr = document.createElement('tr');
     tr.innerHTML =
       '<td>' + esc(c.name) + '</td>' +
-      '<td class="col-brand">' + esc(titleCase(c.brand || '')) + '</td>' +
+      '<td class="col-brand">' + esc(c.brand || '') + '</td>' +
       '<td>' + (c.date && c.date !== 'n/a' ? esc(c.date) : '\u2014') + '</td>';
     tbody.appendChild(tr);
   });

@@ -22,8 +22,8 @@ var dimooOwnedSeries = '';    // per-series default: show all statuses
 var dimooSort        = { col: null, dir: 'asc' };
 var movSort          = { col: null, dir: 'asc' };
 var restSort         = { col: null, dir: 'asc' };
-var optcgSortAlexis  = { col: null, dir: 'asc' };
-var optcgSortJordan  = { col: null, dir: 'asc' };
+var optcgSortAlexis  = { col: 'number', dir: 'asc' };
+var optcgSortJordan  = { col: 'number', dir: 'asc' };
 var playingSort      = { col: null, dir: 'asc' };
 
 var PALETTE = [
@@ -257,13 +257,13 @@ function setSubFilter(section, value) {
     updateBreadcrumb('restaurants', value === 'all' ? null : value);
   } else if (section === 'optcg') {
     optcgSetAlexis  = value;
-    optcgSortAlexis = { col: null, dir: 'asc' };
+    optcgSortAlexis = { col: 'number', dir: 'asc' };
     setSubItemActive('sub-optcg', value);
     renderOptcg();
     updateBreadcrumb('optcg', value === 'all' ? null : value);
   } else if (section === 'jordan-optcg') {
     optcgSetJordan  = value;
-    optcgSortJordan = { col: null, dir: 'asc' };
+    optcgSortJordan = { col: 'number', dir: 'asc' };
     setSubItemActive('sub-jordan-optcg', value);
     renderOptcg();
     updateBreadcrumb('jordan-optcg', value === 'all' ? null : value);
@@ -346,7 +346,7 @@ function buildAllSubLists() {
   cuisines.forEach(function(c) {
     var opt = document.createElement('option');
     opt.value = c;
-    opt.textContent = titleCase(c);
+    opt.textContent = c.replace(/_/g, ' ');
     cuisineSel.appendChild(opt);
   });
 
@@ -370,8 +370,8 @@ function goToSection(section, navKey) {
   if (section === 'restaurants') restYear     = 'all';
   if (section === 'optcg') {
     optcgOwnerCtx = navKey === 'jordan-optcg' ? 'jordan' : 'alexis';
-    if (optcgOwnerCtx === 'jordan') { optcgSetJordan = 'all'; optcgSortJordan = { col: null, dir: 'asc' }; }
-    else                            { optcgSetAlexis = 'all'; optcgSortAlexis = { col: null, dir: 'asc' }; }
+    if (optcgOwnerCtx === 'jordan') { optcgSetJordan = 'all'; optcgSortJordan = { col: 'number', dir: 'asc' }; }
+    else                            { optcgSetAlexis = 'all'; optcgSortAlexis = { col: 'number', dir: 'asc' }; }
   }
   if (section === 'playing')     playingBrand = 'all';
   showSection(section, navKey);

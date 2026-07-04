@@ -44,7 +44,7 @@ function _renderRestaurantsStats(data, year, isAll) {
 
 function _renderRestaurantsCharts(data, year, isAll) {
   var grid = document.getElementById('r-chart-grid');
-  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months', 'chart-rest-cuisine', 'chart-rest-years']);
+  destroyCharts(['chart-rest-return', 'chart-rest-new', 'chart-rest-grades', 'chart-rest-months', 'chart-rest-cuisine', 'chart-rest-years', 'chart-rest-people']);
 
   if (isAll) {
     grid.innerHTML =
@@ -54,22 +54,27 @@ function _renderRestaurantsCharts(data, year, isAll) {
       chartCard('Cuisine Breakdown',          'chart-rest-cuisine', '', 'medium') +
       chartCard('Visits by Month',            'chart-rest-months',  '', 'medium') +
       chartCard('Visits by Year',             'chart-rest-years',   '', 'medium');
+    _restReturnChart( 'chart-rest-return',  data);
+    _restNewChart(    'chart-rest-new',     data);
+    _restGradeChart(  'chart-rest-grades',  data);
+    _restCuisineChart('chart-rest-cuisine', data);
+    _restMonthsChart( 'chart-rest-months',  data);
+    _restYearsChart(  'chart-rest-years',   REST);
   } else {
     grid.innerHTML =
       chartCard('Would Return \u2014 '    + esc(year), 'chart-rest-return',  '', 'medium') +
       chartCard('New vs Return \u2014 '   + esc(year), 'chart-rest-new',     '', 'medium') +
       chartCard('Overall Grade \u2014 '   + esc(year), 'chart-rest-grades',  '', 'medium') +
       chartCard('Cuisine \u2014 '         + esc(year), 'chart-rest-cuisine', '', 'medium') +
-      chartCard('Visits by Month \u2014 ' + esc(year), 'chart-rest-months',  '', 'medium') +
-      chartCard('Visits by Year',              'chart-rest-years',   '', 'medium');
+      chartCard('Who You Ate With \u2014 ' + esc(year), 'chart-rest-people', '', 'medium') +
+      chartCard('Visits by Month \u2014 ' + esc(year), 'chart-rest-months',  '', 'medium');
+    _restReturnChart( 'chart-rest-return',  data);
+    _restNewChart(    'chart-rest-new',     data);
+    _restGradeChart(  'chart-rest-grades',  data);
+    _restCuisineChart('chart-rest-cuisine', data);
+    _restPeopleChart( 'chart-rest-people',  data);
+    _restMonthsChart( 'chart-rest-months',  data);
   }
-
-  _restReturnChart( 'chart-rest-return',  data);
-  _restNewChart(    'chart-rest-new',     data);
-  _restGradeChart(  'chart-rest-grades',  data);
-  _restMonthsChart( 'chart-rest-months',  data);
-  _restCuisineChart('chart-rest-cuisine', data);
-  _restYearsChart(  'chart-rest-years',   REST);
 }
 
 function _restReturnChart(id, data) {
@@ -178,6 +183,39 @@ function _restYearsChart(id, data) {
   });
 }
 
+function _restPeopleChart(id, data) {
+  var map = {};
+  data.forEach(function(r) {
+    var p = (r.people || '').trim().toLowerCase();
+    if (!p || p === 'alone') return;
+    p.split(/,\s*and\s*|,\s*|\s+and\s+/).forEach(function(name) {
+      name = name.trim();
+      if (name) map[name] = (map[name] || 0) + 1;
+    });
+  });
+  var entries = Object.entries(map).sort(function(a, b) { return b[1] - a[1]; }).slice(0, 10);
+
+  if (!entries.length) {
+    var el = document.getElementById(id);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No people data available.</p>';
+    return;
+  }
+
+  safeChart(id, {
+    type: 'bar',
+    data: {
+      labels: entries.map(function(kv) { return kv[0]; }),
+      datasets: [{ data: entries.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleY(), y: scaleX(0) }
+    }
+  });
+}
+
 // ── Restaurants table (with sort) ─────────────────────────────────────────────
 function renderRestaurantsTable() {
   var search     = document.getElementById('r-search').value.toLowerCase();
@@ -235,12 +273,12 @@ function renderRestaurantsTable() {
     var tr  = document.createElement('tr');
     var wr  = (r.would_return || '').toLowerCase();
     var cls = wr === 'yes' ? 'badge-yes' : wr === 'no' ? 'badge-no' : wr === 'maybe' ? 'badge-maybe' : '';
-    var txt = wr ? wr.charAt(0).toUpperCase() + wr.slice(1) : '\u2014';
+    var txt = wr || '\u2014';
     tr.innerHTML =
       '<td>' + esc(r.name) + '</td>' +
       '<td>' + esc(fmtDate(r.date)) + '</td>' +
       '<td>' + esc(r.location || '\u2014') + '</td>' +
-      '<td>' + esc(r.cuisine ? titleCase(r.cuisine) : '\u2014') + '</td>' +
+      '<td>' + esc(r.cuisine ? r.cuisine.replace(/_/g, ' ') : '\u2014') + '</td>' +
       '<td>' + (cls ? '<span class="badge ' + cls + '">' + txt + '</span>' : txt) + '</td>' +
       '<td>' + gradeBadge(r.food)       + '</td>' +
       '<td>' + gradeBadge(r.service)    + '</td>' +

@@ -280,7 +280,7 @@ function renderDimooTable() {
       '<td class="col-type">' + esc(d.type || '\u2014') + '</td>' +
       '<td>' + esc(d.name) + '</td>' +
       '<td class="col-series">' + esc(d.series) + '</td>' +
-      '<td class="col-status"><span class="badge ' + (isOwned ? 'badge-owned' : 'badge-missing') + '">' + (isOwned ? 'Owned' : 'Missing') + '</span></td>' +
+      '<td class="col-status"><span class="badge ' + (isOwned ? 'badge-owned' : 'badge-missing') + '">' + (isOwned ? 'owned' : 'missing') + '</span></td>' +
       '<td>' + esc(d.how) + '</td>' +
       '<td>' + esc(_fmtWho(d.who)) + '</td>' +
       '<td>' + (d.purchase_date && d.purchase_date !== 'n/a' ? esc(d.purchase_date) : '\u2014') + '</td>';

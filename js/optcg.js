@@ -187,6 +187,7 @@ function renderOptcgTable() {
     var dir = s.dir === 'asc' ? 1 : -1;
     rows.sort(function(a, b) {
       if (s.col === 'name')   return dir * (a.name || '').localeCompare(b.name || '');
+      if (s.col === 'number') return dir * (a.number || '').localeCompare(b.number || '', undefined, { numeric: true });
       if (s.col === 'rarity') return dir * (rarityRank(a.rarity) - rarityRank(b.rarity));
       if (s.col === 'date') {
         var da = parseDate(a.date) || new Date(0);
