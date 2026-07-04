@@ -89,8 +89,8 @@ function _renderDimooCharts(data, isAll) {
       safeChart('chart-dimoo-bar', {
         type: 'bar',
         data: { labels: labels, datasets: [
-          { label: 'Owned',   data: ownedCounts,   backgroundColor: '#b9375e' },
-          { label: 'Missing', data: missingCounts, backgroundColor: '#ffc2d4' }
+          { label: 'owned',   data: ownedCounts,   backgroundColor: '#b9375e' },
+          { label: 'missing', data: missingCounts, backgroundColor: '#ffc2d4' }
         ]},
         options: {
           maintainAspectRatio: false,
@@ -128,8 +128,7 @@ function _renderDimooCharts(data, isAll) {
 function _dimooTypeChart(canvasId, data) {
   var typeMap = {};
   data.forEach(function(d) {
-    var t = (d.type || 'unknown').trim() || 'unknown';
-    t = t.charAt(0).toUpperCase() + t.slice(1);
+    var t = (d.type || 'unknown').trim().toLowerCase() || 'unknown';
     typeMap[t] = (typeMap[t] || 0) + 1;
   });
   var keys = Object.keys(typeMap);
@@ -150,14 +149,14 @@ function _dimooAcquisitionChart(canvasId, data) {
   data.forEach(function(d) {
     var raw = ((d.how || 'unknown')).toLowerCase().trim();
     var k;
-    if      (raw.indexOf('blind') !== -1)                                  k = 'Blind Box';
-    else if (raw.indexOf('gift')  !== -1)                                  k = 'Gift';
-    else if (raw.indexOf('self')  !== -1 || raw === 'bought')              k = 'Self Bought';
-    else if (raw.indexOf('trade') !== -1)                                  k = 'Trade';
-    else if (raw.indexOf('pre') !== -1 || raw.indexOf('second') !== -1)    k = 'Pre-owned';
-    else if (raw.indexOf('indiv') !== -1)                                  k = 'Sold Individually';
-    else if (raw === 'n/a' || raw === '')                                  k = 'Unknown';
-    else k = raw.charAt(0).toUpperCase() + raw.slice(1);
+    if      (raw.indexOf('blind') !== -1)                                  k = 'blind box';
+    else if (raw.indexOf('gift')  !== -1)                                  k = 'gift';
+    else if (raw.indexOf('self')  !== -1 || raw === 'bought')              k = 'self bought';
+    else if (raw.indexOf('trade') !== -1)                                  k = 'trade';
+    else if (raw.indexOf('pre') !== -1 || raw.indexOf('second') !== -1)    k = 'pre-owned';
+    else if (raw.indexOf('indiv') !== -1)                                  k = 'sold individually';
+    else if (raw === 'n/a' || raw === '')                                  k = 'unknown';
+    else k = raw;
     howMap[k] = (howMap[k] || 0) + 1;
   });
 
@@ -198,7 +197,7 @@ function _dimooGrowthChart(canvasId, data) {
   safeChart(canvasId, {
     type: 'line',
     data: { labels: months, datasets: [{
-      label: 'Owned',
+      label: 'owned',
       data: cumData,
       borderColor: '#b9375e',
       backgroundColor: 'rgba(185,55,94,0.12)',

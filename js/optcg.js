@@ -84,7 +84,7 @@ function _optcgFoilChart(canvasId, data) {
   safeChart(canvasId, {
     type: 'doughnut',
     data: {
-      labels: ['Foil', 'Non-Foil'],
+      labels: ['foil', 'non-foil'],
       datasets: [{ data: [foil, nonFoil], backgroundColor: ['#c8a820', '#ffc2d4'] }]
     },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }

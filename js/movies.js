@@ -38,28 +38,36 @@ function _renderMoviesStats(data, year, isAll) {
 
 function _renderMoviesCharts(data, year, isAll) {
   var grid = document.getElementById('m-chart-grid');
-  destroyCharts(['chart-mov-ratings', 'chart-mov-years', 'chart-mov-location', 'chart-mov-genres', 'chart-mov-people']);
+  destroyCharts(['chart-mov-ratings', 'chart-mov-years', 'chart-mov-location', 'chart-mov-genres', 'chart-mov-people', 'chart-mov-genre-rating', 'chart-mov-months']);
 
   if (isAll) {
     grid.innerHTML =
       chartCard('Rating Distribution', 'chart-mov-ratings',  '', 'medium') +
-      chartCard('Movies per Year',     'chart-mov-years',    '', 'medium') +
       chartCard('Where Watched',       'chart-mov-location', '', 'medium') +
-      chartCard('Genre Breakdown',     'chart-mov-genres',   '', 'medium');
+      chartCard('Genre Breakdown',     'chart-mov-genres',   '', 'medium') +
+      chartCard('Avg Rating by Genre', 'chart-mov-genre-rating', '', 'medium') +
+      chartCard('Movies per Month',    'chart-mov-months',   '', 'medium') +
+      chartCard('Movies per Year',     'chart-mov-years',    '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
-    _movYearsChart( 'chart-mov-years',    MOV);
     _movLocationChart('chart-mov-location', data);
     _movGenreChart('chart-mov-genres', data);
+    _movGenreRatingChart('chart-mov-genre-rating', data);
+    _movMonthsChart('chart-mov-months', data);
+    _movYearsChart( 'chart-mov-years',    MOV);
   } else {
     grid.innerHTML =
       chartCard('Rating Distribution \u2014 ' + esc(year), 'chart-mov-ratings',  '', 'medium') +
       chartCard('Where Watched \u2014 '        + esc(year), 'chart-mov-location', '', 'medium') +
       chartCard('Genre Breakdown \u2014 '      + esc(year), 'chart-mov-genres',   '', 'medium') +
-      chartCard('Watched With \u2014 '         + esc(year), 'chart-mov-people',   '', 'medium');
+      chartCard('Avg Rating by Genre \u2014 '  + esc(year), 'chart-mov-genre-rating', '', 'medium') +
+      chartCard('Watched With \u2014 '         + esc(year), 'chart-mov-people',   '', 'medium') +
+      chartCard('Movies per Month \u2014 '     + esc(year), 'chart-mov-months',   '', 'medium');
     _movRatingChart('chart-mov-ratings',  data);
     _movLocationChart('chart-mov-location', data);
     _movGenreChart('chart-mov-genres', data);
+    _movGenreRatingChart('chart-mov-genre-rating', data);
     _movPeopleChart('chart-mov-people', data);
+    _movMonthsChart('chart-mov-months', data);
   }
 }
 
@@ -111,7 +119,7 @@ function _movLocationChart(id, data) {
   var entries = Object.entries(locMap).sort(function(a, b) { return b[1] - a[1]; });
   var top   = entries.slice(0, 8);
   var other = entries.slice(8).reduce(function(s, kv) { return s + kv[1]; }, 0);
-  if (other > 0) top.push(['Other', other]);
+  if (other > 0) top.push(['other', other]);
 
   if (!top.length) {
     var el = document.getElementById(id);
@@ -153,6 +161,62 @@ function _movGenreChart(id, data) {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
       scales: { x: scaleY(), y: scaleX(0) }
+    }
+  });
+}
+
+function _movGenreRatingChart(id, data) {
+  var sums = {};
+  var counts = {};
+  data.forEach(function(m) {
+    if (m.rating == null) return;
+    (m.genres || []).forEach(function(g) {
+      var label = g.replace(/_/g, ' ');
+      sums[label]   = (sums[label]   || 0) + m.rating;
+      counts[label] = (counts[label] || 0) + 1;
+    });
+  });
+  var entries = Object.keys(sums)
+    .map(function(g) { return [g, sums[g] / counts[g]]; })
+    .sort(function(a, b) { return b[1] - a[1]; });
+
+  if (!entries.length) {
+    var el = document.getElementById(id);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No genre data available.</p>';
+    return;
+  }
+
+  safeChart(id, {
+    type: 'bar',
+    data: {
+      labels: entries.map(function(kv) { return kv[0]; }),
+      datasets: [{ data: entries.map(function(kv) { return Math.round(kv[1] * 10) / 10; }), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleY(), y: scaleX(0) }
+    }
+  });
+}
+
+function _movMonthsChart(id, data) {
+  var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var counts = [0,0,0,0,0,0,0,0,0,0,0,0];
+  data.forEach(function(m) {
+    if (!m.watch_date) return;
+    var mo = parseInt(m.watch_date.slice(5, 7), 10) - 1;
+    if (mo >= 0 && mo < 12) counts[mo]++;
+  });
+
+  safeChart(id, {
+    type: 'bar',
+    data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: '#b9375e', borderRadius: 4 }] },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleX(11), y: scaleY() }
     }
   });
 }

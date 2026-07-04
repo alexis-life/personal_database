@@ -51,16 +51,16 @@ function _renderRestaurantsCharts(data, year, isAll) {
       chartCard('Would Return',               'chart-rest-return',  '', 'medium') +
       chartCard('New vs Return Visits',        'chart-rest-new',     '', 'medium') +
       chartCard('Overall Grade Distribution', 'chart-rest-grades',  '', 'medium') +
-      chartCard('Visits by Month',            'chart-rest-months',  '', 'medium') +
       chartCard('Cuisine Breakdown',          'chart-rest-cuisine', '', 'medium') +
+      chartCard('Visits by Month',            'chart-rest-months',  '', 'medium') +
       chartCard('Visits by Year',             'chart-rest-years',   '', 'medium');
   } else {
     grid.innerHTML =
       chartCard('Would Return \u2014 '    + esc(year), 'chart-rest-return',  '', 'medium') +
       chartCard('New vs Return \u2014 '   + esc(year), 'chart-rest-new',     '', 'medium') +
       chartCard('Overall Grade \u2014 '   + esc(year), 'chart-rest-grades',  '', 'medium') +
-      chartCard('Visits by Month \u2014 ' + esc(year), 'chart-rest-months',  '', 'medium') +
       chartCard('Cuisine \u2014 '         + esc(year), 'chart-rest-cuisine', '', 'medium') +
+      chartCard('Visits by Month \u2014 ' + esc(year), 'chart-rest-months',  '', 'medium') +
       chartCard('Visits by Year',              'chart-rest-years',   '', 'medium');
   }
 
@@ -78,7 +78,7 @@ function _restReturnChart(id, data) {
   safeChart(id, {
     type: 'doughnut',
     data: {
-      labels: ['Would Return', 'Would Not', 'Maybe'],
+      labels: ['would return', 'would not', 'maybe'],
       datasets: [{ data: [ret.yes, ret.no, ret.maybe], backgroundColor: ['#b9375e', '#8a2846', '#e05780'] }]
     },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
@@ -91,7 +91,7 @@ function _restNewChart(id, data) {
   safeChart(id, {
     type: 'doughnut',
     data: {
-      labels: ['New Place', 'Return Visit'],
+      labels: ['new place', 'return visit'],
       datasets: [{ data: [newCount, returnCount], backgroundColor: ['#b9375e', '#ffc2d4'] }]
     },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
