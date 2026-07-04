@@ -174,7 +174,7 @@ body {
   min-width: 0;
 }
 #d-chart-grid { margin-bottom: 20px; }
-#r-chart-grid { grid-template-columns: repeat(2, 1fr); }
+#r-chart-grid, #m-chart-grid { grid-template-columns: repeat(2, 1fr); }
 
 /* Dimoo table: Type column only in misc dimoos view, Series column hidden there */
 #section-dimoo .col-type { display: none; }

@@ -186,13 +186,16 @@ function setSubItemActive(listId, value) {
 }
 
 // ── Nav accordion ─────────────────────────────────────────────────────────────
-function openNavForce(navKey) {
+function openNavForce(navKey, expand) {
   document.querySelectorAll('.nav-item').forEach(function(el) {
     var k = el.dataset.nav;
     var sub = document.getElementById('sub-' + k);
     if (k === navKey) {
-      el.classList.add('active', 'open');
-      if (sub) sub.style.maxHeight = sub.scrollHeight + 'px';
+      el.classList.add('active');
+      if (expand) {
+        el.classList.add('open');
+        if (sub) sub.style.maxHeight = sub.scrollHeight + 'px';
+      }
     } else {
       el.classList.remove('active', 'open');
       if (sub) sub.style.maxHeight = '0';
@@ -248,11 +251,11 @@ function setSubFilter(section, value) {
   }
 }
 
-function showSection(section, navKey) {
+function showSection(section, navKey, expand) {
   activeSection = section;
   document.querySelectorAll('.section').forEach(function(el) { el.classList.remove('active'); });
   document.getElementById('section-' + section).classList.add('active');
-  openNavForce(navKey || section);
+  openNavForce(navKey || section, expand !== false);
 
   if (section === 'dimoo')            renderDimoo();
   else if (section === 'movies')      renderMovies();
@@ -459,7 +462,7 @@ async function init() {
   setupNav();
   setupMobile();
 
-  showSection('dimoo');
+  showSection('dimoo', null, false);
   updateBreadcrumb('dimoo', null);
   setSubItemActive('sub-dimoo', 'all');
 }
