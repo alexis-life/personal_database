@@ -104,7 +104,13 @@ function formatSetName(s) {
   if (!s) return '';
   if (s.toLowerCase().startsWith('don')) return 'DON!! Cards';
   var m = s.match(/^([a-z]{2,4}\d{2,3}(?:-[a-z]{2,4}\d{2,3})?)/i);
-  return m ? m[1].toUpperCase() : titleCase(s);
+  if (m) return m[1].toUpperCase();
+
+  // Set name has no code prefix of its own (e.g. "premium booster -the best- vol. 2") —
+  // fall back to the code embedded in a card's number field (e.g. "prb02-010" → "PRB02").
+  var card = OPTCG.find(function(c) { return c.set === s; });
+  var numCode = card && card.number ? card.number.match(/^([a-z]{2,4}\d{2,3})/i) : null;
+  return numCode ? numCode[1].toUpperCase() : titleCase(s);
 }
 
 function titleCase(s) {
