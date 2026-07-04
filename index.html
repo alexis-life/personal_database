@@ -78,6 +78,8 @@
 <!-- Main content -->
 <main id="main">
 
+  <div id="today-callout"></div>
+
   <!-- ── Dimoo ── -->
   <section class="section" id="section-dimoo">
     <div class="stat-grid" id="d-stat-grid"></div>
@@ -127,6 +129,11 @@
           <span class="count-pill" id="o-count">0</span>
         </div>
         <div class="table-filters">
+          <select id="o-filter-region">
+            <option value="">all</option>
+            <option value="en">en</option>
+            <option value="jp">jp</option>
+          </select>
           <input id="o-search" type="text" placeholder="Search&#8230;" style="width:160px">
         </div>
       </div>

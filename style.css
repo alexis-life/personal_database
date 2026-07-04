@@ -249,6 +249,44 @@ body {
 .section { display: none; }
 .section.active { display: block; }
 
+/* ── Today callout ──────────────────────────────────── */
+#today-callout {
+  display: none;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(82,46,56,0.08);
+  border-left: 4px solid var(--c6);
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  position: relative;
+  font-size: 0.85rem;
+  color: var(--c9);
+}
+#today-callout.show { display: block; }
+#today-callout .tc-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--c6);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+#today-callout .tc-line { margin-top: 4px; }
+#today-callout .tc-line:first-of-type { margin-top: 0; }
+#today-callout .tc-dismiss {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--c7);
+  line-height: 1;
+  padding: 4px;
+}
+#today-callout .tc-dismiss:hover { color: var(--c6); }
+
 /* ── Stat grid ──────────────────────────────────────── */
 .stat-grid {
   display: grid;

@@ -282,6 +282,7 @@ function showSection(section, navKey, expand) {
   document.getElementById('section-' + section).classList.add('active');
   openNavForce(navKey || section, expand !== false);
   history.replaceState(null, '', '#' + (navKey || section));
+  updateTodayCalloutVisibility();
 
   if (section === 'dimoo')            renderDimoo();
   else if (section === 'movies')      renderMovies();
@@ -406,6 +407,7 @@ function setupFilters() {
   document.getElementById('r-filter-return').addEventListener('change',  function() { renderRestaurantsTable(); });
   document.getElementById('r-filter-cuisine').addEventListener('change', function() { renderRestaurantsTable(); });
   document.getElementById('r-search').addEventListener('input',          function() { renderRestaurantsTable(); });
+  document.getElementById('o-filter-region').addEventListener('change', function() { renderOptcgTable(); });
   document.getElementById('o-search').addEventListener('input', function() { renderOptcgTable(); });
   document.getElementById('p-search').addEventListener('input',        function() { renderPlayingTable(); });
 }
@@ -591,6 +593,62 @@ function setupMobile() {
   });
 }
 
+// ── Today callout ──────────────────────────────────────────────────────────────
+var todayCalloutReady = false;
+var todayCalloutDismissed = false;
+
+function setupTodayCallout() {
+  var today = new Date();
+  var mmdd  = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+  var curYear = String(today.getFullYear());
+  var dismissKey = 'today-callout-dismissed-' + curYear + '-' + mmdd;
+
+  if (localStorage.getItem(dismissKey)) return;
+
+  var movieHits = MOV.filter(function(m) {
+    return m.watch_date && m.watch_date.slice(5, 10) === mmdd && m.watch_date.slice(0, 4) !== curYear;
+  });
+  var restHits = REST.filter(function(r) {
+    return r.date && r.date.slice(5, 10) === mmdd && r.date.slice(0, 4) !== curYear;
+  });
+
+  if (!movieHits.length && !restHits.length) return;
+
+  var lines = [];
+  movieHits.forEach(function(m) {
+    var year = m.watch_date.slice(0, 4);
+    var rating = m.rating != null ? ' (' + m.rating + '/10)' : '';
+    lines.push('<div class="tc-line">🎬 in ' + esc(year) + ', you watched <strong>' + esc(m.title) + '</strong>' + esc(rating) + '</div>');
+  });
+  restHits.forEach(function(r) {
+    var year = r.date.slice(0, 4);
+    var grade = r.overall ? ' (' + r.overall + ')' : '';
+    lines.push('<div class="tc-line">🍽️ in ' + esc(year) + ', you ate at <strong>' + esc(r.name) + '</strong>' + esc(grade) + '</div>');
+  });
+
+  var el = document.getElementById('today-callout');
+  el.innerHTML =
+    '<button class="tc-dismiss" aria-label="Dismiss">&times;</button>' +
+    '<div class="tc-title">On this day</div>' +
+    lines.join('');
+
+  el.querySelector('.tc-dismiss').addEventListener('click', function() {
+    localStorage.setItem(dismissKey, '1');
+    todayCalloutDismissed = true;
+    updateTodayCalloutVisibility();
+  });
+
+  todayCalloutReady = true;
+  updateTodayCalloutVisibility();
+}
+
+function updateTodayCalloutVisibility() {
+  var el = document.getElementById('today-callout');
+  var shouldShow = todayCalloutReady && !todayCalloutDismissed &&
+    (activeSection === 'movies' || activeSection === 'restaurants');
+  el.classList.toggle('show', shouldShow);
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 async function init() {
   var results = await Promise.all([
@@ -617,6 +675,7 @@ async function init() {
   setupNav();
   setupMobile();
   setupGlobalSearch();
+  setupTodayCallout();
 
   var navKey = location.hash.slice(1);
   var section = NAV_KEY_SECTIONS[navKey];

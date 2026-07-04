@@ -168,13 +168,15 @@ function _optcgAltChart(canvasId, data) {
 
 // ── OP TCG table ──────────────────────────────────────────────────────────────
 function renderOptcgTable() {
-  var search = document.getElementById('o-search').value.toLowerCase();
+  var search   = document.getElementById('o-search').value.toLowerCase();
+  var regionSel = document.getElementById('o-filter-region').value;
   var filter = optcgSet();
 
   var ownerData = OPTCG.filter(function(c) { return c.owner === optcgOwnerCtx; });
   var rows = filter === 'all'
     ? ownerData.filter(function(c) { return !c.is_don; })
     : ownerData.filter(function(c) { return c.set === filter; });
+  if (regionSel) rows = rows.filter(function(c) { return (c.region || '').toLowerCase() === regionSel; });
   if (search) rows = rows.filter(function(c) {
     return (c.name   || '').toLowerCase().indexOf(search) !== -1 ||
            (c.number || '').toLowerCase().indexOf(search) !== -1 ||
