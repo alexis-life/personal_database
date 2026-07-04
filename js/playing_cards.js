@@ -53,7 +53,11 @@ function _playingBrandChart(canvasId, data) {
     map[b] = (map[b] || 0) + 1;
   });
   var keys = Object.keys(map);
-  if (!keys.length) return;
+  if (!keys.length) {
+    var el = document.getElementById(canvasId);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No brand data available.</p>';
+    return;
+  }
   safeChart(canvasId, {
     type: 'doughnut',
     data: { labels: keys, datasets: [{ data: keys.map(function(k) { return map[k]; }), backgroundColor: PALETTE }] },
