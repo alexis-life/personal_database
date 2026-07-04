@@ -5,7 +5,7 @@ cd /Users/chikimiko/Documents/GitHub/personal_database
 python3 sync_from_obsidian.py
 
 if ! git diff --quiet -- dimoos.json movies.json restaurants.json optcg.json playing_cards.json; then
-  git add dimoos.json movies.json restaurants.json optcg.json playing_cards.json
+  git add dimoos.json movies.json restaurants.json optcg.json playing_cards.json meta.json
   git commit -m "sync: $(date '+%Y-%m-%d %H:%M')"
   git push origin main
 fi

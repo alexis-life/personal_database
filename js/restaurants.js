@@ -79,7 +79,7 @@ function _restReturnChart(id, data) {
     type: 'doughnut',
     data: {
       labels: ['would return', 'would not', 'maybe'],
-      datasets: [{ data: [ret.yes, ret.no, ret.maybe], backgroundColor: ['#b9375e', '#8a2846', '#e05780'] }]
+      datasets: [{ data: [ret.yes, ret.no, ret.maybe], backgroundColor: [C.rose, C.maroon, C.pink] }]
     },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
   });
@@ -92,7 +92,7 @@ function _restNewChart(id, data) {
     type: 'doughnut',
     data: {
       labels: ['new place', 'return visit'],
-      datasets: [{ data: [newCount, returnCount], backgroundColor: ['#b9375e', '#ffc2d4'] }]
+      datasets: [{ data: [newCount, returnCount], backgroundColor: [C.rose, C.petal] }]
     },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
   });
@@ -100,7 +100,7 @@ function _restNewChart(id, data) {
 
 function _restGradeChart(id, data) {
   var ORDER    = ['S','A','B','C','D'];
-  var GRADE_BG = { S: '#8a2846', A: '#b9375e', B: '#e05780', C: '#ff9ebb', D: '#ffc2d4' };
+  var GRADE_BG = { S: C.maroon, A: C.rose, B: C.pink, C: C.blush, D: C.petal };
   var counts   = { S: 0, A: 0, B: 0, C: 0, D: 0 };
   data.forEach(function(r) { var g = gradeBase(r.overall); if (g in counts) counts[g]++; });
   safeChart(id, {
@@ -125,7 +125,7 @@ function _restMonthsChart(id, data) {
 
   safeChart(id, {
     type: 'bar',
-    data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: '#e05780', borderRadius: 4 }] },
+    data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: C.pink, borderRadius: 4 }] },
     options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: scaleX(11), y: scaleY() } }
   });
 }
@@ -169,7 +169,7 @@ function _restYearsChart(id, data) {
 
   safeChart(id, {
     type: 'bar',
-    data: { labels: years, datasets: [{ data: years.map(function(y) { return yearCounts[y]; }), backgroundColor: '#b9375e', borderRadius: 4 }] },
+    data: { labels: years, datasets: [{ data: years.map(function(y) { return yearCounts[y]; }), backgroundColor: C.rose, borderRadius: 4 }] },
     options: {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },

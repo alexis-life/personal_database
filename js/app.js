@@ -7,26 +7,45 @@ var activeSection = 'dimoo';
 var dimooFilter   = 'all';
 var movYear       = 'all';
 var restYear      = 'all';
-var optcgSet       = 'all';
 var optcgOwnerCtx  = 'alexis'; // 'alexis' | 'jordan'
 var playingBrand   = 'all';
+
+// OP TCG filter/sort state: separate per owner so they don't bleed into each other
+var optcgSetAlexis = 'all';
+var optcgSetJordan = 'all';
 
 // Dimoo owned-filter state: separate per view so they don't bleed into each other
 var dimooOwnedAll    = 'yes'; // all-series default: show owned only
 var dimooOwnedSeries = '';    // per-series default: show all statuses
 
 // Sort state per table  { col: String|null, dir: 'asc'|'desc' }
-var dimooSort   = { col: null, dir: 'asc' };
-var movSort     = { col: null, dir: 'asc' };
-var restSort    = { col: null, dir: 'asc' };
-var optcgSort   = { col: null, dir: 'asc' };
-var playingSort = { col: null, dir: 'asc' };
+var dimooSort        = { col: null, dir: 'asc' };
+var movSort          = { col: null, dir: 'asc' };
+var restSort         = { col: null, dir: 'asc' };
+var optcgSortAlexis  = { col: null, dir: 'asc' };
+var optcgSortJordan  = { col: null, dir: 'asc' };
+var playingSort      = { col: null, dir: 'asc' };
 
 var PALETTE = [
   '#b9375e','#e05780','#8a2846','#ff7aa2','#ff9ebb',
   '#602437','#ffc2d4','#522e38','#d44070','#f0a0b8',
   '#9c2f50','#ffa8c5','#701c3a','#c05070','#ffe0e9'
 ];
+
+// Named aliases into PALETTE for one-off chart accents (bars, lines, single-series doughnuts).
+// Keeps every chart color traceable back to PALETTE instead of scattering magic hex strings.
+var C = {
+  rose:   PALETTE[0],  // primary bars/lines
+  pink:   PALETTE[1],  // secondary accent
+  maroon: PALETTE[2],  // dark accent
+  salmon: PALETTE[3],
+  blush:  PALETTE[4],
+  plum:   PALETTE[5],  // darkest
+  petal:  PALETTE[6],  // pale pink
+  text:   PALETTE[7],  // axis/tick text color
+  pale:   PALETTE[14]  // palest, used for gridlines
+};
+var GOLD = '#c8a820'; // thematic accent for SEC rarity / foil — intentionally outside PALETTE
 
 // Grade rank for sort comparison  (higher = better)
 var GRADE_RANK = { S: 5, A: 4, B: 3, C: 2, D: 1 };
@@ -231,14 +250,14 @@ function setSubFilter(section, value) {
     renderRestaurants();
     updateBreadcrumb('restaurants', value === 'all' ? null : value);
   } else if (section === 'optcg') {
-    optcgSet  = value;
-    optcgSort = { col: null, dir: 'asc' };
+    optcgSetAlexis  = value;
+    optcgSortAlexis = { col: null, dir: 'asc' };
     setSubItemActive('sub-optcg', value);
     renderOptcg();
     updateBreadcrumb('optcg', value === 'all' ? null : value);
   } else if (section === 'jordan-optcg') {
-    optcgSet  = value;
-    optcgSort = { col: null, dir: 'asc' };
+    optcgSetJordan  = value;
+    optcgSortJordan = { col: null, dir: 'asc' };
     setSubItemActive('sub-jordan-optcg', value);
     renderOptcg();
     updateBreadcrumb('jordan-optcg', value === 'all' ? null : value);
@@ -332,6 +351,21 @@ function buildAllSubLists() {
   );
 }
 
+function goToSection(section, navKey) {
+  if (section === 'dimoo')       dimooFilter  = 'all';
+  if (section === 'movies')      movYear      = 'all';
+  if (section === 'restaurants') restYear     = 'all';
+  if (section === 'optcg') {
+    optcgOwnerCtx = navKey === 'jordan-optcg' ? 'jordan' : 'alexis';
+    if (optcgOwnerCtx === 'jordan') { optcgSetJordan = 'all'; optcgSortJordan = { col: null, dir: 'asc' }; }
+    else                            { optcgSetAlexis = 'all'; optcgSortAlexis = { col: null, dir: 'asc' }; }
+  }
+  if (section === 'playing')     playingBrand = 'all';
+  showSection(section, navKey);
+  updateBreadcrumb(navKey === 'jordan-optcg' ? 'jordan-optcg' : section, null);
+  setSubItemActive('sub-' + navKey, 'all');
+}
+
 function setupNav() {
   document.querySelectorAll('.nav-item').forEach(function(el) {
     el.addEventListener('click', function() {
@@ -342,17 +376,7 @@ function setupNav() {
       if (isActive) {
         toggleSubList(navKey);
       } else {
-        if (section === 'dimoo')       dimooFilter  = 'all';
-        if (section === 'movies')      movYear      = 'all';
-        if (section === 'restaurants') restYear     = 'all';
-        if (section === 'optcg') {
-          optcgSet      = 'all';
-          optcgOwnerCtx = navKey === 'jordan-optcg' ? 'jordan' : 'alexis';
-        }
-        if (section === 'playing')     playingBrand = 'all';
-        showSection(section, navKey);
-        updateBreadcrumb(navKey === 'jordan-optcg' ? 'jordan-optcg' : section, null);
-        setSubItemActive('sub-' + navKey, 'all');
+        goToSection(section, navKey);
       }
     });
   });
@@ -412,8 +436,9 @@ function setupSortable() {
     th.classList.add('sortable');
     th.addEventListener('click', function() {
       var col = th.dataset.sort;
-      optcgSort.dir = optcgSort.col === col && optcgSort.dir === 'asc' ? 'desc' : 'asc';
-      optcgSort.col = col;
+      var s = optcgOwnerCtx === 'jordan' ? optcgSortJordan : optcgSortAlexis;
+      s.dir = s.col === col && s.dir === 'asc' ? 'desc' : 'asc';
+      s.col = col;
       renderOptcgTable();
     });
   });
@@ -427,6 +452,114 @@ function setupSortable() {
       playingSort.col = col;
       renderPlayingTable();
     });
+  });
+}
+
+// ── Global search ─────────────────────────────────────────────────────────────
+function buildGlobalSearchIndex() {
+  var index = [];
+  DIM.forEach(function(d) {
+    index.push({ type: 'dimoo', title: d.name, sub: 'dimoo — ' + (d.series || ''), item: d });
+  });
+  MOV.forEach(function(m) {
+    index.push({ type: 'movies', title: m.title, sub: 'movie — ' + (m.watch_date || ''), item: m });
+  });
+  REST.forEach(function(r) {
+    index.push({ type: 'restaurants', title: r.name, sub: 'restaurant — ' + (r.location || ''), item: r });
+  });
+  OPTCG.forEach(function(c) {
+    index.push({ type: 'optcg', title: c.name, sub: (c.owner === 'jordan' ? "jordan's" : "alexis's") + ' op tcg — ' + formatSetName(c.set || ''), item: c });
+  });
+  PLAYING.forEach(function(p) {
+    index.push({ type: 'playing', title: p.name || p.brand, sub: 'playing cards — ' + (p.brand || ''), item: p });
+  });
+  return index;
+}
+
+function goToSearchResult(result) {
+  var item = result.item;
+  if (result.type === 'dimoo') {
+    var group = item.group || item.series || 'all';
+    showSection('dimoo', 'dimoo', true);
+    setSubFilter('dimoo', group);
+    document.getElementById('d-search').value = item.name || '';
+    renderDimooTable();
+  } else if (result.type === 'movies') {
+    var year = item.watch_date ? item.watch_date.slice(0, 4) : 'all';
+    showSection('movies', 'movies', true);
+    setSubFilter('movies', year);
+    document.getElementById('m-search').value = item.title || '';
+    renderMoviesTable();
+  } else if (result.type === 'restaurants') {
+    var year = item.date ? item.date.slice(0, 4) : 'all';
+    showSection('restaurants', 'restaurants', true);
+    setSubFilter('restaurants', year);
+    document.getElementById('r-search').value = item.name || '';
+    renderRestaurantsTable();
+  } else if (result.type === 'optcg') {
+    var navKey = item.owner === 'jordan' ? 'jordan-optcg' : 'optcg';
+    optcgOwnerCtx = item.owner === 'jordan' ? 'jordan' : 'alexis';
+    showSection('optcg', navKey, true);
+    setSubFilter(navKey, item.set || 'all');
+    document.getElementById('o-search').value = item.name || '';
+    renderOptcgTable();
+  } else if (result.type === 'playing') {
+    showSection('playing', 'playing', true);
+    setSubFilter('playing', item.brand || 'all');
+    document.getElementById('p-search').value = item.name || item.brand || '';
+    renderPlayingTable();
+  }
+}
+
+function setupGlobalSearch() {
+  var input   = document.getElementById('global-search');
+  var results = document.getElementById('global-search-results');
+  var timer   = null;
+
+  function render(query) {
+    var q = query.trim().toLowerCase();
+    if (!q) { results.classList.remove('open'); results.innerHTML = ''; return; }
+
+    var matches = buildGlobalSearchIndex()
+      .filter(function(r) { return (r.title || '').toLowerCase().indexOf(q) !== -1; })
+      .slice(0, 8);
+
+    results.innerHTML = '';
+    if (!matches.length) {
+      results.innerHTML = '<div class="gsr-empty">No matches found.</div>';
+    } else {
+      matches.forEach(function(r) {
+        var div = document.createElement('div');
+        div.className = 'gsr-item';
+        div.innerHTML =
+          '<span class="gsr-title">' + esc(r.title || '') + '</span>' +
+          '<span class="gsr-sub">' + esc(r.sub) + '</span>';
+        div.addEventListener('click', function() {
+          goToSearchResult(r);
+          input.value = '';
+          results.classList.remove('open');
+          results.innerHTML = '';
+        });
+        results.appendChild(div);
+      });
+    }
+    results.classList.add('open');
+  }
+
+  input.addEventListener('input', function() {
+    var query = input.value;
+    clearTimeout(timer);
+    timer = setTimeout(function() { render(query); }, 200);
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('#global-search-wrap')) {
+      results.classList.remove('open');
+    }
+  });
+
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { input.value = ''; results.classList.remove('open'); results.innerHTML = ''; input.blur(); }
   });
 }
 
@@ -452,15 +585,25 @@ async function init() {
     fetchJSON('movies.json'),
     fetchJSON('restaurants.json'),
     fetchJSON('optcg.json'),
-    fetchJSON('playing_cards.json')
+    fetchJSON('playing_cards.json'),
+    fetchJSON('meta.json')
   ]);
   DIM = results[0]; MOV = results[1]; REST = results[2]; OPTCG = results[3]; PLAYING = results[4];
+
+  var meta = results[5];
+  if (meta && meta.synced_at) {
+    var el = document.getElementById('last-synced');
+    if (el) el.textContent = 'last synced: ' + new Date(meta.synced_at).toLocaleString([], {
+      month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+    });
+  }
 
   buildAllSubLists();
   setupFilters();
   setupSortable();
   setupNav();
   setupMobile();
+  setupGlobalSearch();
 
   showSection('dimoo', null, false);
   updateBreadcrumb('dimoo', null);

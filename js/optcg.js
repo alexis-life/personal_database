@@ -5,8 +5,16 @@
 var RARITY_RANK = { r: 1, sr: 2, sec: 3 };
 function rarityRank(r) { return RARITY_RANK[(r || '').toLowerCase()] || 0; }
 
+function cardColor(c) {
+  var col = (c.color || '').trim();
+  return col.indexOf('/') !== -1 ? 'multicolor' : col;
+}
+
+function optcgSet()  { return optcgOwnerCtx === 'jordan' ? optcgSetJordan  : optcgSetAlexis;  }
+function optcgSort() { return optcgOwnerCtx === 'jordan' ? optcgSortJordan : optcgSortAlexis; }
+
 function renderOptcg() {
-  var filter = optcgSet;
+  var filter = optcgSet();
   var ownerData = OPTCG.filter(function(c) { return c.owner === optcgOwnerCtx; });
   var data = filter === 'all'
     ? ownerData.filter(function(c) { return !c.is_don; })
@@ -31,6 +39,12 @@ function _renderOptcgStats(data, filter) {
     grid.innerHTML =
       statCard(1, 'Total Cards', total,    'in ' + owner + '\'s collection') +
       statCard(2, 'Sets',        setCount, 'unique sets');
+  } else if (data.length > 0 && data.every(function(c) { return c.is_don; })) {
+    var foil = data.filter(function(c) { return c.foil && c.foil !== 'n/a' && c.foil !== ''; }).length;
+    var label = formatSetName(filter);
+    grid.innerHTML =
+      statCard(1, 'Total Cards', total, 'in ' + label) +
+      statCard(2, 'Foil',        foil,  'of ' + total + ' cards');
   } else {
     var label = formatSetName(filter);
     grid.innerHTML =
@@ -40,13 +54,22 @@ function _renderOptcgStats(data, filter) {
 
 function _renderOptcgCharts(data, filter, isDon) {
   var grid = document.getElementById('o-chart-grid');
-  destroyCharts(['chart-optcg-rarity', 'chart-optcg-foil']);
+  destroyCharts(['chart-optcg-rarity', 'chart-optcg-color', 'chart-optcg-sets', 'chart-optcg-alt']);
 
   grid.className = 'chart-grid';
 
   if (isDon) {
-    grid.innerHTML = chartCard('Foil vs Non-Foil', 'chart-optcg-foil', '', 'medium');
-    _optcgFoilChart('chart-optcg-foil', data);
+    grid.innerHTML = '';
+  } else if (filter === 'all') {
+    grid.innerHTML =
+      chartCard('By Rarity',    'chart-optcg-rarity', '', 'medium') +
+      chartCard('By Color',     'chart-optcg-color',  '', 'medium') +
+      chartCard('Cards per Set','chart-optcg-sets',   '', 'medium') +
+      chartCard('Alt Art vs Regular', 'chart-optcg-alt', '', 'medium');
+    _optcgRarityChart('chart-optcg-rarity', data);
+    _optcgColorChart('chart-optcg-color', data);
+    _optcgSetChart('chart-optcg-sets', data);
+    _optcgAltChart('chart-optcg-alt', data);
   } else {
     grid.innerHTML = chartCard('By Rarity', 'chart-optcg-rarity', '', 'medium');
     _optcgRarityChart('chart-optcg-rarity', data);
@@ -62,13 +85,13 @@ function _optcgRarityChart(canvasId, data) {
   var keys = Object.keys(map).sort(function(a, b) {
     return (RARITY_RANK[a.toLowerCase()] || 0) - (RARITY_RANK[b.toLowerCase()] || 0);
   });
-  var colors = { R: '#ffc2d4', SR: '#b9375e', SEC: '#c8a820' };
+  var colors = { R: C.petal, SR: C.rose, SEC: GOLD };
   safeChart(canvasId, {
     type: 'bar',
     data: {
       labels: keys,
       datasets: [{ data: keys.map(function(k) { return map[k]; }),
-        backgroundColor: keys.map(function(k) { return colors[k] || '#ff9ebb'; }) }]
+        backgroundColor: keys.map(function(k) { return colors[k] || C.blush; }) }]
     },
     options: {
       maintainAspectRatio: false,
@@ -78,14 +101,62 @@ function _optcgRarityChart(canvasId, data) {
   });
 }
 
-function _optcgFoilChart(canvasId, data) {
-  var foil    = data.filter(function(c) { return c.foil && c.foil !== 'n/a' && c.foil !== ''; }).length;
-  var nonFoil = data.length - foil;
+function _optcgColorChart(canvasId, data) {
+  var map = {};
+  data.forEach(function(c) {
+    var col = cardColor(c);
+    if (!col) return;
+    map[col] = (map[col] || 0) + (c.count || 1);
+  });
+  var keys = Object.keys(map);
+  if (!keys.length) {
+    var el = document.getElementById(canvasId);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No color data available.</p>';
+    return;
+  }
+  safeChart(canvasId, {
+    type: 'doughnut',
+    data: { labels: keys, datasets: [{ data: keys.map(function(k) { return map[k]; }), backgroundColor: PALETTE }] },
+    options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
+  });
+}
+
+function _optcgSetChart(canvasId, data) {
+  var map = {};
+  data.forEach(function(c) {
+    var s = c.set || 'unknown';
+    map[s] = (map[s] || 0) + (c.count || 1);
+  });
+  var entries = Object.entries(map).sort(function(a, b) { return b[1] - a[1]; });
+
+  safeChart(canvasId, {
+    type: 'bar',
+    data: {
+      labels: entries.map(function(kv) { return kv[0]; }),
+      datasets: [{ data: entries.map(function(kv) { return kv[1]; }), backgroundColor: PALETTE, borderRadius: 4 }]
+    },
+    options: {
+      indexAxis: 'y',
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: { x: scaleY(), y: scaleX(0) }
+    }
+  });
+}
+
+function _optcgAltChart(canvasId, data) {
+  var alt = data.filter(function(c) { return (c.alt || '').toLowerCase() === 'yes'; }).length;
+  var reg = data.filter(function(c) { return (c.alt || '').toLowerCase() === 'no'; }).length;
+  if (alt + reg === 0) {
+    var el = document.getElementById(canvasId);
+    if (el) el.parentNode.innerHTML = '<p style="color:var(--c7);font-size:0.85rem;padding:8px 0">No alt art data available.</p>';
+    return;
+  }
   safeChart(canvasId, {
     type: 'doughnut',
     data: {
-      labels: ['foil', 'non-foil'],
-      datasets: [{ data: [foil, nonFoil], backgroundColor: ['#c8a820', '#ffc2d4'] }]
+      labels: ['alt art', 'regular'],
+      datasets: [{ data: [alt, reg], backgroundColor: [C.rose, C.petal] }]
     },
     options: { maintainAspectRatio: false, plugins: { legend: legendRight() } }
   });
@@ -94,7 +165,7 @@ function _optcgFoilChart(canvasId, data) {
 // ── OP TCG table ──────────────────────────────────────────────────────────────
 function renderOptcgTable() {
   var search = document.getElementById('o-search').value.toLowerCase();
-  var filter = optcgSet;
+  var filter = optcgSet();
 
   var ownerData = OPTCG.filter(function(c) { return c.owner === optcgOwnerCtx; });
   var rows = filter === 'all'
@@ -107,7 +178,7 @@ function renderOptcgTable() {
   });
 
   // Sort
-  var s = optcgSort;
+  var s = optcgSort();
   if (s.col) {
     var dir = s.dir === 'asc' ? 1 : -1;
     rows.sort(function(a, b) {
@@ -146,9 +217,9 @@ function renderOptcgTable() {
     var altBadge = c.alt ? '<span class="badge badge-sp">' + esc(c.alt) + '</span>' : '\u2014';
     var spBadge  = c.sp  ? '<span class="badge badge-sp">' + esc(c.sp)  + '</span>' : '\u2014';
     var foilBadge = c.foil && c.foil !== 'n/a' && c.foil !== ''
-      ? '<span class="badge badge-foil">' + esc(c.foil) + '</span>' : '\u2014';
+      ? '<span class="badge badge-yes">' + esc(c.foil) + '</span>' : '\u2014';
     var goldBadge = c.gold && c.gold !== 'n/a' && c.gold !== ''
-      ? '<span class="badge badge-foil">' + esc(c.gold) + '</span>' : '\u2014';
+      ? '<span class="badge badge-yes">' + esc(c.gold) + '</span>' : '\u2014';
 
     var tr = document.createElement('tr');
     tr.innerHTML =

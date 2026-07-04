@@ -6,6 +6,7 @@ Run from the repo root: python3 sync_from_obsidian.py
 
 import json
 import re
+from datetime import datetime, timezone
 from pathlib import Path
 
 VAULT      = Path.home() / "Library/Mobile Documents/iCloud~md~obsidian/Documents/personal"
@@ -358,3 +359,6 @@ if __name__ == "__main__":
     with open(OUT_DIR / "playing_cards.json", "w", encoding="utf-8") as f:
         json.dump(playing, f, ensure_ascii=False, indent=2)
     print(f"Wrote {len(playing)} playing cards → playing_cards.json")
+
+    with open(OUT_DIR / "meta.json", "w", encoding="utf-8") as f:
+        json.dump({"synced_at": datetime.now(timezone.utc).isoformat()}, f, indent=2)

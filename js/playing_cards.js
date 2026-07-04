@@ -49,7 +49,7 @@ function _renderPlayingCharts(data, filter) {
 function _playingBrandChart(canvasId, data) {
   var map = {};
   data.forEach(function(c) {
-    var b = titleCase(c.brand || 'Unknown');
+    var b = (c.brand || 'unknown').toLowerCase();
     map[b] = (map[b] || 0) + 1;
   });
   var keys = Object.keys(map);

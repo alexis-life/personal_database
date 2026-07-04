@@ -73,8 +73,8 @@ function _renderMoviesCharts(data, year, isAll) {
 
 function _movRatingChart(id, data) {
   var ratingColors = [
-    '#ffe0e9','#ffc2d4','#ff9ebb','#ff7aa2','#ff7aa2',
-    '#e05780','#e05780','#b9375e','#8a2846','#602437'
+    C.pale, C.petal, C.blush, C.salmon, C.salmon,
+    C.pink, C.pink, C.rose, C.maroon, C.plum
   ];
   var counts = [0,0,0,0,0,0,0,0,0,0];
   data.filter(function(m) { return m.rating != null && m.rating >= 1 && m.rating <= 10; })
@@ -101,7 +101,7 @@ function _movYearsChart(id, data) {
 
   safeChart(id, {
     type: 'bar',
-    data: { labels: years, datasets: [{ data: years.map(function(y) { return yearCounts[y]; }), backgroundColor: '#b9375e', borderRadius: 4 }] },
+    data: { labels: years, datasets: [{ data: years.map(function(y) { return yearCounts[y]; }), backgroundColor: C.rose, borderRadius: 4 }] },
     options: {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },
@@ -212,7 +212,7 @@ function _movMonthsChart(id, data) {
 
   safeChart(id, {
     type: 'bar',
-    data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: '#b9375e', borderRadius: 4 }] },
+    data: { labels: MONTH_NAMES, datasets: [{ data: counts, backgroundColor: C.rose, borderRadius: 4 }] },
     options: {
       maintainAspectRatio: false,
       plugins: { legend: { display: false } },

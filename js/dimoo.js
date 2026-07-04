@@ -89,17 +89,17 @@ function _renderDimooCharts(data, isAll) {
       safeChart('chart-dimoo-bar', {
         type: 'bar',
         data: { labels: labels, datasets: [
-          { label: 'owned',   data: ownedCounts,   backgroundColor: '#b9375e' },
-          { label: 'missing', data: missingCounts, backgroundColor: '#ffc2d4' }
+          { label: 'owned',   data: ownedCounts,   backgroundColor: C.rose },
+          { label: 'missing', data: missingCounts, backgroundColor: C.petal }
         ]},
         options: {
           maintainAspectRatio: false,
           indexAxis: 'y',
           scales: {
-            x: { stacked: true, ticks: { font: { family: 'Poppins', size: 11 }, color: '#8a2846' }, grid: { color: '#ffe0e9' } },
-            y: { stacked: true, ticks: { font: { family: 'Poppins', size: 10 }, color: '#522e38' }, grid: { display: false }, afterFit: function(scale) { scale.width = Math.max(scale.width, 150); } }
+            x: { stacked: true, ticks: { font: { family: 'Poppins', size: 11 }, color: C.maroon }, grid: { color: C.pale } },
+            y: { stacked: true, ticks: { font: { family: 'Poppins', size: 10 }, color: C.text }, grid: { display: false }, afterFit: function(scale) { scale.width = Math.max(scale.width, 150); } }
           },
-          plugins: { legend: { labels: { font: { family: 'Poppins', size: 12 }, color: '#522e38' } } }
+          plugins: { legend: { labels: { font: { family: 'Poppins', size: 12 }, color: C.text } } }
         }
       });
 
@@ -199,14 +199,14 @@ function _dimooGrowthChart(canvasId, data) {
     data: { labels: months, datasets: [{
       label: 'owned',
       data: cumData,
-      borderColor: '#b9375e',
-      backgroundColor: 'rgba(185,55,94,0.12)',
-      fill: true, tension: 0.3, pointRadius: 3, pointBackgroundColor: '#b9375e'
+      borderColor: C.rose,
+      backgroundColor: 'rgba(185,55,94,0.12)', // C.rose (#b9375e) at low alpha
+      fill: true, tension: 0.3, pointRadius: 3, pointBackgroundColor: C.rose
     }]},
     options: {
       maintainAspectRatio: false,
       scales: {
-        x: { ticks: { font: { family: 'Poppins', size: 10 }, color: '#8a2846', maxRotation: 45 }, grid: { color: '#ffe0e9' } },
+        x: { ticks: { font: { family: 'Poppins', size: 10 }, color: C.maroon, maxRotation: 45 }, grid: { color: C.pale } },
         y: scaleY()
       },
       plugins: { legend: { display: false } }
