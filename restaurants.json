@@ -142,7 +142,7 @@
   {
     "name": "prime bbq",
     "date": "2025-09-17",
-    "location": "san mateo",
+    "location": "33 w 25th ave, san mateo, ca 94403",
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "no",
@@ -170,7 +170,7 @@
   {
     "name": "supreme pot",
     "date": "2025-09-19",
-    "location": "daly city",
+    "location": "3 st francis square, daly city, ca 94015",
     "people": "ellison bernabe, eric trinh, jordan mai",
     "would_return": "yes",
     "return_visit": "no",
@@ -198,7 +198,7 @@
   {
     "name": "zhangliang malatang",
     "date": "2025-09-26",
-    "location": "san mateo",
+    "location": "139 s b st, san mateo, ca 94401",
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "no",
@@ -226,7 +226,7 @@
   {
     "name": "ushi taro ramen sunset",
     "date": "2025-09-27",
-    "location": "sunset sf",
+    "location": "1382 9th ave, san francisco, ca 94122",
     "people": "eric trinh, jordan mai",
     "would_return": "yes",
     "return_visit": "yes",
@@ -338,7 +338,7 @@
   {
     "name": "prime bbq",
     "date": "2025-10-24",
-    "location": "",
+    "location": "33 w 25th ave, san mateo, ca 94403",
     "people": "jordan mai, eric trinh",
     "would_return": "yes",
     "return_visit": "yes",
@@ -366,7 +366,7 @@
   {
     "name": "cq noodle",
     "date": "2025-11-05",
-    "location": "sf",
+    "location": "2121 clement st, san francisco, ca 94121",
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "no",
@@ -394,7 +394,7 @@
   {
     "name": "tokyo sushi & bar",
     "date": "2025-11-07",
-    "location": "skyline",
+    "location": "2278 westborough blvd, ste 201, south san francisco, ca 94080",
     "people": "jordan mai, eric trinh, walter li",
     "would_return": "maybe",
     "return_visit": "no",
@@ -506,7 +506,7 @@
   {
     "name": "ramen nagi",
     "date": "2025-12-26",
-    "location": "valley fair",
+    "location": "2855 stevens creek blvd, santa clara, ca 95050",
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "yes",
@@ -520,7 +520,7 @@
   {
     "name": "seapot daly city",
     "date": "2025-12-31",
-    "location": "daly city",
+    "location": "383 gellert blvd, daly city, ca 94015",
     "people": "jordan mai",
     "would_return": "yes",
     "return_visit": "yes",
@@ -548,7 +548,7 @@
   {
     "name": "pizza my heart",
     "date": "2026-01-03",
-    "location": "valley fair",
+    "location": "2855 stevens creek blvd, santa clara, ca 95050",
     "people": "bernice tang",
     "would_return": "maybe",
     "return_visit": "no",
@@ -674,7 +674,7 @@
   {
     "name": "tai wu restaurant",
     "date": "2026-02-01",
-    "location": "foster city",
+    "location": "1080 foster city blvd, foster city, ca 94404",
     "people": "lucia huang, adrianna tan",
     "would_return": "yes",
     "return_visit": "no",
@@ -744,7 +744,7 @@
   {
     "name": "breakfast at tiffany’s",
     "date": "2026-02-14",
-    "location": "sunset",
+    "location": "2499 san bruno ave, san francisco, ca 94134",
     "people": "jordan mai",
     "would_return": "maybe",
     "return_visit": "no",
@@ -786,7 +786,7 @@
   {
     "name": "ramen yamada-ya san francisco",
     "date": "2026-02-28",
-    "location": "",
+    "location": "1728 buchanan st, san francisco, ca 94115",
     "people": "jordan mai, eric trinh, ellison bernabe, jomar",
     "would_return": "",
     "return_visit": "yes",
@@ -1066,7 +1066,7 @@
   {
     "name": "yun tea house",
     "date": "2026-04-27",
-    "location": "",
+    "location": "4344 convoy st, suite m, san diego, ca 92111",
     "people": "jordan mai",
     "would_return": "",
     "return_visit": "",
@@ -1080,7 +1080,7 @@
   {
     "name": "the mini donut company",
     "date": "2026-04-28",
-    "location": "",
+    "location": "4545 la jolla village dr, ste fc-9, san diego, ca 92122",
     "people": "jordan mai",
     "would_return": "",
     "return_visit": "",
