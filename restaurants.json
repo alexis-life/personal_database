@@ -658,20 +658,6 @@
     "overall": "C"
   },
   {
-    "name": "sweethoney dessert 杏記甜品店",
-    "date": "2026-02-01",
-    "location": "1066 foster city blvd, foster city, ca 94404",
-    "people": "lucia huang, adrianna tan",
-    "would_return": "no",
-    "return_visit": "no",
-    "cuisine": "chinese",
-    "food": "B",
-    "service": "C",
-    "atmosphere": "B",
-    "value": "C",
-    "overall": "C"
-  },
-  {
     "name": "tai wu restaurant",
     "date": "2026-02-01",
     "location": "1080 foster city blvd, foster city, ca 94404",
@@ -1036,20 +1022,6 @@
     "overall": "B+"
   },
   {
-    "name": "wushiland boba - utc",
-    "date": "2026-04-26",
-    "location": "4309 La Jolla Village Dr STE 2300, San Diego, CA 92122",
-    "people": "jordan mai",
-    "would_return": "",
-    "return_visit": "",
-    "cuisine": "chinese",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
-  },
-  {
     "name": "kura revolving sushi bar",
     "date": "2026-04-27",
     "location": "4609 convoy st ste f, san diego, ca 92111",
@@ -1062,34 +1034,6 @@
     "atmosphere": "B",
     "value": "B",
     "overall": "A-"
-  },
-  {
-    "name": "yun tea house",
-    "date": "2026-04-27",
-    "location": "4344 convoy st, suite m, san diego, ca 92111",
-    "people": "jordan mai",
-    "would_return": "",
-    "return_visit": "",
-    "cuisine": "chinese",
-    "food": "B",
-    "service": "B",
-    "atmosphere": "S",
-    "value": "B",
-    "overall": "B+"
-  },
-  {
-    "name": "the mini donut company",
-    "date": "2026-04-28",
-    "location": "4545 la jolla village dr, ste fc-9, san diego, ca 92122",
-    "people": "jordan mai",
-    "would_return": "",
-    "return_visit": "",
-    "cuisine": "american",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
   },
   {
     "name": "tang bar san mateo",
