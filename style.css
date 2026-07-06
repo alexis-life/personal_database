@@ -515,6 +515,10 @@ tbody tr:hover td { background: #fff0f3; }
 }
 @media (max-width: 599px) {
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .chart-grid { grid-template-columns: 1fr; }
+  .chart-grid, #r-chart-grid, #m-chart-grid { grid-template-columns: 1fr; }
   #global-search-wrap { width: 140px; }
+}
+/* Phones in landscape: 1 chart per row instead of 2 (matches portrait) */
+@media (orientation: landscape) and (max-height: 500px) {
+  .chart-grid, #r-chart-grid, #m-chart-grid { grid-template-columns: 1fr; }
 }
