@@ -1188,5 +1188,19 @@
     "atmosphere": "S",
     "value": "B",
     "overall": "A"
+  },
+  {
+    "name": "ramen nagi",
+    "date": "2026-07-05",
+    "location": "2855 stevens creek blvd, santa clara, ca 95050",
+    "people": "jordan mai, eric trinh, bernice tang",
+    "would_return": "",
+    "return_visit": "yes",
+    "cuisine": "japanese",
+    "food": "A",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "B",
+    "overall": "A"
   }
 ]
