@@ -5,11 +5,13 @@ Run from the repo root: python3 sync_from_obsidian.py
 """
 
 import json
+import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-VAULT      = Path.home() / "Library/Mobile Documents/iCloud~md~obsidian/Documents/personal"
+VAULT      = Path(os.environ["OBSIDIAN_VAULT"]) if os.environ.get("OBSIDIAN_VAULT") \
+             else Path.home() / "Library/Mobile Documents/iCloud~md~obsidian/Documents/personal"
 DIMOOS_DIR  = VAULT / "cards/dimoos"
 MOVIES_DIR  = VAULT / "cards/movies"
 REST_DIR    = VAULT / "cards/restaurants"
