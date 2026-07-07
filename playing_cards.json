@@ -2,67 +2,86 @@
   {
     "brand": "bicycle",
     "name": "naruto playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "panda playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "prismatic playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "hello kitty playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "hello kitty 50th anniversary playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney tim burton's nightmare before christmas inspired playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney stitch inspired playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney alice in wonderland inspired playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "bored ape playing cards",
-    "date": "08/31/2025"
+    "date": "08/31/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney frozen inspired playing cards",
-    "date": "08/31/2025"
+    "date": "08/31/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney the lion king inspired playing cards",
-    "date": "08/31/2025"
+    "date": "08/31/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney classic mickey mouse inspired playing cards",
-    "date": "08/31/2025"
+    "date": "08/31/2025",
+    "group": ""
   },
   {
     "brand": "bicycle",
     "name": "disney classic minnie mouse playing cards",
-    "date": "08/31/2025"
+    "date": "08/31/2025",
+    "group": ""
+  },
+  {
+    "brand": "bicycle",
+    "name": "disney villains (purple",
+    "date": "01/24/2026",
+    "group": ""
   },
   {
     "brand": "bicycle",
@@ -72,67 +91,98 @@
   {
     "brand": "card mafia",
     "name": "one piece brook foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece usopp foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece nami foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece sanji foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece monkey d. luffy foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece roronoa zoro foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece chopper foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece nico robin foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "card mafia",
     "name": "one piece franky foiled playing cards",
-    "date": "08/28/2025"
+    "date": "08/28/2025",
+    "group": "cardmafia"
   },
   {
     "brand": "stella factory",
     "name": "peak playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": "misc"
   },
   {
     "brand": "baobao restaurant",
     "name": "boba playing cards",
-    "date": "07/19/2021"
+    "date": "07/19/2021",
+    "group": "misc"
   },
   {
     "brand": "baobao restaurant",
     "name": "matcha boba gilded edition playing cards",
-    "date": "12/15/2022"
+    "date": "12/15/2022",
+    "group": "misc"
   },
   {
     "brand": "baobao restaurant",
     "name": "instant noodles spicy edition playing cards",
-    "date": "12/15/2022"
+    "date": "12/15/2022",
+    "group": "misc"
+  },
+  {
+    "brand": "mazedeck",
+    "name": "illusion playing cards",
+    "date": "02/03/2026",
+    "group": "misc"
+  },
+  {
+    "brand": "-",
+    "name": "the world of shirow masamune 2025 playing cards",
+    "date": "01/09/2026",
+    "group": "misc"
+  },
+  {
+    "brand": "cosmos (yasin",
+    "name": "stellar constellation uv playing cards",
+    "date": "04/12/2026",
+    "group": "misc"
   },
   {
     "brand": "mazedeck",
@@ -152,31 +202,37 @@
   {
     "brand": "theory11",
     "name": "deadpool playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "theory11",
     "name": "keith haring playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "theory11",
     "name": "love me playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "theory11",
     "name": "rick and morty playing cards",
-    "date": "08/27/2025"
+    "date": "08/27/2025",
+    "group": ""
   },
   {
     "brand": "theory11",
     "name": "the dark knight x batman playing cards",
-    "date": "01/24/2026"
+    "date": "01/24/2026",
+    "group": ""
   },
   {
     "brand": "theory11",
     "name": "wicked playing cards",
-    "date": "12/17/2025"
+    "date": "12/17/2025",
+    "group": ""
   }
 ]
