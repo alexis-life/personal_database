@@ -2,14 +2,18 @@
 
 // ── Playing Cards rendering ───────────────────────────────────────────────────
 
+function playingCardsForFilter(filter) {
+  if (filter === 'all')  return PLAYING.slice();
+  if (filter === 'misc') return PLAYING.filter(function(c) { return MISC_BRANDS.has(c.brand); });
+  return PLAYING.filter(function(c) { return c.brand === filter; });
+}
+
 function renderPlaying() {
   var filter = playingBrand;
-  var data = filter === 'all'
-    ? PLAYING.slice()
-    : PLAYING.filter(function(c) { return c.brand === filter; });
+  var data = playingCardsForFilter(filter);
 
   var section = document.getElementById('section-playing');
-  section.classList.toggle('brand-filter', filter !== 'all');
+  section.classList.toggle('brand-filter', filter !== 'all' && filter !== 'misc');
 
   _renderPlayingStats(data, filter);
   _renderPlayingCharts(data, filter);
@@ -110,9 +114,7 @@ function renderPlayingTable() {
   var search = document.getElementById('p-search').value.toLowerCase();
   var filter = playingBrand;
 
-  var rows = filter === 'all'
-    ? PLAYING.slice()
-    : PLAYING.filter(function(c) { return c.brand === filter; });
+  var rows = playingCardsForFilter(filter);
 
   if (search) rows = rows.filter(function(c) {
     return (c.name  || '').toLowerCase().indexOf(search) !== -1 ||

@@ -47,6 +47,10 @@ var C = {
 };
 var GOLD = '#c8a820'; // thematic accent for SEC rarity / foil — intentionally outside PALETTE
 
+// Playing-card brands that get grouped under a single "Misc" filter instead of
+// their own sidebar entry (novelty/one-off brands, not real playing-card lines).
+var MISC_BRANDS = new Set(['card mafia', 'cardmafia', 'stella factory', 'baobao restaurant']);
+
 // Grade rank for sort comparison  (higher = better)
 var GRADE_RANK = { S: 5, A: 4, B: 3, C: 2, D: 1 };
 function gradeRank(g) { return GRADE_RANK[gradeBase(g)] || 0; }
@@ -351,12 +355,14 @@ function buildAllSubLists() {
     cuisineSel.appendChild(opt);
   });
 
-  // Playing card brands (in file order)
+  // Playing card brands (in file order) — misc/novelty brands group under one "Misc" entry
   var playingBrands = Array.from(new Set(PLAYING.map(function(c) { return c.brand; })));
-  buildSubList('sub-playing',
-    [{ label: 'All Brands', value: 'all' }].concat(playingBrands.map(function(b) { return { label: titleCase(b), value: b }; })),
-    function(val) { setSubFilter('playing', val); }
-  );
+  var realBrands = playingBrands.filter(function(b) { return !MISC_BRANDS.has(b); });
+  var hasMisc     = playingBrands.some(function(b) { return MISC_BRANDS.has(b); });
+  var playingItems = [{ label: 'All Brands', value: 'all' }]
+    .concat(realBrands.map(function(b) { return { label: titleCase(b), value: b }; }));
+  if (hasMisc) playingItems.push({ label: 'Misc', value: 'misc' });
+  buildSubList('sub-playing', playingItems, function(val) { setSubFilter('playing', val); });
 }
 
 // navKey → section, so a URL hash like #jordan-optcg can be resolved on load
