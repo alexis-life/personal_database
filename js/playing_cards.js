@@ -3,9 +3,15 @@
 // ── Playing Cards rendering ───────────────────────────────────────────────────
 
 function playingCardsForFilter(filter) {
-  if (filter === 'all')  return PLAYING.slice();
-  if (filter === 'misc') return PLAYING.filter(function(c) { return MISC_BRANDS.has(c.brand); });
-  return PLAYING.filter(function(c) { return c.brand === filter; });
+  // Card Mafia lives on its own tab — pull it in specifically when asked,
+  // otherwise keep it out of the main Playing Cards view entirely.
+  if (filter === 'cardmafia') {
+    return PLAYING.filter(function(c) { return c.group === 'cardmafia'; });
+  }
+  var base = PLAYING.filter(function(c) { return c.group !== 'cardmafia'; });
+  if (filter === 'all')  return base;
+  if (filter === 'misc') return base.filter(function(c) { return c.group === 'misc'; });
+  return base.filter(function(c) { return c.brand === filter; });
 }
 
 function renderPlaying() {

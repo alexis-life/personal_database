@@ -1,12 +1,13 @@
 'use strict';
 
 // ── Global state ──────────────────────────────────────────────────────────────
-var DIM = [], MOV = [], REST = [], OPTCG = [], PLAYING = [];
+var DIM = [], MOV = [], REST = [], OPTCG = [], PLAYING = [], DESSERT = [];
 var CI = {};
 var activeSection = 'dimoo';
 var dimooFilter   = 'all';
 var movYear       = 'all';
 var restYear      = 'all';
+var dessertYear   = 'all';
 var optcgOwnerCtx  = 'alexis'; // 'alexis' | 'jordan'
 var playingBrand   = 'all';
 
@@ -22,6 +23,7 @@ var dimooOwnedSeries = '';    // per-series default: show all statuses
 var dimooSort        = { col: null, dir: 'asc' };
 var movSort          = { col: null, dir: 'asc' };
 var restSort         = { col: null, dir: 'asc' };
+var dessertSort      = { col: null, dir: 'asc' };
 var optcgSortAlexis  = { col: 'number', dir: 'asc' };
 var optcgSortJordan  = { col: 'number', dir: 'asc' };
 var playingSort      = { col: null, dir: 'asc' };
@@ -47,9 +49,10 @@ var C = {
 };
 var GOLD = '#c8a820'; // thematic accent for SEC rarity / foil — intentionally outside PALETTE
 
-// Playing-card brands that get grouped under a single "Misc" filter instead of
-// their own sidebar entry (novelty/one-off brands, not real playing-card lines).
-var MISC_BRANDS = new Set(['card mafia', 'cardmafia', 'stella factory', 'baobao restaurant']);
+// Playing cards carry a "group" field set by the sync script based on which
+// Obsidian file they came from: cards from cardmafia.md group under "Card Mafia",
+// cards from misc.md group under "Misc" — both are sub-filters within the
+// Playing Cards tab, so adding a new brand row to either file just works.
 
 // Grade rank for sort comparison  (higher = better)
 var GRADE_RANK = { S: 5, A: 4, B: 3, C: 2, D: 1 };
@@ -165,7 +168,7 @@ function updateSortIndicators(sectionId, sortObj) {
 
 // ── Breadcrumb ────────────────────────────────────────────────────────────────
 function updateBreadcrumb(section, filter) {
-  var names = { dimoo: 'Dimoo Collection', movies: 'Movies', restaurants: 'Restaurants', optcg: 'OP TCG', 'jordan-optcg': "Jordan's Collection", playing: 'Playing Cards' };
+  var names = { dimoo: 'Dimoo Collection', movies: 'Movies', restaurants: 'Restaurants', dessert: 'Dessert Shops', optcg: 'OP TCG', 'jordan-optcg': "Jordan's Collection", playing: 'Playing Cards' };
   var parent = names[section] || section;
   var bc = document.getElementById('breadcrumb');
 
@@ -179,7 +182,7 @@ function updateBreadcrumb(section, filter) {
       bc.innerHTML = '<span class="bc-current">' + esc(parent) + '</span>';
     }
   } else {
-    var display = section === 'dimoo' ? titleCase(filter) : (section === 'optcg' || section === 'jordan-optcg') ? formatSetName(filter) : section === 'playing' ? titleCase(filter) : filter;
+    var display = section === 'dimoo' ? titleCase(filter) : (section === 'optcg' || section === 'jordan-optcg') ? formatSetName(filter) : section === 'playing' ? (filter === 'cardmafia' ? 'Card Mafia' : titleCase(filter)) : filter;
     bc.innerHTML =
       '<span class="bc-parent" data-section="' + esc(section) + '">' + esc(parent) + '</span>' +
       '<span class="bc-sep">/</span>' +
@@ -259,6 +262,11 @@ function setSubFilter(section, value) {
     setSubItemActive('sub-restaurants', value);
     renderRestaurants();
     updateBreadcrumb('restaurants', value === 'all' ? null : value);
+  } else if (section === 'dessert') {
+    dessertYear = value;
+    setSubItemActive('sub-dessert', value);
+    renderDessertShops();
+    updateBreadcrumb('dessert', value === 'all' ? null : value);
   } else if (section === 'optcg') {
     optcgSetAlexis  = value;
     optcgSortAlexis = { col: 'number', dir: 'asc' };
@@ -291,6 +299,7 @@ function showSection(section, navKey, expand) {
   if (section === 'dimoo')            renderDimoo();
   else if (section === 'movies')      renderMovies();
   else if (section === 'restaurants') renderRestaurants();
+  else if (section === 'dessert')     renderDessertShops();
   else if (section === 'optcg')       renderOptcg();
   else if (section === 'playing')     renderPlaying();
 }
@@ -326,6 +335,15 @@ function buildAllSubLists() {
     function(val) { setSubFilter('restaurants', val); }
   );
 
+  // Dessert shop years descending
+  var dessertYears = Array.from(new Set(
+    DESSERT.map(function(d) { return d.date ? d.date.slice(0, 4) : null; }).filter(Boolean)
+  )).sort().reverse();
+  buildSubList('sub-dessert',
+    [{ label: 'All', value: 'all' }].concat(dessertYears.map(function(y) { return { label: y, value: y }; })),
+    function(val) { setSubFilter('dessert', val); }
+  );
+
   // OP TCG sets — separate sub-lists per owner
   var alexisSets = Array.from(new Set(
     OPTCG.filter(function(c) { return c.owner === 'alexis'; }).map(function(c) { return c.set; })
@@ -355,26 +373,43 @@ function buildAllSubLists() {
     cuisineSel.appendChild(opt);
   });
 
-  // Playing card brands (in file order) — misc/novelty brands group under one "Misc" entry
-  var playingBrands = Array.from(new Set(PLAYING.map(function(c) { return c.brand; })));
-  var realBrands = playingBrands.filter(function(b) { return !MISC_BRANDS.has(b); });
-  var hasMisc     = playingBrands.some(function(b) { return MISC_BRANDS.has(b); });
+  // Dessert shop type filter dropdown
+  var dessertTypes = Array.from(new Set(
+    DESSERT.map(function(d) { return d.type; }).filter(Boolean)
+  )).sort();
+  var typeSel = document.getElementById('ds-filter-type');
+  dessertTypes.forEach(function(t) {
+    var opt = document.createElement('option');
+    opt.value = t;
+    opt.textContent = t.replace(/_/g, ' ');
+    typeSel.appendChild(opt);
+  });
+
+  // Playing card brands (in file order) — cardmafia.md and misc.md brands each
+  // group under one sidebar sub-item instead of listing every brand separately
+  var realBrands = Array.from(new Set(
+    PLAYING.filter(function(c) { return !c.group; }).map(function(c) { return c.brand; })
+  ));
+  var hasCardMafia = PLAYING.some(function(c) { return c.group === 'cardmafia'; });
+  var hasMisc      = PLAYING.some(function(c) { return c.group === 'misc'; });
   var playingItems = [{ label: 'All Brands', value: 'all' }]
     .concat(realBrands.map(function(b) { return { label: titleCase(b), value: b }; }));
-  if (hasMisc) playingItems.push({ label: 'Misc', value: 'misc' });
+  if (hasCardMafia) playingItems.push({ label: 'Card Mafia', value: 'cardmafia' });
+  if (hasMisc)      playingItems.push({ label: 'Misc', value: 'misc' });
   buildSubList('sub-playing', playingItems, function(val) { setSubFilter('playing', val); });
 }
 
 // navKey → section, so a URL hash like #jordan-optcg can be resolved on load
 var NAV_KEY_SECTIONS = {
   dimoo: 'dimoo', optcg: 'optcg', 'jordan-optcg': 'optcg',
-  movies: 'movies', restaurants: 'restaurants', playing: 'playing'
+  movies: 'movies', restaurants: 'restaurants', dessert: 'dessert', playing: 'playing'
 };
 
 function goToSection(section, navKey) {
   if (section === 'dimoo')       dimooFilter  = 'all';
   if (section === 'movies')      movYear      = 'all';
   if (section === 'restaurants') restYear     = 'all';
+  if (section === 'dessert')     dessertYear  = 'all';
   if (section === 'optcg') {
     optcgOwnerCtx = navKey === 'jordan-optcg' ? 'jordan' : 'alexis';
     if (optcgOwnerCtx === 'jordan') { optcgSetJordan = 'all'; optcgSortJordan = { col: 'number', dir: 'asc' }; }
@@ -413,6 +448,9 @@ function setupFilters() {
   document.getElementById('r-filter-return').addEventListener('change',  function() { renderRestaurantsTable(); });
   document.getElementById('r-filter-cuisine').addEventListener('change', function() { renderRestaurantsTable(); });
   document.getElementById('r-search').addEventListener('input',          function() { renderRestaurantsTable(); });
+  document.getElementById('ds-filter-return').addEventListener('change', function() { renderDessertShopsTable(); });
+  document.getElementById('ds-filter-type').addEventListener('change',  function() { renderDessertShopsTable(); });
+  document.getElementById('ds-search').addEventListener('input',        function() { renderDessertShopsTable(); });
   document.getElementById('o-filter-region').addEventListener('change', function() { renderOptcgTable(); });
   document.getElementById('o-search').addEventListener('input', function() { renderOptcgTable(); });
   document.getElementById('p-search').addEventListener('input',        function() { renderPlayingTable(); });
@@ -452,6 +490,17 @@ function setupSortable() {
     });
   });
 
+  // Dessert Shops
+  document.querySelectorAll('#section-dessert th[data-sort]').forEach(function(th) {
+    th.classList.add('sortable');
+    th.addEventListener('click', function() {
+      var col = th.dataset.sort;
+      dessertSort.dir = dessertSort.col === col && dessertSort.dir === 'asc' ? 'desc' : 'asc';
+      dessertSort.col = col;
+      renderDessertShopsTable();
+    });
+  });
+
   // OP TCG
   document.querySelectorAll('#section-optcg th[data-sort]').forEach(function(th) {
     th.classList.add('sortable');
@@ -488,6 +537,9 @@ function buildGlobalSearchIndex() {
   REST.forEach(function(r) {
     index.push({ type: 'restaurants', title: r.name, sub: 'restaurant — ' + (r.location || ''), item: r });
   });
+  DESSERT.forEach(function(d) {
+    index.push({ type: 'dessert', title: d.name, sub: 'dessert shop — ' + (d.location || ''), item: d });
+  });
   OPTCG.forEach(function(c) {
     index.push({ type: 'optcg', title: c.name, sub: (c.owner === 'jordan' ? "jordan's" : "alexis's") + ' op tcg — ' + formatSetName(c.set || ''), item: c });
   });
@@ -517,6 +569,12 @@ function goToSearchResult(result) {
     setSubFilter('restaurants', year);
     document.getElementById('r-search').value = item.name || '';
     renderRestaurantsTable();
+  } else if (result.type === 'dessert') {
+    var year = item.date ? item.date.slice(0, 4) : 'all';
+    showSection('dessert', 'dessert', true);
+    setSubFilter('dessert', year);
+    document.getElementById('ds-search').value = item.name || '';
+    renderDessertShopsTable();
   } else if (result.type === 'optcg') {
     var navKey = item.owner === 'jordan' ? 'jordan-optcg' : 'optcg';
     optcgOwnerCtx = item.owner === 'jordan' ? 'jordan' : 'alexis';
@@ -526,7 +584,7 @@ function goToSearchResult(result) {
     renderOptcgTable();
   } else if (result.type === 'playing') {
     showSection('playing', 'playing', true);
-    setSubFilter('playing', item.brand || 'all');
+    setSubFilter('playing', item.group === 'cardmafia' ? 'cardmafia' : (item.brand || 'all'));
     document.getElementById('p-search').value = item.name || item.brand || '';
     renderPlayingTable();
   }
@@ -617,8 +675,11 @@ function setupTodayCallout() {
   var restHits = REST.filter(function(r) {
     return r.date && r.date.slice(5, 10) === mmdd && r.date.slice(0, 4) !== curYear;
   });
+  var dessertHits = DESSERT.filter(function(d) {
+    return d.date && d.date.slice(5, 10) === mmdd && d.date.slice(0, 4) !== curYear;
+  });
 
-  if (!movieHits.length && !restHits.length) return;
+  if (!movieHits.length && !restHits.length && !dessertHits.length) return;
 
   var lines = [];
   movieHits.forEach(function(m) {
@@ -630,6 +691,11 @@ function setupTodayCallout() {
     var year = r.date.slice(0, 4);
     var grade = r.overall ? ' (' + r.overall + ')' : '';
     lines.push('<div class="tc-line">🍽️ in ' + esc(year) + ', you ate at <strong>' + esc(r.name) + '</strong>' + esc(grade) + '</div>');
+  });
+  dessertHits.forEach(function(d) {
+    var year = d.date.slice(0, 4);
+    var grade = d.overall ? ' (' + d.overall + ')' : '';
+    lines.push('<div class="tc-line">🍰 in ' + esc(year) + ', you went to <strong>' + esc(d.name) + '</strong>' + esc(grade) + '</div>');
   });
 
   var el = document.getElementById('today-callout');
@@ -651,7 +717,7 @@ function setupTodayCallout() {
 function updateTodayCalloutVisibility() {
   var el = document.getElementById('today-callout');
   var shouldShow = todayCalloutReady && !todayCalloutDismissed &&
-    (activeSection === 'movies' || activeSection === 'restaurants');
+    (activeSection === 'movies' || activeSection === 'restaurants' || activeSection === 'dessert');
   el.classList.toggle('show', shouldShow);
 }
 
@@ -661,13 +727,14 @@ async function init() {
     fetchJSON('dimoos.json'),
     fetchJSON('movies.json'),
     fetchJSON('restaurants.json'),
+    fetchJSON('dessert_shops.json'),
     fetchJSON('optcg.json'),
     fetchJSON('playing_cards.json'),
     fetchJSON('meta.json')
   ]);
-  DIM = results[0]; MOV = results[1]; REST = results[2]; OPTCG = results[3]; PLAYING = results[4];
+  DIM = results[0]; MOV = results[1]; REST = results[2]; DESSERT = results[3]; OPTCG = results[4]; PLAYING = results[5];
 
-  var meta = results[5];
+  var meta = results[6];
   if (meta && meta.synced_at) {
     var el = document.getElementById('last-synced');
     if (el) el.textContent = 'last synced: ' + new Date(meta.synced_at).toLocaleString([], {

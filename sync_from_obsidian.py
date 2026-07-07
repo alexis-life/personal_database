@@ -15,6 +15,7 @@ VAULT      = Path(os.environ["OBSIDIAN_VAULT"]) if os.environ.get("OBSIDIAN_VAUL
 DIMOOS_DIR  = VAULT / "cards/dimoos"
 MOVIES_DIR  = VAULT / "cards/movies"
 REST_DIR    = VAULT / "cards/restaurants"
+DESSERT_DIR = VAULT / "cards/dessert shop"
 OPTCG_DIR   = VAULT / "cards/op tcg cards"
 PLAYING_DIR = VAULT / "cards/playing cards"
 OUT_DIR    = Path(__file__).parent
@@ -68,10 +69,15 @@ def parse_dimoo_date(s):
 
 
 def extract_inline_fields(cell_text):
-    """Extract all (key:: value) patterns from a table cell string."""
+    """Extract all (key:: value) patterns from a table cell string.
+
+    Value may itself contain one level of parens (e.g. "cosmos (yasin)"),
+    so the value pattern allows a single nested (...) group before the
+    field's own closing paren.
+    """
     return {
         m.group(1): m.group(2).strip()
-        for m in re.finditer(r"\((\w+)::\s*([^)]*)\)", cell_text)
+        for m in re.finditer(r"\((\w+)::\s*((?:[^()]|\([^()]*\))*)\)", cell_text)
     }
 
 
@@ -201,35 +207,77 @@ def load_movies():
 
 def load_restaurants():
     restaurants = []
-    for f in sorted(REST_DIR.glob("*.md")):
-        fm = parse_frontmatter(f)
-        if not fm.get("restaurant_name"):
+    for year_dir in sorted(REST_DIR.iterdir()):
+        if not year_dir.is_dir():
             continue
+        for f in sorted(year_dir.glob("*.md")):
+            fm = parse_frontmatter(f)
+            if not fm.get("restaurant_name"):
+                continue
 
-        # Extract cuisine from tags:: field (e.g. "#cuisine/japanese")
-        cuisine = ""
-        tags_raw = fm.get("tags", "")
-        m = re.search(r"#cuisine/(\S+)", tags_raw)
-        if m:
-            cuisine = m.group(1).lower()
+            # Extract cuisine from tags:: field (e.g. "#cuisine/japanese")
+            cuisine = ""
+            tags_raw = fm.get("tags", "")
+            m = re.search(r"#cuisine/(\S+)", tags_raw)
+            if m:
+                cuisine = m.group(1).lower()
 
-        restaurants.append({
-            "name":         fm.get("restaurant_name", ""),
-            "date":         to_iso_date(fm.get("date", "")),
-            "location":     fm.get("location", ""),
-            "people":       fm.get("people", ""),
-            "would_return": fm.get("would_return", ""),
-            "return_visit": fm.get("return_visit", ""),
-            "cuisine":      cuisine,
-            "food":         fm.get("food", ""),
-            "service":      fm.get("service", ""),
-            "atmosphere":   fm.get("atmosphere", ""),
-            "value":        fm.get("value", ""),
-            "overall":      fm.get("overall", ""),
-        })
+            restaurants.append({
+                "name":         fm.get("restaurant_name", ""),
+                "date":         to_iso_date(fm.get("date", "")),
+                "location":     fm.get("location", ""),
+                "people":       fm.get("people", ""),
+                "would_return": fm.get("would_return", ""),
+                "return_visit": fm.get("return_visit", ""),
+                "cuisine":      cuisine,
+                "food":         fm.get("food", ""),
+                "service":      fm.get("service", ""),
+                "atmosphere":   fm.get("atmosphere", ""),
+                "value":        fm.get("value", ""),
+                "overall":      fm.get("overall", ""),
+            })
 
     restaurants.sort(key=lambda r: r.get("date") or "")
     return restaurants
+
+
+# ── Dessert Shops ─────────────────────────────────────────────────────────────
+
+def load_dessert_shops():
+    shops = []
+    for year_dir in sorted(DESSERT_DIR.iterdir()):
+        if not year_dir.is_dir():
+            continue
+        for f in sorted(year_dir.glob("*.md")):
+            fm = parse_frontmatter(f)
+            if not fm.get("shop_name"):
+                continue
+
+            tags_raw = fm.get("tags", "")
+            types  = [t.lower() for t in re.findall(r"#type/(\S+)",  tags_raw)]
+            styles = [s.lower() for s in re.findall(r"#style/(\S+)", tags_raw)]
+            visit_m = re.search(r"#visit/(\S+)", tags_raw)
+            visit_type = visit_m.group(1).lower() if visit_m else ""
+
+            shops.append({
+                "name":         fm.get("shop_name", ""),
+                "date":         to_iso_date(fm.get("date", "")),
+                "location":     fm.get("location", ""),
+                "people":       fm.get("people", ""),
+                "would_return": fm.get("would_return", ""),
+                "return_visit": fm.get("return_visit", ""),
+                "type":         ", ".join(types),
+                "style":        ", ".join(styles),
+                "visit_type":   visit_type,
+                "food":         fm.get("food", ""),
+                "service":      fm.get("service", ""),
+                "atmosphere":   fm.get("atmosphere", ""),
+                "value":        fm.get("value", ""),
+                "overall":      fm.get("overall", ""),
+            })
+
+    shops.sort(key=lambda s: s.get("date") or "")
+    return shops
 
 
 # ── OP TCG ────────────────────────────────────────────────────────────────────
@@ -306,9 +354,15 @@ def load_optcg():
 
 def load_playing_cards():
     cards = []
+    # Files whose cards get grouped under a special sidebar filter instead of
+    # their own brand entry — grouping follows the source file, not the brand
+    # string, so adding a new brand row to misc.md just works.
+    GROUP_FILES = {"misc": "misc", "cardmafia": "cardmafia"}
+
     for f in sorted(PLAYING_DIR.glob("*.md")):
         fm         = parse_frontmatter(f)
         file_brand = fm.get("brand", "").strip()
+        group      = GROUP_FILES.get(f.stem, "")
 
         with open(f, encoding="utf-8") as fh:
             lines = fh.readlines()
@@ -330,6 +384,7 @@ def load_playing_cards():
                 "brand": brand,
                 "name":  name,
                 "date":  parse_dimoo_date(fields.get("date", "")),
+                "group": group,
             })
     return cards
 
@@ -351,6 +406,11 @@ if __name__ == "__main__":
     with open(OUT_DIR / "restaurants.json", "w", encoding="utf-8") as f:
         json.dump(restaurants, f, ensure_ascii=False, indent=2)
     print(f"Wrote {len(restaurants)} restaurants → restaurants.json")
+
+    dessert_shops = load_dessert_shops()
+    with open(OUT_DIR / "dessert_shops.json", "w", encoding="utf-8") as f:
+        json.dump(dessert_shops, f, ensure_ascii=False, indent=2)
+    print(f"Wrote {len(dessert_shops)} dessert shops → dessert_shops.json")
 
     optcg = load_optcg()
     with open(OUT_DIR / "optcg.json", "w", encoding="utf-8") as f:
