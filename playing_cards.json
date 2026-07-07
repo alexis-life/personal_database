@@ -65,6 +65,11 @@
     "date": "08/31/2025"
   },
   {
+    "brand": "bicycle",
+    "name": "disney villains (purple",
+    "date": "01/24/2026"
+  },
+  {
     "brand": "card mafia",
     "name": "one piece brook foiled playing cards",
     "date": "08/28/2025"
@@ -130,6 +135,21 @@
     "date": "12/15/2022"
   },
   {
+    "brand": "mazedeck",
+    "name": "illusion playing cards",
+    "date": "02/03/2026"
+  },
+  {
+    "brand": "-",
+    "name": "the world of shirow masamune 2025 playing cards",
+    "date": "01/09/2026"
+  },
+  {
+    "brand": "cosmos (yasin",
+    "name": "stellar constellation uv playing cards",
+    "date": "04/12/2026"
+  },
+  {
     "brand": "theory11",
     "name": "deadpool playing cards",
     "date": "08/27/2025"
@@ -148,5 +168,15 @@
     "brand": "theory11",
     "name": "rick and morty playing cards",
     "date": "08/27/2025"
+  },
+  {
+    "brand": "theory11",
+    "name": "the dark knight x batman playing cards",
+    "date": "01/24/2026"
+  },
+  {
+    "brand": "theory11",
+    "name": "wicked playing cards",
+    "date": "12/17/2025"
   }
 ]
