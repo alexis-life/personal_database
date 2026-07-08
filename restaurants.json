@@ -1202,5 +1202,19 @@
     "atmosphere": "B",
     "value": "B",
     "overall": "A"
+  },
+  {
+    "name": "curry hyuga",
+    "date": "2026-07-07",
+    "location": "1204 broadway, burlingame, ca 94010",
+    "people": "jordan mai, eric trinh",
+    "would_return": "",
+    "return_visit": "yes",
+    "cuisine": "japanese",
+    "food": "A",
+    "service": "S",
+    "atmosphere": "A",
+    "value": "B",
+    "overall": "A"
   }
 ]
