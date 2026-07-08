@@ -1,25 +1,7 @@
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --c1: #ffe0e9;
-  --c2: #ffc2d4;
-  --c3: #ff9ebb;
-  --c4: #ff7aa2;
-  --c5: #e05780;
-  --c6: #b9375e;
-  --c7: #8a2846;
-  --c8: #602437;
-  --c9: #522e38;
-  --sidebar-w: 260px;
-  --topbar-h: 60px;
-  --content-pad: 28px;
-}
-
+/* Shared reset, color/layout vars, and base body styles now come from
+   the hub theme.css (https://alexischao.com/theme.css), linked in index.html.
+   This file only adds what's unique to this dashboard's sidebar layout. */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9f4f5;
-  color: var(--c9);
-  min-height: 100vh;
   display: flex;
 }
 
