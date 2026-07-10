@@ -128,6 +128,22 @@
     "overall": ""
   },
   {
+    "name": "7 leaves cafe",
+    "date": "2026-07-01",
+    "location": "3931 alemany blvd, unit 2003, san francisco, ca 94132",
+    "people": "jordan mai",
+    "would_return": "maybe",
+    "return_visit": "yes",
+    "type": "boba",
+    "style": "",
+    "visit_type": "delivery",
+    "food": "C",
+    "service": "",
+    "atmosphere": "",
+    "value": "B",
+    "overall": "B-"
+  },
+  {
     "name": "heytea daly city",
     "date": "2026-07-03",
     "location": "500 westlake center, daly city, ca 94015",
@@ -140,7 +156,7 @@
     "food": "B",
     "service": "",
     "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "value": "B",
+    "overall": "B"
   }
 ]

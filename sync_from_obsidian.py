@@ -12,12 +12,12 @@ from pathlib import Path
 
 VAULT      = Path(os.environ["OBSIDIAN_VAULT"]) if os.environ.get("OBSIDIAN_VAULT") \
              else Path.home() / "Library/Mobile Documents/iCloud~md~obsidian/Documents/personal"
-DIMOOS_DIR  = VAULT / "cards/dimoos"
-MOVIES_DIR  = VAULT / "cards/movies"
-REST_DIR    = VAULT / "cards/restaurants"
-DESSERT_DIR = VAULT / "cards/dessert shop"
-OPTCG_DIR   = VAULT / "cards/op tcg cards"
-PLAYING_DIR = VAULT / "cards/playing cards"
+DIMOOS_DIR  = VAULT / "atlas/cards/dimoos"
+MOVIES_DIR  = VAULT / "atlas/cards/movies"
+REST_DIR    = VAULT / "atlas/cards/restaurants"
+DESSERT_DIR = VAULT / "atlas/cards/dessert shop"
+OPTCG_DIR   = VAULT / "atlas/cards/op tcg cards"
+PLAYING_DIR = VAULT / "atlas/cards/playing cards"
 OUT_DIR    = Path(__file__).parent
 
 # ── Shared helpers ────────────────────────────────────────────────────────────
