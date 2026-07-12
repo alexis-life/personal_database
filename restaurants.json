@@ -1230,5 +1230,19 @@
     "atmosphere": "A",
     "value": "B",
     "overall": "A"
+  },
+  {
+    "name": "utopia cafe",
+    "date": "2026-07-11",
+    "location": "139 waverly pl, san francisco, ca 94108",
+    "people": "jordan mai, eric trinh",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "cuisine": "chinese",
+    "food": "A",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "S",
+    "overall": "S"
   }
 ]
