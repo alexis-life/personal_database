@@ -1244,5 +1244,33 @@
     "atmosphere": "B",
     "value": "S",
     "overall": "S"
+  },
+  {
+    "name": "pho huynh hiep 3 - kevin's noodle house",
+    "date": "2026-07-18",
+    "location": "85 southgate ave, daly city, ca 94015",
+    "people": "jordan mai, eric trinh",
+    "would_return": "",
+    "return_visit": "yes",
+    "cuisine": "vietnamese",
+    "food": "B",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "A",
+    "overall": "B"
+  },
+  {
+    "name": "pho huynh hiep 3 - kevin's noodle house",
+    "date": "2026-07-18",
+    "location": "85 southgate ave, daly city, ca 94015",
+    "people": "eric trinh, michael sim, daniel perez",
+    "would_return": "",
+    "return_visit": "yes",
+    "cuisine": "vietnamese",
+    "food": "B",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "A",
+    "overall": "B"
   }
 ]
