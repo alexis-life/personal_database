@@ -158,5 +158,21 @@
     "atmosphere": "",
     "value": "B",
     "overall": "B"
+  },
+  {
+    "name": "great tea 茶尚品",
+    "date": "2026-07-11",
+    "location": "727 washington st, san francisco, ca 94108",
+    "people": "jordan mai, eric trinh",
+    "would_return": "maybe",
+    "return_visit": "no",
+    "type": "boba, fruit_tea",
+    "style": "",
+    "visit_type": "takeout",
+    "food": "",
+    "service": "",
+    "atmosphere": "",
+    "value": "",
+    "overall": ""
   }
 ]
