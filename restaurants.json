@@ -1272,5 +1272,19 @@
     "atmosphere": "B",
     "value": "A",
     "overall": "B"
+  },
+  {
+    "name": "truffle poké bar",
+    "date": "2026-07-22",
+    "location": "1212 donnelly ave, burlingame, ca 94010",
+    "people": "jordan mai",
+    "would_return": "maybe",
+    "return_visit": "no",
+    "cuisine": "hawaiian",
+    "food": "B",
+    "service": "B",
+    "atmosphere": "A",
+    "value": "B",
+    "overall": "B"
   }
 ]
