@@ -3428,5 +3428,19 @@
     "atmosphere": "A",
     "value": "C",
     "overall": "B-"
+  },
+  {
+    "name": "birdman ramen",
+    "date": "2026-08-02",
+    "location": "212 e ohio st, chicago, il 60611",
+    "people": "jordan mai, eric trinh",
+    "would_return": "",
+    "return_visit": "no",
+    "cuisine": "japanese",
+    "food": "",
+    "service": "",
+    "atmosphere": "",
+    "value": "",
+    "overall": ""
   }
 ]
