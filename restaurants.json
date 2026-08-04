@@ -3458,6 +3458,20 @@
     "overall": "A"
   },
   {
+    "name": "au cheval",
+    "date": "2026-08-03",
+    "location": "800 w randolph st, chicago, il 60607",
+    "people": "jordan mai, eric trinh",
+    "would_return": "",
+    "return_visit": "no",
+    "cuisine": "american",
+    "food": "",
+    "service": "",
+    "atmosphere": "",
+    "value": "",
+    "overall": ""
+  },
+  {
     "name": "shrimp noodle bar",
     "date": "2026-08-03",
     "location": "",
@@ -3469,6 +3483,6 @@
     "service": "A",
     "atmosphere": "B",
     "value": "S",
-    "overall": ""
+    "overall": "A"
   }
 ]
