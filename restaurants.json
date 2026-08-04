@@ -3462,13 +3462,13 @@
     "date": "2026-08-03",
     "location": "",
     "people": "jordan mai, eric trinh",
-    "would_return": "",
+    "would_return": "yes",
     "return_visit": "no",
     "cuisine": "chinese",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
+    "food": "A",
+    "service": "A",
+    "atmosphere": "B",
+    "value": "S",
     "overall": ""
   }
 ]
