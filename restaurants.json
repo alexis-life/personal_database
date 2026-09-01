@@ -1488,14 +1488,14 @@
     "date": "2026-08-31",
     "location": "1581 webster st #217, san francisco, ca 94115",
     "people": "jordan mai, eric trinh, jacob ganburged",
-    "would_return": "",
+    "would_return": "yes",
     "return_visit": "no",
     "cuisine": "japanese",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "A",
+    "service": "B",
+    "atmosphere": "A",
+    "value": "B",
+    "overall": "B"
   },
   {
     "name": "udon mugizo - sf",
