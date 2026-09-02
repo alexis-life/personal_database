@@ -331,6 +331,22 @@
     "imdb_id": "tt15789038"
   },
   {
+    "title": "elementals",
+    "year": 2023,
+    "watch_date": "2023-12-03",
+    "location": "apartment",
+    "people": "brighten hayama",
+    "rating": 9,
+    "overall": "good movie about showing hardships of interracial couples with immigrant parents",
+    "genres": [
+      "animation",
+      "fantasy",
+      "comedy",
+      "kids_family"
+    ],
+    "imdb_id": ""
+  },
+  {
     "title": "leo",
     "year": 2023,
     "watch_date": "2023-12-03",
@@ -863,6 +879,21 @@
       "anime"
     ],
     "imdb_id": "tt0119698"
+  },
+  {
+    "title": "princess mononoke 4k",
+    "year": 2025,
+    "watch_date": "2025-04-06",
+    "location": "roxie theatre",
+    "people": "ellison bernabe, michael lemay, michael sim, eric trinh",
+    "rating": 8,
+    "overall": "good movie somewhat about industrialization with great animations",
+    "genres": [
+      "adventure",
+      "fantasy",
+      "anime"
+    ],
+    "imdb_id": ""
   },
   {
     "title": "colorful stage! the movie a miku who can't sing",
