@@ -13,7 +13,8 @@
       "adventure",
       "animation",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt27155038"
   },
   {
     "title": "the 355",
@@ -26,7 +27,8 @@
     "genres": [
       "action",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt8356942"
   },
   {
     "title": "knives out",
@@ -41,7 +43,8 @@
       "comedy",
       "crime",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt8946378"
   },
   {
     "title": "puss in boots",
@@ -56,7 +59,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt0448694"
   },
   {
     "title": "puss in boots the last wish",
@@ -71,7 +75,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt3915174"
   },
   {
     "title": "teenage mutant ninja turtles mutant mayhem",
@@ -86,7 +91,8 @@
       "adventure",
       "comedy",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt8589698"
   },
   {
     "title": "the truman show",
@@ -99,7 +105,8 @@
     "genres": [
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt0120382"
   },
   {
     "title": "gran turismo",
@@ -112,7 +119,8 @@
     "genres": [
       "action",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt4495098"
   },
   {
     "title": "oppenheimer",
@@ -126,7 +134,8 @@
       "biography",
       "drama",
       "history"
-    ]
+    ],
+    "imdb_id": "tt15398776"
   },
   {
     "title": "the flash",
@@ -140,7 +149,8 @@
       "action",
       "fantasy",
       "adventure"
-    ]
+    ],
+    "imdb_id": "tt0439572"
   },
   {
     "title": "the super mario bros",
@@ -155,7 +165,8 @@
       "adventure",
       "comedy",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt6718170"
   },
   {
     "title": "asteroid city",
@@ -169,7 +180,8 @@
       "comedy",
       "drama",
       "romance"
-    ]
+    ],
+    "imdb_id": "tt14230388"
   },
   {
     "title": "barbie",
@@ -181,7 +193,8 @@
     "overall": "okay movie. very politically feminist",
     "genres": [
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt1517268"
   },
   {
     "title": "eternal sunshine of the spotless mind",
@@ -194,7 +207,8 @@
     "genres": [
       "sci-fi",
       "romance"
-    ]
+    ],
+    "imdb_id": "tt0338013"
   },
   {
     "title": "love at first sight",
@@ -207,7 +221,8 @@
     "genres": [
       "romance",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt2183014"
   },
   {
     "title": "let it snow",
@@ -222,7 +237,8 @@
       "romance",
       "comedy",
       "lgbtq"
-    ]
+    ],
+    "imdb_id": "tt1950235"
   },
   {
     "title": "borat",
@@ -234,7 +250,8 @@
     "overall": "pure enjoyment but dark humor needed",
     "genres": [
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt0443453"
   },
   {
     "title": "a haunting in venice",
@@ -248,7 +265,8 @@
       "holiday",
       "mystery_thriller",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt22687790"
   },
   {
     "title": "downsizing",
@@ -263,7 +281,8 @@
       "drama",
       "sci-fi",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt1389072"
   },
   {
     "title": "five nights at freddy’s",
@@ -276,7 +295,8 @@
     "genres": [
       "horror",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt4589218"
   },
   {
     "title": "meet the robinsons",
@@ -291,10 +311,11 @@
       "adventure",
       "comedy",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt0396555"
   },
   {
-    "title": "elementals",
+    "title": "elemental",
     "year": 2023,
     "watch_date": "2023-12-03",
     "location": "apartment",
@@ -306,7 +327,8 @@
       "fantasy",
       "comedy",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt15789038"
   },
   {
     "title": "leo",
@@ -321,7 +343,8 @@
       "comedy",
       "kids_family",
       "musical"
-    ]
+    ],
+    "imdb_id": "tt5755238"
   },
   {
     "title": "the boy and the heron",
@@ -335,7 +358,8 @@
       "fantasy",
       "adventure",
       "anime"
-    ]
+    ],
+    "imdb_id": "tt6587046"
   },
   {
     "title": "the adventures of tintin",
@@ -351,7 +375,8 @@
       "animation",
       "mystery_thriller",
       "action"
-    ]
+    ],
+    "imdb_id": "tt0983193"
   },
   {
     "title": "love actually",
@@ -366,7 +391,8 @@
       "comedy",
       "drama",
       "holiday"
-    ]
+    ],
+    "imdb_id": "tt0314331"
   },
   {
     "title": "lost in translation",
@@ -379,7 +405,8 @@
     "genres": [
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt0335266"
   },
   {
     "title": "sweeney todd the demon barber of fleet street",
@@ -394,7 +421,8 @@
       "mystery_thriller",
       "crime",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt0408236"
   },
   {
     "title": "priscilla",
@@ -409,7 +437,8 @@
       "drama",
       "romance",
       "music"
-    ]
+    ],
+    "imdb_id": "tt22041854"
   },
   {
     "title": "wonka",
@@ -424,7 +453,8 @@
       "musical",
       "comedy",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt6166392"
   },
   {
     "title": "look both ways",
@@ -438,7 +468,8 @@
       "comedy",
       "drama",
       "romance"
-    ]
+    ],
+    "imdb_id": "tt14298328"
   },
   {
     "title": "mean girls",
@@ -450,7 +481,8 @@
     "overall": "decent movie. can see why it’s iconic but shitty ending",
     "genres": [
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt0377092"
   },
   {
     "title": "mean girls",
@@ -463,10 +495,11 @@
     "genres": [
       "comedy",
       "musical"
-    ]
+    ],
+    "imdb_id": "tt0377092"
   },
   {
-    "title": "the wonderful store of henry sugar",
+    "title": "the wonderful story of henry sugar",
     "year": 2023,
     "watch_date": "2024-01-27",
     "location": "apartment",
@@ -477,7 +510,8 @@
       "comedy",
       "adventure",
       "short"
-    ]
+    ],
+    "imdb_id": "tt16968450"
   },
   {
     "title": "wish",
@@ -494,7 +528,8 @@
       "comedy",
       "adventure",
       "musical"
-    ]
+    ],
+    "imdb_id": "tt11304740"
   },
   {
     "title": "queenpin",
@@ -507,7 +542,8 @@
     "genres": [
       "comedy",
       "crime"
-    ]
+    ],
+    "imdb_id": "tt9054192"
   },
   {
     "title": "american fiction",
@@ -520,7 +556,8 @@
     "genres": [
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt23561236"
   },
   {
     "title": "migration",
@@ -535,7 +572,8 @@
       "adventure",
       "comedy",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt6495056"
   },
   {
     "title": "poor things",
@@ -550,7 +588,8 @@
       "fantasy",
       "romance",
       "sci-fi"
-    ]
+    ],
+    "imdb_id": "tt14230458"
   },
   {
     "title": "bodies bodies bodies",
@@ -565,7 +604,8 @@
       "horror",
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt8110652"
   },
   {
     "title": "the hunger games the ballad of songbirds and snakes",
@@ -579,7 +619,8 @@
       "action",
       "adventure",
       "sci-fi"
-    ]
+    ],
+    "imdb_id": "tt10545296"
   },
   {
     "title": "spy x family code white",
@@ -594,7 +635,8 @@
       "adventure",
       "comedy",
       "action"
-    ]
+    ],
+    "imdb_id": "tt26684398"
   },
   {
     "title": "the fall guy",
@@ -609,7 +651,8 @@
       "comedy",
       "romance",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt1684562"
   },
   {
     "title": "haikyuu!! the dumpster battle",
@@ -623,7 +666,8 @@
       "anime",
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt30476486"
   },
   {
     "title": "bad boys ride or die",
@@ -636,7 +680,8 @@
     "genres": [
       "action",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt4919268"
   },
   {
     "title": "inside out",
@@ -651,7 +696,8 @@
       "comedy",
       "fantasy",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt2096673"
   },
   {
     "title": "inside out 2",
@@ -666,7 +712,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt22022452"
   },
   {
     "title": "descendants the rise of red",
@@ -681,7 +728,8 @@
       "fantasy",
       "adventure",
       "musical"
-    ]
+    ],
+    "imdb_id": "tt20202136"
   },
   {
     "title": "deadpool & wolverine",
@@ -695,7 +743,8 @@
       "action",
       "comedy",
       "adventure"
-    ]
+    ],
+    "imdb_id": "tt6263850"
   },
   {
     "title": "harold and the purple crayon",
@@ -710,7 +759,8 @@
       "comedy",
       "adventure",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt1609486"
   },
   {
     "title": "the platform 2",
@@ -723,7 +773,8 @@
     "genres": [
       "sci-fi",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt27729779"
   },
   {
     "title": "crazy, stupid, love",
@@ -736,7 +787,8 @@
     "genres": [
       "romance",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt1570728"
   },
   {
     "title": "our little secret",
@@ -750,7 +802,8 @@
       "romance",
       "comedy",
       "holiday"
-    ]
+    ],
+    "imdb_id": "tt31022050"
   },
   {
     "title": "wicked",
@@ -765,7 +818,8 @@
       "fantasy",
       "musical",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt1262426"
   },
   {
     "title": "kinda pregnant",
@@ -777,7 +831,8 @@
     "overall": "funny movie but gave me second hand embarrassment",
     "genres": [
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt30253036"
   },
   {
     "title": "captain america brave new world",
@@ -791,10 +846,11 @@
       "action",
       "adventure",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt14513804"
   },
   {
-    "title": "princess mononoke 4k",
+    "title": "princess mononoke",
     "year": 2025,
     "watch_date": "2025-04-06",
     "location": "roxie theatre",
@@ -805,7 +861,8 @@
       "adventure",
       "fantasy",
       "anime"
-    ]
+    ],
+    "imdb_id": "tt0119698"
   },
   {
     "title": "colorful stage! the movie a miku who can't sing",
@@ -819,7 +876,8 @@
       "anime",
       "drama",
       "musical"
-    ]
+    ],
+    "imdb_id": "tt33050528"
   },
   {
     "title": "the hating game",
@@ -832,7 +890,8 @@
     "genres": [
       "romance",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt8718158"
   },
   {
     "title": "sinners",
@@ -846,7 +905,8 @@
       "horror",
       "mystery_thriller",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt31193180"
   },
   {
     "title": "the life list",
@@ -860,7 +920,8 @@
       "drama",
       "comedy",
       "romance"
-    ]
+    ],
+    "imdb_id": "tt2172954"
   },
   {
     "title": "pitch perfect",
@@ -874,7 +935,8 @@
       "musical",
       "comedy",
       "romance"
-    ]
+    ],
+    "imdb_id": "tt1981677"
   },
   {
     "title": "thunderbolts*",
@@ -889,7 +951,8 @@
       "adventure",
       "crime",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt20969586"
   },
   {
     "title": "final destination bloodlines",
@@ -901,7 +964,8 @@
     "overall": "was a thriller comedy-like movie with a bunch of killing goldberg machines",
     "genres": [
       "horror"
-    ]
+    ],
+    "imdb_id": "tt9619824"
   },
   {
     "title": "la la land",
@@ -916,7 +980,8 @@
       "romance",
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt3783958"
   },
   {
     "title": "lilo & stitch",
@@ -932,7 +997,8 @@
       "kids_family",
       "adventure",
       "action"
-    ]
+    ],
+    "imdb_id": "tt11655566"
   },
   {
     "title": "despicable me 4",
@@ -947,7 +1013,8 @@
       "comedy",
       "kids_family",
       "adventure"
-    ]
+    ],
+    "imdb_id": "tt7510222"
   },
   {
     "title": "the greatest showman",
@@ -961,7 +1028,8 @@
       "musical",
       "biography",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt1485796"
   },
   {
     "title": "anyone but you",
@@ -974,7 +1042,8 @@
     "genres": [
       "romance",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt26047818"
   },
   {
     "title": "now you see me",
@@ -988,7 +1057,8 @@
       "mystery_thriller",
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt1670345"
   },
   {
     "title": "sing",
@@ -1003,7 +1073,8 @@
       "musical",
       "comedy",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt3470600"
   },
   {
     "title": "bee movie",
@@ -1018,7 +1089,8 @@
       "adventure",
       "comedy",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt0389790"
   },
   {
     "title": "kpop demon hunters",
@@ -1036,7 +1108,8 @@
       "musical",
       "kids_family",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt14205554"
   },
   {
     "title": "materialists",
@@ -1050,7 +1123,8 @@
       "romance",
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt30253473"
   },
   {
     "title": "now you see me 2",
@@ -1066,7 +1140,8 @@
       "crime",
       "drama",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt3110958"
   },
   {
     "title": "mission impossible – the final reckoning",
@@ -1080,7 +1155,8 @@
       "action",
       "adventure",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt9603208"
   },
   {
     "title": "superman",
@@ -1095,7 +1171,8 @@
       "adventure",
       "sci-fi",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt5950044"
   },
   {
     "title": "the fantastic four first steps",
@@ -1110,7 +1187,8 @@
       "adventure",
       "sci-fi",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt10676052"
   },
   {
     "title": "moana 2",
@@ -1126,7 +1204,8 @@
       "kids_family",
       "musical",
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt13622970"
   },
   {
     "title": "turning red",
@@ -1141,7 +1220,8 @@
       "comedy",
       "fantasy",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt8097030"
   },
   {
     "title": "the naked gun",
@@ -1155,7 +1235,8 @@
       "comedy",
       "action",
       "crime"
-    ]
+    ],
+    "imdb_id": "tt3402138"
   },
   {
     "title": "f1",
@@ -1169,7 +1250,8 @@
       "action",
       "drama",
       "sports"
-    ]
+    ],
+    "imdb_id": "tt16311594"
   },
   {
     "title": "anora",
@@ -1183,7 +1265,8 @@
       "comedy",
       "drama",
       "romance"
-    ]
+    ],
+    "imdb_id": "tt28607951"
   },
   {
     "title": "elio",
@@ -1193,7 +1276,8 @@
     "people": "jordan mai",
     "rating": 5,
     "overall": "shit ending with overly pushed lesson of the story, terrible mc, but like the rest of the characters were 100% more likeable",
-    "genres": []
+    "genres": [],
+    "imdb_id": "tt4900148"
   },
   {
     "title": "demon slayer kimetsu no yaiba the movie infinity castle",
@@ -1208,7 +1292,8 @@
       "action",
       "fantasy",
       "adventure"
-    ]
+    ],
+    "imdb_id": "tt11032374"
   },
   {
     "title": "unknown number the high school catfish",
@@ -1222,7 +1307,8 @@
       "crime",
       "drama",
       "documentary"
-    ]
+    ],
+    "imdb_id": "tt37674426"
   },
   {
     "title": "chainsaw man - the movie reze arc",
@@ -1237,7 +1323,8 @@
       "adventure",
       "fantasy",
       "anime"
-    ]
+    ],
+    "imdb_id": "tt30472557"
   },
   {
     "title": "wicked",
@@ -1252,7 +1339,8 @@
       "fantasy",
       "musical",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt1262426"
   },
   {
     "title": "wicked for good",
@@ -1267,7 +1355,8 @@
       "fantasy",
       "adventure",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt19847976"
   },
   {
     "title": "zootopia 2",
@@ -1282,7 +1371,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt26443597"
   },
   {
     "title": "fatman",
@@ -1297,7 +1387,8 @@
       "holiday",
       "fantasy",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt10310140"
   },
   {
     "title": "joy ride",
@@ -1309,7 +1400,8 @@
     "overall": "a movie showcasing the hardships of being an asian american",
     "genres": [
       "comedy"
-    ]
+    ],
+    "imdb_id": "tt15268244"
   },
   {
     "title": "is this thing on",
@@ -1322,7 +1414,8 @@
     "genres": [
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt28083456"
   },
   {
     "title": "the spongebob movie search for squarepants",
@@ -1337,7 +1430,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt23572848"
   },
   {
     "title": "the bad guys",
@@ -1353,7 +1447,8 @@
       "adventure",
       "action",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt8115900"
   },
   {
     "title": "goat",
@@ -1369,7 +1464,8 @@
       "animation",
       "adventure",
       "sports"
-    ]
+    ],
+    "imdb_id": "tt27613895"
   },
   {
     "title": "crime 101",
@@ -1383,7 +1479,8 @@
       "crime",
       "mystery_thriller",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt32430579"
   },
   {
     "title": "hoppers",
@@ -1398,7 +1495,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt26443616"
   },
   {
     "title": "project hail mary",
@@ -1411,7 +1509,8 @@
     "genres": [
       "sci-fi",
       "adventure"
-    ]
+    ],
+    "imdb_id": "tt12042730"
   },
   {
     "title": "the super mario galaxy movie",
@@ -1426,7 +1525,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt28650488"
   },
   {
     "title": "exit 8",
@@ -1439,7 +1539,8 @@
     "genres": [
       "mystery_thriller",
       "horror"
-    ]
+    ],
+    "imdb_id": "tt35222590"
   },
   {
     "title": "cruella",
@@ -1452,7 +1553,8 @@
     "genres": [
       "comedy",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt3228774"
   },
   {
     "title": "glass onion a knives out mystery",
@@ -1466,7 +1568,8 @@
       "mystery_thriller",
       "comedy",
       "drama"
-    ]
+    ],
+    "imdb_id": "tt11564570"
   },
   {
     "title": "michael",
@@ -1480,7 +1583,8 @@
       "biography",
       "drama",
       "music"
-    ]
+    ],
+    "imdb_id": "tt11378946"
   },
   {
     "title": "the sheep detectives",
@@ -1495,7 +1599,8 @@
       "comedy",
       "action",
       "kids_family"
-    ]
+    ],
+    "imdb_id": "tt32565993"
   },
   {
     "title": "star wars the mandalorian and grogu",
@@ -1510,7 +1615,8 @@
       "adventure",
       "action",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt30825738"
   },
   {
     "title": "obsession",
@@ -1523,7 +1629,8 @@
     "genres": [
       "horror",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": "tt37287335"
   },
   {
     "title": "backrooms",
@@ -1538,7 +1645,8 @@
       "fantasy",
       "mystery_thriller",
       "horror"
-    ]
+    ],
+    "imdb_id": "tt26657236"
   },
   {
     "title": "toy story 5",
@@ -1553,7 +1661,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt29355505"
   },
   {
     "title": "minions & monsters",
@@ -1568,7 +1677,8 @@
       "comedy",
       "adventure",
       "animation"
-    ]
+    ],
+    "imdb_id": "tt32890033"
   },
   {
     "title": "the odyssey",
@@ -1582,7 +1692,8 @@
       "adventure",
       "action",
       "fantasy"
-    ]
+    ],
+    "imdb_id": "tt33764258"
   },
   {
     "title": "the drama (2026) - unfinished",
@@ -1597,6 +1708,7 @@
       "romance",
       "comedy",
       "mystery_thriller"
-    ]
+    ],
+    "imdb_id": ""
   }
 ]

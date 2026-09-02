@@ -7,6 +7,9 @@ Run from the repo root: python3 sync_from_obsidian.py
 import json
 import os
 import re
+import urllib.error
+import urllib.parse
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -166,8 +169,59 @@ def load_dimoos():
 
 # ── Movies ────────────────────────────────────────────────────────────────────
 
+TMDB_READ_TOKEN = os.environ.get("TMDB_READ_TOKEN")
+
+
+def load_imdb_cache():
+    """Load title+year -> imdb_id from the existing movies.json so repeat
+    syncs don't re-query TMDb for movies we've already resolved."""
+    cache = {}
+    existing = OUT_DIR / "movies.json"
+    if not existing.exists():
+        return cache
+    try:
+        with open(existing, encoding="utf-8") as f:
+            for m in json.load(f):
+                if m.get("imdb_id"):
+                    cache[(m.get("title", ""), m.get("year"))] = m["imdb_id"]
+    except (json.JSONDecodeError, OSError):
+        pass
+    return cache
+
+
+def _tmdb_get(path, params):
+    url = "https://api.themoviedb.org/3" + path
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {TMDB_READ_TOKEN}"})
+    with urllib.request.urlopen(req, timeout=10) as resp:
+        return json.load(resp)
+
+
+def fetch_imdb_id(title, year):
+    """Look up a movie's IMDb ID via TMDb (search by title/year, then read
+    the matched movie's external IDs). Returns '' on any failure (no token
+    configured, network error, or no match) so a bad lookup never breaks
+    the sync."""
+    if not TMDB_READ_TOKEN:
+        return ""
+    try:
+        params = {"query": title}
+        if year:
+            params["year"] = str(year)
+        results = _tmdb_get("/search/movie", params).get("results", [])
+        if not results:
+            return ""
+        tmdb_id = results[0]["id"]
+        return _tmdb_get(f"/movie/{tmdb_id}/external_ids", None).get("imdb_id", "") or ""
+    except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, KeyError, IndexError):
+        return ""
+
+
 def load_movies():
     movies = []
+    imdb_cache = load_imdb_cache()
+
     for year_dir in sorted(MOVIES_DIR.iterdir()):
         if not year_dir.is_dir():
             continue
@@ -188,6 +242,14 @@ def load_movies():
 
             genres = re.findall(r"#genre/(\S+)", fm.get("tags", ""))
 
+            # Manual override (imdb_id:: tt1234567 in the note) always wins;
+            # otherwise reuse a cached lookup, otherwise query TMDb.
+            imdb_id = fm.get("imdb_id", "").strip()
+            if not imdb_id:
+                imdb_id = imdb_cache.get((title, release_year), "")
+            if not imdb_id:
+                imdb_id = fetch_imdb_id(title, release_year)
+
             movies.append({
                 "title":      title,
                 "year":       release_year,
@@ -197,6 +259,7 @@ def load_movies():
                 "rating":     rating,
                 "overall":    fm.get("overall", ""),
                 "genres":     genres,
+                "imdb_id":    imdb_id,
             })
 
     movies.sort(key=lambda m: m.get("watch_date") or "")

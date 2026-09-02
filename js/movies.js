@@ -311,8 +311,11 @@ function renderMoviesTable() {
       var cls = m.rating >= 8 ? 'badge-rate-hi' : m.rating >= 5 ? 'badge-rate-mid' : 'badge-rate-lo';
       ratingHtml = '<span class="badge ' + cls + '">' + m.rating + '/10</span>';
     }
+    var titleHtml = /^tt\d+$/.test(m.imdb_id || '')
+      ? '<a href="https://www.imdb.com/title/' + m.imdb_id + '/" target="_blank" rel="noopener">' + esc(m.title) + '</a>'
+      : esc(m.title);
     tr.innerHTML =
-      '<td>' + esc(m.title) + (m.year ? ' <span style="color:var(--c7);font-size:0.78rem">(' + m.year + ')</span>' : '') + '</td>' +
+      '<td>' + titleHtml + (m.year ? ' <span style="color:var(--c7);font-size:0.78rem">(' + m.year + ')</span>' : '') + '</td>' +
       '<td>' + esc(fmtDate(m.watch_date)) + '</td>' +
       '<td>' + ratingHtml + '</td>' +
       '<td>' + esc(m.location || '\u2014') + '</td>' +
