@@ -1003,6 +1003,23 @@
     "date": "n/a"
   },
   {
+    "set": "op10 royal blood",
+    "is_don": false,
+    "owner": "jordan",
+    "count": 1,
+    "region": "jp",
+    "name": "tony tony chopper (トニートニー・チョッパー)",
+    "rarity": "r",
+    "number": "op10-011",
+    "alt": "yes",
+    "sp": "no",
+    "color": "red",
+    "foil": "",
+    "gold": "",
+    "source_set": "",
+    "date": "09/14/2026"
+  },
+  {
     "set": "op11 a fist of divine speed",
     "is_don": false,
     "owner": "jordan",
@@ -1409,6 +1426,23 @@
     "gold": "",
     "source_set": "",
     "date": "n/a"
+  },
+  {
+    "set": "op13 carrying on his will",
+    "is_don": false,
+    "owner": "jordan",
+    "count": 1,
+    "region": "en",
+    "name": "ace & sabo & luffy",
+    "rarity": "sr",
+    "number": "op13-007",
+    "alt": "yes",
+    "sp": "no",
+    "color": "red",
+    "foil": "",
+    "gold": "",
+    "source_set": "",
+    "date": "09/14/2026"
   },
   {
     "set": "op14-eb04 the azure sea's seven",
