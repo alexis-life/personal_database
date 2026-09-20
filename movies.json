@@ -1741,5 +1741,21 @@
       "mystery_thriller"
     ],
     "imdb_id": ""
+  },
+  {
+    "title": "coyote vs acme",
+    "year": 2026,
+    "watch_date": "2026-09-19",
+    "location": "san mateo cinemark theatre",
+    "people": "jordan mai",
+    "rating": null,
+    "overall": "",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation"
+    ],
+    "imdb_id": "tt1756855"
   }
 ]
