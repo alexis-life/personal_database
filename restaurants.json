@@ -1698,13 +1698,13 @@
     "date": "2026-09-29",
     "location": "62 e 4th ave, san mateo, ca 94401",
     "people": "kenny huynh",
-    "would_return": "",
+    "would_return": "yes",
     "return_visit": "yes",
     "cuisine": "chinese",
-    "food": "S",
+    "food": "A",
     "service": "A",
-    "atmosphere": "A",
+    "atmosphere": "B",
     "value": "B",
-    "overall": "S"
+    "overall": "A"
   }
 ]
