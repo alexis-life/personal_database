@@ -1762,5 +1762,19 @@
     "atmosphere": "B",
     "value": "C",
     "overall": "A"
+  },
+  {
+    "name": "yoshi ramen & sushi",
+    "date": "2026-10-08",
+    "location": "127-h serramonte center, daly city, ca 94015",
+    "people": "kenny huynh, ellison bernabe",
+    "would_return": "",
+    "return_visit": "no",
+    "cuisine": "japanese",
+    "food": "",
+    "service": "",
+    "atmosphere": "",
+    "value": "",
+    "overall": ""
   }
 ]
