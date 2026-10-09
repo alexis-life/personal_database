@@ -48,6 +48,39 @@ def to_iso_date(d):
     return d.replace(".", "-") if d else ""
 
 
+def _completeness(record):
+    """Count non-empty fields, used to pick the "best" entry among duplicates."""
+    count = 0
+    for v in record.values():
+        if isinstance(v, (list, tuple)):
+            count += 1 if v else 0
+        elif v not in (None, ""):
+            count += 1
+    return count
+
+
+def dedupe_entries(entries, key_fields, label):
+    """Collapse entries that share the same key_fields (e.g. title+watch_date)
+    down to one, keeping the most complete record. This happens when multiple
+    devices (Mac/PC/NAS) independently sync the same vault and a stray
+    duplicate note briefly exists on one of their copies — rather than
+    silently shipping N near-identical rows to the live dashboard, keep the
+    best one and log what got collapsed."""
+    groups = {}
+    for e in entries:
+        groups.setdefault(tuple(e.get(k) for k in key_fields), []).append(e)
+
+    result = []
+    for key, group in groups.items():
+        if len(group) > 1:
+            best = max(group, key=_completeness)
+            print(f"  dedup: {label} {key} had {len(group)} matching entries, keeping most complete one")
+            result.append(best)
+        else:
+            result.append(group[0])
+    return result
+
+
 # ── Dimoo ─────────────────────────────────────────────────────────────────────
 
 MONTHS = {
@@ -262,6 +295,7 @@ def load_movies():
                 "imdb_id":    imdb_id,
             })
 
+    movies = dedupe_entries(movies, ("title", "watch_date"), "movie")
     movies.sort(key=lambda m: m.get("watch_date") or "")
     return movies
 
@@ -300,6 +334,7 @@ def load_restaurants():
                 "overall":      fm.get("overall", ""),
             })
 
+    restaurants = dedupe_entries(restaurants, ("name", "date"), "restaurant")
     restaurants.sort(key=lambda r: r.get("date") or "")
     return restaurants
 

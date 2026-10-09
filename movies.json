@@ -331,22 +331,6 @@
     "imdb_id": "tt15789038"
   },
   {
-    "title": "elementals",
-    "year": 2023,
-    "watch_date": "2023-12-03",
-    "location": "apartment",
-    "people": "brighten hayama",
-    "rating": 9,
-    "overall": "good movie about showing hardships of interracial couples with immigrant parents",
-    "genres": [
-      "animation",
-      "fantasy",
-      "comedy",
-      "kids_family"
-    ],
-    "imdb_id": ""
-  },
-  {
     "title": "leo",
     "year": 2023,
     "watch_date": "2023-12-03",
@@ -879,21 +863,6 @@
       "anime"
     ],
     "imdb_id": "tt0119698"
-  },
-  {
-    "title": "princess mononoke 4k",
-    "year": 2025,
-    "watch_date": "2025-04-06",
-    "location": "roxie theatre",
-    "people": "ellison bernabe, michael lemay, michael sim, eric trinh",
-    "rating": 8,
-    "overall": "good movie somewhat about industrialization with great animations",
-    "genres": [
-      "adventure",
-      "fantasy",
-      "anime"
-    ],
-    "imdb_id": ""
   },
   {
     "title": "colorful stage! the movie a miku who can't sing",
@@ -1759,102 +1728,6 @@
     "imdb_id": "tt1756855"
   },
   {
-    "title": "coyote vs acme",
-    "year": 2026,
-    "watch_date": "2026-09-19",
-    "location": "san mateo cinemark theatre",
-    "people": "jordan mai",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "kids_family",
-      "comedy",
-      "adventure",
-      "animation"
-    ],
-    "imdb_id": "tt1756855"
-  },
-  {
-    "title": "coyote vs acme",
-    "year": 2026,
-    "watch_date": "2026-09-19",
-    "location": "san mateo cinemark theatre",
-    "people": "jordan mai",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "kids_family",
-      "comedy",
-      "adventure",
-      "animation"
-    ],
-    "imdb_id": "tt1756855"
-  },
-  {
-    "title": "coyote vs acme",
-    "year": 2026,
-    "watch_date": "2026-09-19",
-    "location": "san mateo cinemark theatre",
-    "people": "jordan mai",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "kids_family",
-      "comedy",
-      "adventure",
-      "animation"
-    ],
-    "imdb_id": "tt1756855"
-  },
-  {
-    "title": "coyote vs acme",
-    "year": 2026,
-    "watch_date": "2026-09-19",
-    "location": "san mateo cinemark theatre",
-    "people": "jordan mai",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "kids_family",
-      "comedy",
-      "adventure",
-      "animation"
-    ],
-    "imdb_id": "tt1756855"
-  },
-  {
-    "title": "coyote vs acme",
-    "year": 2026,
-    "watch_date": "2026-09-19",
-    "location": "san mateo cinemark theatre",
-    "people": "jordan mai",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "kids_family",
-      "comedy",
-      "adventure",
-      "animation"
-    ],
-    "imdb_id": "tt1756855"
-  },
-  {
-    "title": "coyote vs acme",
-    "year": 2026,
-    "watch_date": "2026-09-19",
-    "location": "san mateo cinemark theatre",
-    "people": "jordan mai",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "kids_family",
-      "comedy",
-      "adventure",
-      "animation"
-    ],
-    "imdb_id": "tt1756855"
-  },
-  {
     "title": "practical magic",
     "year": 1998,
     "watch_date": "2026-09-25",
@@ -1876,45 +1749,6 @@
     "location": "daly city home",
     "people": "kenny huynh",
     "rating": 9,
-    "overall": "",
-    "genres": [
-      "romance"
-    ],
-    "imdb_id": "tt10375624"
-  },
-  {
-    "title": "voicemails for isabelle",
-    "year": 2026,
-    "watch_date": "2026-10-07",
-    "location": "daly city home",
-    "people": "kenny huynh",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "romance"
-    ],
-    "imdb_id": "tt10375624"
-  },
-  {
-    "title": "voicemails for isabelle",
-    "year": 2026,
-    "watch_date": "2026-10-07",
-    "location": "daly city home",
-    "people": "kenny huynh",
-    "rating": null,
-    "overall": "",
-    "genres": [
-      "romance"
-    ],
-    "imdb_id": "tt10375624"
-  },
-  {
-    "title": "voicemails for isabelle",
-    "year": 2026,
-    "watch_date": "2026-10-07",
-    "location": "daly city home",
-    "people": "kenny huynh",
-    "rating": null,
     "overall": "",
     "genres": [
       "romance"
