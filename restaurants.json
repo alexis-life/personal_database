@@ -1650,5 +1650,19 @@
     "atmosphere": "B",
     "value": "B",
     "overall": "A"
+  },
+  {
+    "name": "special noodle",
+    "date": "2026-10-11",
+    "location": "",
+    "people": "jordan mai",
+    "would_return": "",
+    "return_visit": "no",
+    "cuisine": "chinese",
+    "food": "",
+    "service": "",
+    "atmosphere": "",
+    "value": "",
+    "overall": ""
   }
 ]
