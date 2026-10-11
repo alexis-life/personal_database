@@ -1526,6 +1526,34 @@
     "overall": "B"
   },
   {
+    "name": "marugame udon",
+    "date": "2026-09-17",
+    "location": "3251 20th ave, san francisco, ca 94132",
+    "people": "kenny huynh",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "cuisine": "japanese",
+    "food": "A",
+    "service": "B",
+    "atmosphere": "B",
+    "value": "B",
+    "overall": "B"
+  },
+  {
+    "name": "marufuku ramen",
+    "date": "2026-09-21",
+    "location": "1581 webster st, suite 235, sf, ca 94115",
+    "people": "kenny huynh",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "cuisine": "japanese",
+    "food": "A",
+    "service": "A",
+    "atmosphere": "A",
+    "value": "C",
+    "overall": "B+"
+  },
+  {
     "name": "yakitori edomasa",
     "date": "2026-09-27",
     "location": "1581 webster st #270, san francisco, ca 94115",
