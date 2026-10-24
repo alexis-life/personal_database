@@ -1785,5 +1785,19 @@
       "romance"
     ],
     "imdb_id": "tt10375624"
+  },
+  {
+    "title": "street fighter",
+    "year": 2026,
+    "watch_date": "2026-10-18",
+    "location": "daly city cinemark theatre",
+    "people": "kenny huynh",
+    "rating": 5,
+    "overall": "",
+    "genres": [
+      "action",
+      "adventure"
+    ],
+    "imdb_id": "tt27419420"
   }
 ]
