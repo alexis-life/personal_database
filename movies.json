@@ -1799,5 +1799,20 @@
       "adventure"
     ],
     "imdb_id": "tt27419420"
+  },
+  {
+    "title": "wicker",
+    "year": 2026,
+    "watch_date": "2026-10-31",
+    "location": "san mateo cinemark theatre",
+    "people": "kenny huynh",
+    "rating": null,
+    "overall": "",
+    "genres": [
+      "fantasy",
+      "romance",
+      "comedy"
+    ],
+    "imdb_id": "tt29611136"
   }
 ]
