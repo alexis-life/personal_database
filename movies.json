@@ -1814,5 +1814,21 @@
       "comedy"
     ],
     "imdb_id": "tt29611136"
+  },
+  {
+    "title": "wildwood",
+    "year": 2026,
+    "watch_date": "2026-11-04",
+    "location": "tanfran cinemark theatre",
+    "people": "kenny huynh, jordan mai, eric trinh, ellison bernabe",
+    "rating": null,
+    "overall": "",
+    "genres": [
+      "fantasy",
+      "adventure",
+      "animation",
+      "action"
+    ],
+    "imdb_id": "tt2056785"
   }
 ]
