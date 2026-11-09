@@ -1830,5 +1830,22 @@
       "action"
     ],
     "imdb_id": "tt2056785"
+  },
+  {
+    "title": "the cat in the hat",
+    "year": 2026,
+    "watch_date": "2026-11-08",
+    "location": "daly city cinemark theatre",
+    "people": "kenny huynh, bernice tang",
+    "rating": null,
+    "overall": "",
+    "genres": [
+      "kids_family",
+      "comedy",
+      "adventure",
+      "animation",
+      "fantasy"
+    ],
+    "imdb_id": "tt2321555"
   }
 ]
