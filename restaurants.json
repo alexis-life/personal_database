@@ -1757,11 +1757,25 @@
     "would_return": "",
     "return_visit": "no",
     "cuisine": "hawaiian",
-    "food": "",
-    "service": "",
-    "atmosphere": "",
-    "value": "",
-    "overall": ""
+    "food": "S",
+    "service": "B",
+    "atmosphere": "D",
+    "value": "A",
+    "overall": "S"
+  },
+  {
+    "name": "hawaiian drive inn",
+    "date": "2026-10-29",
+    "location": "4827 mission st, san francisco, ca 94112",
+    "people": "kenny huynh",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "cuisine": "hawaiian",
+    "food": "S",
+    "service": "B",
+    "atmosphere": "D",
+    "value": "A",
+    "overall": "S"
   },
   {
     "name": "udon mugizo - san mateo",
@@ -1790,5 +1804,19 @@
     "atmosphere": "",
     "value": "",
     "overall": "A"
+  },
+  {
+    "name": "hawaiian drive inn",
+    "date": "2026-11-09",
+    "location": "4827 mission st, san francisco, ca 94112",
+    "people": "eric trinh, kenny huynh",
+    "would_return": "yes",
+    "return_visit": "yes",
+    "cuisine": "hawaiian",
+    "food": "S",
+    "service": "B",
+    "atmosphere": "D",
+    "value": "A",
+    "overall": "S"
   }
 ]
