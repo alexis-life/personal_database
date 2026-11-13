@@ -1818,5 +1818,19 @@
     "atmosphere": "D",
     "value": "A",
     "overall": "S"
+  },
+  {
+    "name": "tang bar",
+    "date": "2026-11-12",
+    "location": "3251 20th ave 2nd floor, san francisco, ca 94132",
+    "people": "shirley tang (mommy), bernice tang, kenny huynh",
+    "would_return": "",
+    "return_visit": "yes",
+    "cuisine": "chinese",
+    "food": "",
+    "service": "",
+    "atmosphere": "",
+    "value": "",
+    "overall": "A"
   }
 ]
